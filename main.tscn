@@ -1,7 +1,30 @@
 [gd_scene format=3 uid="uid://btojnm1veumfj"]
 
+[ext_resource type="Script" uid="uid://b1lcv3q0m44es" path="res://Player/camera.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://7bm83ywhglhl" path="res://icon.svg" id="1_ig7tw"]
+
 [node name="Main" type="Node" unique_id=1996573084]
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=2066863623]
 
+[node name="CenterPoint" type="Marker2D" parent="." unique_id=1987314234]
+position = Vector2(576, 324)
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=23174848 node_paths=PackedStringArray("center_point")]
+anchor_mode = 0
+position_smoothing_enabled = true
+script = ExtResource("1_0xm2m")
+center_point = NodePath("../CenterPoint")
+position_limits = Rect2i(-1000, 0, 1000, 0)
+
 [node name="SceneRoot" type="Node2D" parent="." unique_id=1418304631]
+
+[node name="Level" type="Node2D" parent="SceneRoot" unique_id=117647999]
+position = Vector2(618, 346)
+
+[node name="Icon" type="Sprite2D" parent="SceneRoot/Level" unique_id=963907738]
+modulate = Color(0.2901961, 0.2901961, 0.45490196, 1)
+position = Vector2(-34, -37)
+scale = Vector2(11.578125, 6.078125)
+texture = ExtResource("1_ig7tw")
