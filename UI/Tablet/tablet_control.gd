@@ -1,6 +1,6 @@
 extends Control
 
-@export var tablet: PanelContainer
+@export var tablet: Control
 @export var anim_duration: float = 0.5
 @export var hidden_offset: float = 800.0
 @export var shown_offset: float = 350.0

@@ -1,7 +1,7 @@
 
 extends Control
 
-@export var toast: PanelContainer
+@export var toast: Panel
 @export var boss_image: TextureRect
 @export var boss_name: Label
 @export var boss_title: Label
