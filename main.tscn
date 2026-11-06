@@ -1,7 +1,39 @@
 [gd_scene format=3 uid="uid://btojnm1veumfj"]
 
+[ext_resource type="Script" uid="uid://b1lcv3q0m44es" path="res://Player/camera.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://7bm83ywhglhl" path="res://icon.svg" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://dqc8s6gnne47t" path="res://Objects/gameobject.gd" id="3_h2yge"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6lhr"]
+size = Vector2(125, 125)
+
 [node name="Main" type="Node" unique_id=1996573084]
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=2066863623]
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=23174848]
+anchor_mode = 0
+position_smoothing_enabled = true
+script = ExtResource("1_0xm2m")
+position_limits = Rect2i(-1000, 0, 1000, 0)
+
 [node name="SceneRoot" type="Node2D" parent="." unique_id=1418304631]
+
+[node name="Level" type="Node2D" parent="SceneRoot" unique_id=117647999]
+position = Vector2(618, 346)
+
+[node name="Icon" type="Sprite2D" parent="SceneRoot/Level" unique_id=963907738]
+modulate = Color(0.2901961, 0.2901961, 0.45490196, 1)
+position = Vector2(-34, -37)
+scale = Vector2(11.578125, 6.078125)
+texture = ExtResource("1_ig7tw")
+
+[node name="Object" type="Area2D" parent="SceneRoot/Level" unique_id=168752524]
+monitoring = false
+script = ExtResource("3_h2yge")
+
+[node name="Sprite2D" type="Sprite2D" parent="SceneRoot/Level/Object" unique_id=288813659]
+texture = ExtResource("1_ig7tw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneRoot/Level/Object" unique_id=149514347]
+shape = SubResource("RectangleShape2D_b6lhr")
