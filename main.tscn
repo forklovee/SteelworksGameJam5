@@ -1,7 +1,114 @@
 [gd_scene format=3 uid="uid://btojnm1veumfj"]
 
+[ext_resource type="Script" uid="uid://djjg8fy8y14ov" path="res://UI/Tablet/tablet_control.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://bm7yox4rtj7l2" path="res://UI/Toast/toast_control.gd" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://cd87pvau0yr8f" path="res://UI/Tablet/tablet.png" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://3sbq6o3dgmno" path="res://Quests/quest_animation.gd" id="4_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://7bm83ywhglhl" path="res://icon.svg" id="4_lquwl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h2yge"]
+
 [node name="Main" type="Node" unique_id=1996573084]
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=2066863623]
+
+[node name="TabletControl" type="Control" parent="UI" unique_id=440444350 node_paths=PackedStringArray("tablet")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+script = ExtResource("1_ig7tw")
+tablet = NodePath("Tablet")
+
+[node name="Tablet" type="PanelContainer" parent="UI/TabletControl" unique_id=1953524956]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -212.5
+offset_top = -600.0
+offset_right = 212.5
+offset_bottom = 600.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 800)
+offset_transform_visual_only = false
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_h2yge")
+
+[node name="TabletBody" type="TextureRect" parent="UI/TabletControl/Tablet" unique_id=531123886]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_h2yge")
+stretch_mode = 4
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/TabletControl/Tablet" unique_id=251766917]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/TabletControl/Tablet/ScrollContainer" unique_id=917488453]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/TabletControl/Tablet/ScrollContainer/VBoxContainer" unique_id=1966460449]
+layout_mode = 2
+text = "dfdsdfsfdsf"
+
+[node name="ToastControl" type="Control" parent="UI" unique_id=631731580 node_paths=PackedStringArray("toast", "boss_image", "boss_name", "boss_title", "boss_message")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+script = ExtResource("2_0xm2m")
+toast = NodePath("Toast")
+boss_image = NodePath("Toast/HBoxContainer/VBoxContainer2/Image")
+boss_name = NodePath("Toast/HBoxContainer/VBoxContainer2/Name")
+boss_title = NodePath("Toast/HBoxContainer/VBoxContainer/Title")
+boss_message = NodePath("Toast/HBoxContainer/VBoxContainer/Message")
+
+[node name="Toast" type="PanelContainer" parent="UI/ToastControl" unique_id=877710176]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_right = 100.0
+offset_bottom = 50.0
+grow_horizontal = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 20)
+offset_transform_visual_only = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/ToastControl/Toast" unique_id=730661876]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="UI/ToastControl/Toast/HBoxContainer" unique_id=1979679845]
+layout_mode = 2
+
+[node name="Image" type="TextureRect" parent="UI/ToastControl/Toast/HBoxContainer/VBoxContainer2" unique_id=1496671495]
+layout_mode = 2
+texture = ExtResource("4_lquwl")
+
+[node name="Name" type="Label" parent="UI/ToastControl/Toast/HBoxContainer/VBoxContainer2" unique_id=1999357238]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/ToastControl/Toast/HBoxContainer" unique_id=899873592]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="UI/ToastControl/Toast/HBoxContainer/VBoxContainer" unique_id=926755561]
+layout_mode = 2
+
+[node name="Message" type="Label" parent="UI/ToastControl/Toast/HBoxContainer/VBoxContainer" unique_id=661524480]
+layout_mode = 2
+
+[node name="QuestAnimation" type="Node" parent="." unique_id=2043042858 node_paths=PackedStringArray("toast", "tablet")]
+script = ExtResource("4_1bvp3")
+toast = NodePath("../UI/ToastControl")
+tablet = NodePath("../UI/TabletControl")
 
 [node name="SceneRoot" type="Node2D" parent="." unique_id=1418304631]
