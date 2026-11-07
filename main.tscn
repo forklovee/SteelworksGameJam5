@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://btojnm1veumfj"]
 
+[ext_resource type="Script" uid="uid://b1lcv3q0m44es" path="res://Player/camera.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://djjg8fy8y14ov" path="res://UI/Tablet/tablet_control.gd" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://bm7yox4rtj7l2" path="res://UI/Toast/toast_control.gd" id="2_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://cd87pvau0yr8f" path="res://UI/Tablet/tablet.png" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://dqc8s6gnne47t" path="res://Objects/gameobject.gd" id="3_h2yge"]
 [ext_resource type="Script" uid="uid://3sbq6o3dgmno" path="res://Quests/new_quest.gd" id="4_1bvp3"]
 [ext_resource type="FontFile" uid="uid://dvd5mbtf11li2" path="res://UI/PixelifySans-VariableFont_wght.ttf" id="5_7mycd"]
 [ext_resource type="Texture2D" uid="uid://bphbwyj284wqj" path="res://UI/Toast/elon.png" id="5_272bh"]
 [ext_resource type="Texture2D" uid="uid://of6hn87tqpwn" path="res://UI/panel.png" id="7_kek77"]
+[ext_resource type="Texture2D" uid="uid://7bm83ywhglhl" path="res://icon.svg" id="9_4c57u"]
 
 [sub_resource type="Theme" id="Theme_7mycd"]
 Label/colors/font_color = Color(0, 0, 0, 1)
@@ -27,9 +30,6 @@ modulate_color = Color(0.18359044, 0.18359044, 0.18359044, 1)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hcvde"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dhxmx"]
-[ext_resource type="Script" uid="uid://b1lcv3q0m44es" path="res://Player/camera.gd" id="1_0xm2m"]
-[ext_resource type="Texture2D" uid="uid://7bm83ywhglhl" path="res://icon.svg" id="1_ig7tw"]
-[ext_resource type="Script" uid="uid://dqc8s6gnne47t" path="res://Objects/gameobject.gd" id="3_h2yge"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b6lhr"]
 size = Vector2(125, 125)
@@ -210,6 +210,7 @@ autowrap_mode = 3
 script = ExtResource("4_1bvp3")
 toast = NodePath("../UI/ToastControl")
 tablet = NodePath("../UI/TabletControl")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=23174848]
 anchor_mode = 0
 position_smoothing_enabled = true
@@ -225,14 +226,14 @@ position = Vector2(618, 346)
 modulate = Color(0.2901961, 0.2901961, 0.45490196, 1)
 position = Vector2(-34, -37)
 scale = Vector2(11.578125, 6.078125)
-texture = ExtResource("1_ig7tw")
+texture = ExtResource("9_4c57u")
 
 [node name="Object" type="Area2D" parent="SceneRoot/Level" unique_id=168752524]
 monitoring = false
 script = ExtResource("3_h2yge")
 
 [node name="Sprite2D" type="Sprite2D" parent="SceneRoot/Level/Object" unique_id=288813659]
-texture = ExtResource("1_ig7tw")
+texture = ExtResource("9_4c57u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneRoot/Level/Object" unique_id=149514347]
 shape = SubResource("RectangleShape2D_b6lhr")
