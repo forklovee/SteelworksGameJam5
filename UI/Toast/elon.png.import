@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1ou8rqcfneam"
-path="res://.godot/imported/message.png-0558159ff153242f45d8dde9965e2ef2.ctex"
+uid="uid://bphbwyj284wqj"
+path="res://.godot/imported/elon.png-dcc95252333c7ffeedc0bd9822937c11.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Tablet/message.png"
-dest_files=["res://.godot/imported/message.png-0558159ff153242f45d8dde9965e2ef2.ctex"]
+source_file="res://UI/Toast/elon.png"
+dest_files=["res://.godot/imported/elon.png-dcc95252333c7ffeedc0bd9822937c11.ctex"]
 
 [params]
 

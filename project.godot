@@ -17,11 +17,11 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Game="*uid://dsw8eyggrpdln"
+Game="*uid://bro6b3pe0fo7l"
 
 [display]
 
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
 
 [input]

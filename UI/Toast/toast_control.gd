@@ -1,9 +1,8 @@
 
 extends Control
 
-@export var toast: Panel
+@export var toast: PanelContainer
 @export var boss_image: TextureRect
-@export var boss_name: Label
 @export var boss_title: Label
 @export var boss_message: Label
 @export var anim_duration: float = 0.5
@@ -13,7 +12,6 @@ extends Control
 var tween: Tween
 
 func _ready() -> void:
-	boss_name.text = "Szef"
 	toast.offset_transform_position = Vector2(0, hidden_offset)
 	toast.modulate.a = 0.0
 	toast.visible = false
