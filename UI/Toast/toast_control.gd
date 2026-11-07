@@ -40,6 +40,7 @@ func show_boss_message(title: String, message: String) -> void:
 		1.0,
 		anim_duration
 	)
+	$"../NotificationSound".play()
 
 func hide_boss_message() -> void:
 	if tween and tween.is_running():

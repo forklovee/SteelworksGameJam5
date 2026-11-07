@@ -32,6 +32,7 @@ func player_message(message: String) -> void:
 	await get_tree().create_timer(2.0).timeout
 	rich_text.visible_characters = 0
 	rich_text.text = message
+	$"../PlayerMeow".play()
 	await get_tree().process_frame
 	messagebox.get_parent().scroll_vertical = messagebox.get_parent().get_v_scroll_bar().max_value
 	var tween2 = create_tween()
@@ -39,7 +40,7 @@ func player_message(message: String) -> void:
 		rich_text,
 		"visible_characters",
 		rich_text.text.length(),
-		message.length() * 0.02
+		message.length() * 0.01
 	)
 
 func gpt_message(message: String, delay: float) -> void:
@@ -49,9 +50,11 @@ func gpt_message(message: String, delay: float) -> void:
 	await get_tree().process_frame
 	messagebox.get_parent().scroll_vertical = messagebox.get_parent().get_v_scroll_bar().max_value
 	rich_text.text = "[wave amp=20 freq=50]Myśli...[/wave]"
+	$"../GPTMeow".play()
 	await get_tree().create_timer(delay).timeout
 	rich_text.visible_characters = 0
 	rich_text.text = message
+	$"../GPTMeow".play()
 	await get_tree().process_frame
 	messagebox.get_parent().scroll_vertical = messagebox.get_parent().get_v_scroll_bar().max_value
 	var tween2 = create_tween()
@@ -64,14 +67,17 @@ func gpt_message(message: String, delay: float) -> void:
 
 func show_tablet() -> void:
 	animate_tablet(Vector2(0, shown_offset))
-	
+	$"../TabletOpenSound".play()
+
 func show_tablet_user() -> void:
 	if hover_disabled:
 		return
 	animate_tablet(Vector2(0, shown_offset))
+	$"../TabletOpenSound".play()
 
 func hide_tablet() -> void:
 	animate_tablet(Vector2(0, hidden_offset))
+	$"../TabletCloseSound".play()
 
 func check_mouse() -> void:
 	if hover_disabled:
