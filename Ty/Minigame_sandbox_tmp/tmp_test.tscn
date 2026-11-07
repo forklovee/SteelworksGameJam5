@@ -6,16 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dldnfyen8os32" path="res://Ty/CoderArt_tmp/enviro_pot.png" id="4_ol1co"]
 [ext_resource type="Script" uid="uid://du0gbaou57l7l" path="res://Ty/Minigame_sandbox_tmp/enviro_pot.gd" id="5_mdpjc"]
 [ext_resource type="Resource" uid="uid://ccq4bxmsesp77" path="res://Ty/minigames/minigame_resource/angry_pot1.tres" id="6_0j8h8"]
-[ext_resource type="Shader" uid="uid://btjxjp3lshqkf" path="res://Ty/Minigame_sandbox_tmp/tmp_test.gdshader" id="6_go62f"]
-[ext_resource type="Script" uid="uid://blprqrlcv2x1b" path="res://Ty/Minigame_sandbox_tmp/mini_game_system.gd" id="6_kr01m"]
-[ext_resource type="PackedScene" uid="uid://c5tvlpca48maa" path="res://Ty/minigames/angry_pot.tscn" id="6_mdpjc"]
-[ext_resource type="Script" uid="uid://cr6yorqppejrm" path="res://Ty/Minigame_sandbox_tmp/sub_viewport.gd" id="6_tbbxv"]
 [ext_resource type="Resource" uid="uid://q7gr2sp1s4mt" path="res://Ty/minigames/minigame_resource/meteor1.tres" id="7_qouca"]
-[ext_resource type="PackedScene" uid="uid://8y2en6yqw62u" path="res://Ty/minigames/meteor.tscn" id="10_l8o30"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_go62f"]
-shader = ExtResource("6_go62f")
-shader_parameter/show = 0.5
+[ext_resource type="PackedScene" uid="uid://bthwh1yruypok" path="res://Ty/Minigame_sandbox_tmp/mini_game_system.tscn" id="8_go62f"]
 
 [node name="TmpTest" type="Node" unique_id=111779941]
 
@@ -89,22 +81,4 @@ texture = ExtResource("4_ol1co")
 script = ExtResource("5_mdpjc")
 minigame = ExtResource("7_qouca")
 
-[node name="MiniGameSystem" type="CanvasLayer" parent="." unique_id=1181157125]
-script = ExtResource("6_kr01m")
-angry_pot_game = ExtResource("6_mdpjc")
-meteor_game = ExtResource("10_l8o30")
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="MiniGameSystem" unique_id=1846556524]
-visible = false
-material = SubResource("ShaderMaterial_go62f")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="SubViewport" type="SubViewport" parent="MiniGameSystem/SubViewportContainer" unique_id=454118483]
-handle_input_locally = false
-size = Vector2i(819, 802)
-render_target_update_mode = 0
-script = ExtResource("6_tbbxv")
+[node name="MiniGameSystem" parent="." unique_id=825669390 instance=ExtResource("8_go62f")]

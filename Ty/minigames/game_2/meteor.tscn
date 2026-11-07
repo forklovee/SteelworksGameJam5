@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://8y2en6yqw62u"]
 
-[ext_resource type="Script" uid="uid://bl4wljvck0vb1" path="res://Ty/minigames/meteor.gd" id="1_fmeov"]
+[ext_resource type="Script" uid="uid://bl4wljvck0vb1" path="res://Ty/minigames/game_2/meteor.gd" id="1_fmeov"]
 [ext_resource type="Texture2D" uid="uid://7bm83ywhglhl" path="res://icon.svg" id="2_crnu3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xfnnq"]

@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://c5tvlpca48maa"]
 
-[ext_resource type="Script" uid="uid://bjeyqrix78t1w" path="res://Ty/minigames/angry_pot.gd" id="1_cbw3r"]
+[ext_resource type="Script" uid="uid://bjeyqrix78t1w" path="res://Ty/minigames/game_1/angry_pot.gd" id="1_cbw3r"]
 [ext_resource type="Texture2D" uid="uid://crl07tjukk0qt" path="res://Ty/CoderArt_tmp/item_stone.png" id="1_y28lh"]
 [ext_resource type="Texture2D" uid="uid://bdwny7upca0sx" path="res://Ty/CoderArt_tmp/game_pot.png" id="2_cbw3r"]
-[ext_resource type="Script" uid="uid://bjdkuy1utimer" path="res://Ty/minigames/area_2d.gd" id="4_7e2t3"]
+[ext_resource type="Script" uid="uid://bjdkuy1utimer" path="res://Ty/minigames/game_1/area_2d.gd" id="4_7e2t3"]
 [ext_resource type="Texture2D" uid="uid://7bm83ywhglhl" path="res://icon.svg" id="4_8iejl"]
-[ext_resource type="Script" uid="uid://nbot84ateogj" path="res://Ty/minigames/eat_item.gd" id="5_gxl56"]
+[ext_resource type="Script" uid="uid://nbot84ateogj" path="res://Ty/minigames/game_1/eat_item.gd" id="5_gxl56"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xfnnq"]
 radius = 11.001818

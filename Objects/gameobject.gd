@@ -3,7 +3,7 @@ class_name GameObject extends Area2D
 @onready var rest_global_position := global_position
 
 func _ready() -> void:
-	set_process(false)
+	#set_process(false)
 	mouse_entered.connect(Game._on_gameobject_hovered.bind(self))
 	mouse_exited.connect(Game._on_gameobject_unhovered.bind(self))
 
