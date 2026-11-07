@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://8y2en6yqw62u"]
+
+[ext_resource type="Script" uid="uid://bl4wljvck0vb1" path="res://Ty/minigames/game_2/meteor.gd" id="1_fmeov"]
+[ext_resource type="Texture2D" uid="uid://7bm83ywhglhl" path="res://icon.svg" id="2_crnu3"]
+[ext_resource type="PackedScene" uid="uid://cejhqvj53oxct" path="res://Ty/minigames/game_2/rock.tscn" id="3_ekcuw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfnnq"]
+size = Vector2(62, 59)
+
+[node name="Meteor" type="Node" unique_id=1208431657]
+script = ExtResource("1_fmeov")
+rock = ExtResource("3_ekcuw")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=220302306]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4617.0
+offset_top = -4155.0
+offset_right = 4231.0
+offset_bottom = 5197.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.20074946, 0.002412957, 0.08997125, 1)
+
+[node name="player" type="Area2D" parent="." unique_id=1037591522]
+position = Vector2(548, 560)
+
+[node name="Sprite2D2" type="Sprite2D" parent="player" unique_id=1156383985]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_crnu3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=1337790040]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_xfnnq")

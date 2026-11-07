@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bthwh1yruypok"]
+
+[ext_resource type="Script" uid="uid://blprqrlcv2x1b" path="res://Ty/Minigame_sandbox_tmp/mini_game_system.gd" id="1_1k0bi"]
+[ext_resource type="PackedScene" uid="uid://c5tvlpca48maa" path="res://Ty/minigames/game_1/angry_pot.tscn" id="2_e2g7v"]
+[ext_resource type="PackedScene" uid="uid://8y2en6yqw62u" path="res://Ty/minigames/game_2/meteor.tscn" id="3_h1swm"]
+[ext_resource type="Shader" uid="uid://btjxjp3lshqkf" path="res://Ty/Minigame_sandbox_tmp/tmp_test.gdshader" id="4_2d5cv"]
+[ext_resource type="Script" uid="uid://cr6yorqppejrm" path="res://Ty/Minigame_sandbox_tmp/sub_viewport.gd" id="5_0gys8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_go62f"]
+shader = ExtResource("4_2d5cv")
+shader_parameter/show = 0.5
+
+[node name="MiniGameSystem" type="CanvasLayer" unique_id=825669390]
+script = ExtResource("1_1k0bi")
+angry_pot_game = ExtResource("2_e2g7v")
+meteor_game = ExtResource("3_h1swm")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=531651880]
+visible = false
+material = SubResource("ShaderMaterial_go62f")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1270906809]
+handle_input_locally = false
+size = Vector2i(768, 522)
+render_target_update_mode = 0
+script = ExtResource("5_0gys8")

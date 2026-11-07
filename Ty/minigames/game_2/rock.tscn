@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cejhqvj53oxct"]
+
+[sub_resource type="Gradient" id="Gradient_fmeov"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_b24ox"]
+gradient = SubResource("Gradient_fmeov")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crnu3"]
+size = Vector2(68, 77.5)
+
+[node name="rock" type="Area2D" unique_id=851529678]
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1341427752]
+texture = SubResource("GradientTexture2D_b24ox")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1407299425]
+position = Vector2(1, 0.25)
+shape = SubResource("RectangleShape2D_crnu3")

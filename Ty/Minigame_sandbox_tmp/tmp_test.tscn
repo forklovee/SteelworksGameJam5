@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://dnkigrc67gnd6"]
+
+[ext_resource type="Script" uid="uid://qx5w5pfoke7e" path="res://Ty/Minigame_sandbox_tmp/bar.gd" id="1_jc552"]
+[ext_resource type="Texture2D" uid="uid://cw0uaqin6cbtp" path="res://Ty/CoderArt_tmp/item_dumling.png" id="2_kix72"]
+[ext_resource type="Texture2D" uid="uid://crl07tjukk0qt" path="res://Ty/CoderArt_tmp/item_stone.png" id="3_ol1co"]
+[ext_resource type="Texture2D" uid="uid://dldnfyen8os32" path="res://Ty/CoderArt_tmp/enviro_pot.png" id="4_ol1co"]
+[ext_resource type="Script" uid="uid://du0gbaou57l7l" path="res://Ty/Minigame_sandbox_tmp/enviro_pot.gd" id="5_mdpjc"]
+[ext_resource type="Resource" uid="uid://ccq4bxmsesp77" path="res://Ty/minigames/minigame_resource/angry_pot1.tres" id="6_0j8h8"]
+[ext_resource type="Resource" uid="uid://q7gr2sp1s4mt" path="res://Ty/minigames/minigame_resource/meteor1.tres" id="7_qouca"]
+[ext_resource type="PackedScene" uid="uid://bthwh1yruypok" path="res://Ty/Minigame_sandbox_tmp/mini_game_system.tscn" id="8_go62f"]
+
+[node name="TmpTest" type="Node" unique_id=111779941]
+
+[node name="bar" type="ColorRect" parent="." unique_id=1373305918]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 885.0
+offset_top = -115.0
+offset_right = 1321.5
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.8088849, 0.39490634, 1, 1)
+script = ExtResource("1_jc552")
+active_color = Color(0.722956, 0.5343273, 0.37132737, 1)
+passive_color = Color(1, 1, 1, 0)
+
+[node name="dumpling" type="ColorRect" parent="bar" unique_id=1906118828]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -77.0
+offset_top = -115.0
+offset_right = 47.25
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(1, 1, 1, 0)
+
+[node name="ItemStone" type="Sprite2D" parent="bar/dumpling" unique_id=1245941604]
+position = Vector2(63.25, 51)
+texture = ExtResource("2_kix72")
+
+[node name="ColorRect" type="ColorRect" parent="bar" unique_id=1961915438]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -218.25
+offset_top = -115.0
+offset_right = -94.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.722956, 0.5343273, 0.37132737, 1)
+
+[node name="ItemStone" type="Sprite2D" parent="bar/ColorRect" unique_id=622935870]
+position = Vector2(63.25, 51)
+texture = ExtResource("3_ol1co")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2049888587]
+position = Vector2(1777.25, 329)
+scale = Vector2(4.71875, 5.25)
+
+[node name="EnviroPot" type="Sprite2D" parent="." unique_id=337507606]
+position = Vector2(1666.25, 271)
+scale = Vector2(4.71875, 5.25)
+texture = ExtResource("4_ol1co")
+script = ExtResource("5_mdpjc")
+minigame = ExtResource("6_0j8h8")
+
+[node name="EnviroPot2" type="Sprite2D" parent="." unique_id=2071519899]
+position = Vector2(1918, 271)
+scale = Vector2(4.71875, 5.25)
+texture = ExtResource("4_ol1co")
+script = ExtResource("5_mdpjc")
+minigame = ExtResource("7_qouca")
+
+[node name="MiniGameSystem" parent="." unique_id=825669390 instance=ExtResource("8_go62f")]

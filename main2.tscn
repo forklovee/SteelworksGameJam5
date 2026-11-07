@@ -1,0 +1,168 @@
+[gd_scene format=3 uid="uid://dqau7k342i8sb"]
+
+[ext_resource type="PackedScene" uid="uid://bthwh1yruypok" path="res://Ty/Minigame_sandbox_tmp/mini_game_system.tscn" id="1_3yxjw"]
+[ext_resource type="Script" uid="uid://b1lcv3q0m44es" path="res://Player/camera.gd" id="1_8ce7h"]
+[ext_resource type="Texture2D" uid="uid://7bm83ywhglhl" path="res://icon.svg" id="2_3yxjw"]
+[ext_resource type="PackedScene" uid="uid://dtk1v86t8gsio" path="res://Ty/minigames/game_3/paint.tscn" id="2_4fcfw"]
+[ext_resource type="Script" uid="uid://dqc8s6gnne47t" path="res://Objects/gameobject.gd" id="3_elgsa"]
+[ext_resource type="Script" uid="uid://cbhqqrxl6dp4b" path="res://Ty/GameObjectWithMiniGame.gd" id="5_sck4r"]
+[ext_resource type="Texture2D" uid="uid://cw0uaqin6cbtp" path="res://Ty/CoderArt_tmp/item_dumling.png" id="5_w8cd7"]
+[ext_resource type="Script" uid="uid://bbtuodtvo5lq1" path="res://Ty/minigames/minigame_resource/AngryPotResource.gd" id="6_1mhn8"]
+[ext_resource type="Texture2D" uid="uid://dldnfyen8os32" path="res://Ty/CoderArt_tmp/enviro_pot.png" id="7_1mhn8"]
+[ext_resource type="Resource" uid="uid://q7gr2sp1s4mt" path="res://Ty/minigames/minigame_resource/meteor1.tres" id="8_0rof8"]
+[ext_resource type="Texture2D" uid="uid://ct3yfc6dn0xtf" path="res://Ty/CoderArt_tmp/pic/katedra_bw.png" id="10_bbj40"]
+[ext_resource type="Resource" uid="uid://c4vmmsr72ecjs" path="res://Ty/minigames/minigame_resource/meteor2.tres" id="10_l8hla"]
+[ext_resource type="Script" uid="uid://b547yb8teytou" path="res://Ty/minigames/minigame_resource/PaintResource.gd" id="11_4fcfw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6lhr"]
+size = Vector2(125, 125)
+
+[sub_resource type="Resource" id="Resource_3yxjw"]
+script = ExtResource("6_1mhn8")
+backgound_color = Color(0.7833822, 0.38424915, 0.890199, 1)
+metadata/_custom_type_script = "uid://bbtuodtvo5lq1"
+
+[sub_resource type="Gradient" id="Gradient_1mhn8"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1mhn8"]
+gradient = SubResource("Gradient_1mhn8")
+
+[sub_resource type="Resource" id="Resource_l8hla"]
+script = ExtResource("11_4fcfw")
+backgound_color = Color(1, 0.27875718, 0.65429235, 1)
+painting = ExtResource("10_bbj40")
+metadata/_custom_type_script = "uid://b547yb8teytou"
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l8hla"]
+gradient = SubResource("Gradient_1mhn8")
+fill_from = Vector2(0.6279864, 0.48634812)
+
+[node name="Main" type="Node" unique_id=1996573084]
+
+[node name="MiniGameSystem" parent="." unique_id=825669390 instance=ExtResource("1_3yxjw")]
+paint_game = ExtResource("2_4fcfw")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=2066863623]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=23174848]
+anchor_mode = 0
+position_smoothing_enabled = true
+script = ExtResource("1_8ce7h")
+position_limits = Rect2i(-1000, 0, 1000, 0)
+
+[node name="SceneRoot" type="Node2D" parent="." unique_id=1418304631]
+
+[node name="Level" type="Node2D" parent="SceneRoot" unique_id=117647999]
+position = Vector2(618, 346)
+
+[node name="Icon" type="Sprite2D" parent="SceneRoot/Level" unique_id=963907738]
+modulate = Color(0.2901961, 0.2901961, 0.45490196, 1)
+position = Vector2(-34, -37)
+scale = Vector2(11.578125, 6.078125)
+texture = ExtResource("2_3yxjw")
+
+[node name="Object" type="Area2D" parent="SceneRoot/Level" unique_id=168752524]
+monitoring = false
+script = ExtResource("3_elgsa")
+
+[node name="Sprite2D" type="Sprite2D" parent="SceneRoot/Level/Object" unique_id=288813659]
+texture = ExtResource("2_3yxjw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneRoot/Level/Object" unique_id=149514347]
+shape = SubResource("RectangleShape2D_b6lhr")
+
+[node name="KeyObject4" type="Area2D" parent="SceneRoot/Level" unique_id=1435133683]
+position = Vector2(-32, -166)
+monitoring = false
+script = ExtResource("3_elgsa")
+
+[node name="Sprite2D" type="Sprite2D" parent="SceneRoot/Level/KeyObject4" unique_id=970740316]
+scale = Vector2(3, 3)
+texture = ExtResource("5_w8cd7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneRoot/Level/KeyObject4" unique_id=1733124867]
+shape = SubResource("RectangleShape2D_b6lhr")
+
+[node name="GameObject2" type="Area2D" parent="SceneRoot/Level" unique_id=815841940 node_paths=PackedStringArray("key", "minigameSystem")]
+position = Vector2(292, 0)
+script = ExtResource("5_sck4r")
+key = NodePath("../KeyObject4")
+minigame = SubResource("Resource_3yxjw")
+minigameSystem = NodePath("../../../MiniGameSystem")
+
+[node name="Sprite2D" type="Sprite2D" parent="SceneRoot/Level/GameObject2" unique_id=1695970192]
+scale = Vector2(2, 2)
+texture = ExtResource("7_1mhn8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneRoot/Level/GameObject2" unique_id=1492409277]
+shape = SubResource("RectangleShape2D_b6lhr")
+
+[node name="GameObject6" type="Area2D" parent="SceneRoot/Level" unique_id=1113515955 node_paths=PackedStringArray("key", "minigameSystem")]
+position = Vector2(-326, 0)
+script = ExtResource("5_sck4r")
+key = NodePath("../KeyObject4")
+minigame = SubResource("Resource_3yxjw")
+minigameSystem = NodePath("../../../MiniGameSystem")
+
+[node name="Sprite2D" type="Sprite2D" parent="SceneRoot/Level/GameObject6" unique_id=1063389084]
+scale = Vector2(2, 2)
+texture = ExtResource("7_1mhn8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneRoot/Level/GameObject6" unique_id=779276813]
+shape = SubResource("RectangleShape2D_b6lhr")
+
+[node name="GameObject3" type="Area2D" parent="SceneRoot/Level" unique_id=2051271495 node_paths=PackedStringArray("key", "minigameSystem")]
+position = Vector2(277, -182)
+script = ExtResource("5_sck4r")
+key = NodePath("../KeyObject4")
+minigame = ExtResource("8_0rof8")
+minigameSystem = NodePath("../../../MiniGameSystem")
+
+[node name="Sprite2D" type="Sprite2D" parent="SceneRoot/Level/GameObject3" unique_id=387666953]
+scale = Vector2(2, 2)
+texture = SubResource("GradientTexture2D_1mhn8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneRoot/Level/GameObject3" unique_id=993232870]
+shape = SubResource("RectangleShape2D_b6lhr")
+
+[node name="GameObject7" type="Area2D" parent="SceneRoot/Level" unique_id=1634404696 node_paths=PackedStringArray("key", "minigameSystem")]
+position = Vector2(28, 206)
+script = ExtResource("5_sck4r")
+key = NodePath("../KeyObject4")
+minigame = SubResource("Resource_l8hla")
+minigameSystem = NodePath("../../../MiniGameSystem")
+
+[node name="Sprite2D" type="Sprite2D" parent="SceneRoot/Level/GameObject7" unique_id=1581280669]
+scale = Vector2(2, 2)
+texture = SubResource("GradientTexture2D_l8hla")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneRoot/Level/GameObject7" unique_id=1175433220]
+shape = SubResource("RectangleShape2D_b6lhr")
+
+[node name="GameObject5" type="Area2D" parent="SceneRoot/Level" unique_id=184898256 node_paths=PackedStringArray("key", "minigameSystem")]
+position = Vector2(-428, -178)
+script = ExtResource("5_sck4r")
+key = NodePath("../KeyObject4")
+minigame = ExtResource("8_0rof8")
+minigameSystem = NodePath("../../../MiniGameSystem")
+
+[node name="Sprite2D" type="Sprite2D" parent="SceneRoot/Level/GameObject5" unique_id=4216682]
+scale = Vector2(2, 2)
+texture = SubResource("GradientTexture2D_1mhn8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneRoot/Level/GameObject5" unique_id=1499507035]
+shape = SubResource("RectangleShape2D_b6lhr")
+
+[node name="GameObject4" type="Area2D" parent="SceneRoot/Level" unique_id=1713138673 node_paths=PackedStringArray("key", "minigameSystem")]
+position = Vector2(460, -182)
+script = ExtResource("5_sck4r")
+key = NodePath("../KeyObject4")
+minigame = ExtResource("10_l8hla")
+minigameSystem = NodePath("../../../MiniGameSystem")
+
+[node name="Sprite2D" type="Sprite2D" parent="SceneRoot/Level/GameObject4" unique_id=356375946]
+scale = Vector2(2, 2)
+texture = SubResource("GradientTexture2D_1mhn8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneRoot/Level/GameObject4" unique_id=1789273827]
+shape = SubResource("RectangleShape2D_b6lhr")

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="AngryPotResource" format=3 uid="uid://ccq4bxmsesp77"]
+
+[ext_resource type="Script" uid="uid://bbtuodtvo5lq1" path="res://Ty/minigames/minigame_resource/AngryPotResource.gd" id="1_5qfca"]
+
+[resource]
+script = ExtResource("1_5qfca")
+backgound_color = Color(0.16865915, 0.6944048, 0.84435827, 1)
+metadata/_custom_type_script = "uid://bbtuodtvo5lq1"
