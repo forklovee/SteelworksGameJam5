@@ -41,6 +41,11 @@ func parse_img():
 		$ColorRect/ColorRect2.scale.x=1.0-(diffrence-target_diff)/(start_diff-target_diff)
 
 func _process(delta: float) -> void:
+	t+=delta
+	if get_parent().name=="SubViewport":
+		var m:ShaderMaterial=$"../..".material
+		m.set_shader_parameter("show",min(t,1.0))	
+	
 	if Input.is_action_pressed("mouse_click"):
 		print("click")
 		var p=$Paint.to_local(get_viewport().get_mouse_position())
