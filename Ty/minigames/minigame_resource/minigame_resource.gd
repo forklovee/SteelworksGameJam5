@@ -7,7 +7,8 @@ class_name MiniGameResource
 enum GameType{
 	None,
 	ANGRYPOT,
-	METEOR
+	METEOR,
+	PAINT
 	}
 
 @abstract func get_game_type()->GameType

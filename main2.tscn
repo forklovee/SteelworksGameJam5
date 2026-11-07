@@ -3,13 +3,16 @@
 [ext_resource type="PackedScene" uid="uid://bthwh1yruypok" path="res://Ty/Minigame_sandbox_tmp/mini_game_system.tscn" id="1_3yxjw"]
 [ext_resource type="Script" uid="uid://b1lcv3q0m44es" path="res://Player/camera.gd" id="1_8ce7h"]
 [ext_resource type="Texture2D" uid="uid://7bm83ywhglhl" path="res://icon.svg" id="2_3yxjw"]
+[ext_resource type="PackedScene" uid="uid://dtk1v86t8gsio" path="res://Ty/minigames/game_3/paint.tscn" id="2_4fcfw"]
 [ext_resource type="Script" uid="uid://dqc8s6gnne47t" path="res://Objects/gameobject.gd" id="3_elgsa"]
 [ext_resource type="Script" uid="uid://cbhqqrxl6dp4b" path="res://Ty/GameObjectWithMiniGame.gd" id="5_sck4r"]
 [ext_resource type="Texture2D" uid="uid://cw0uaqin6cbtp" path="res://Ty/CoderArt_tmp/item_dumling.png" id="5_w8cd7"]
 [ext_resource type="Script" uid="uid://bbtuodtvo5lq1" path="res://Ty/minigames/minigame_resource/AngryPotResource.gd" id="6_1mhn8"]
 [ext_resource type="Texture2D" uid="uid://dldnfyen8os32" path="res://Ty/CoderArt_tmp/enviro_pot.png" id="7_1mhn8"]
 [ext_resource type="Resource" uid="uid://q7gr2sp1s4mt" path="res://Ty/minigames/minigame_resource/meteor1.tres" id="8_0rof8"]
+[ext_resource type="Texture2D" uid="uid://ct3yfc6dn0xtf" path="res://Ty/CoderArt_tmp/pic/katedra_bw.png" id="10_bbj40"]
 [ext_resource type="Resource" uid="uid://c4vmmsr72ecjs" path="res://Ty/minigames/minigame_resource/meteor2.tres" id="10_l8hla"]
+[ext_resource type="Script" uid="uid://b547yb8teytou" path="res://Ty/minigames/minigame_resource/PaintResource.gd" id="11_4fcfw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b6lhr"]
 size = Vector2(125, 125)
@@ -24,9 +27,20 @@ metadata/_custom_type_script = "uid://bbtuodtvo5lq1"
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_1mhn8"]
 gradient = SubResource("Gradient_1mhn8")
 
+[sub_resource type="Resource" id="Resource_l8hla"]
+script = ExtResource("11_4fcfw")
+backgound_color = Color(1, 0.27875718, 0.65429235, 1)
+painting = ExtResource("10_bbj40")
+metadata/_custom_type_script = "uid://b547yb8teytou"
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l8hla"]
+gradient = SubResource("Gradient_1mhn8")
+fill_from = Vector2(0.6279864, 0.48634812)
+
 [node name="Main" type="Node" unique_id=1996573084]
 
 [node name="MiniGameSystem" parent="." unique_id=825669390 instance=ExtResource("1_3yxjw")]
+paint_game = ExtResource("2_4fcfw")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=2066863623]
 
@@ -109,6 +123,20 @@ scale = Vector2(2, 2)
 texture = SubResource("GradientTexture2D_1mhn8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneRoot/Level/GameObject3" unique_id=993232870]
+shape = SubResource("RectangleShape2D_b6lhr")
+
+[node name="GameObject7" type="Area2D" parent="SceneRoot/Level" unique_id=1634404696 node_paths=PackedStringArray("key", "minigameSystem")]
+position = Vector2(28, 206)
+script = ExtResource("5_sck4r")
+key = NodePath("../KeyObject4")
+minigame = SubResource("Resource_l8hla")
+minigameSystem = NodePath("../../../MiniGameSystem")
+
+[node name="Sprite2D" type="Sprite2D" parent="SceneRoot/Level/GameObject7" unique_id=1581280669]
+scale = Vector2(2, 2)
+texture = SubResource("GradientTexture2D_l8hla")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneRoot/Level/GameObject7" unique_id=1175433220]
 shape = SubResource("RectangleShape2D_b6lhr")
 
 [node name="GameObject5" type="Area2D" parent="SceneRoot/Level" unique_id=184898256 node_paths=PackedStringArray("key", "minigameSystem")]

@@ -22,6 +22,7 @@ func start(game_camera:Camera2D,_on_win:Callable,game:MiniGameResource):
 	t=0.0
 	meteor_game=game
 	rocks_times=meteor_game.rock_times.duplicate()
+	$ColorRect.color=meteor_game.backgound_color
 
 func _process(delta: float) -> void:
 	if playing:

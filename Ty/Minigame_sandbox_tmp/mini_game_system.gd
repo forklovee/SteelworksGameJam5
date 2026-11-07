@@ -4,6 +4,7 @@ class_name MiniGameSystem
 
 @export var angry_pot_game:PackedScene
 @export var meteor_game:PackedScene
+@export var paint_game:PackedScene
 var game_instance:MiniGame=null
 
 func play(game:MiniGameResource):
@@ -22,6 +23,7 @@ func play(game:MiniGameResource):
 	var map={
 		MiniGameResource.GameType.ANGRYPOT:angry_pot_game,
 		MiniGameResource.GameType.METEOR:meteor_game,
+		MiniGameResource.GameType.PAINT:paint_game
 	}
 	assert(game.get_game_type() in map.keys())
 	var current_game=map[game.get_game_type()]
