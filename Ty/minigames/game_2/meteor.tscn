@@ -2,20 +2,14 @@
 
 [ext_resource type="Script" uid="uid://bl4wljvck0vb1" path="res://Ty/minigames/game_2/meteor.gd" id="1_fmeov"]
 [ext_resource type="Texture2D" uid="uid://7bm83ywhglhl" path="res://icon.svg" id="2_crnu3"]
+[ext_resource type="PackedScene" uid="uid://cejhqvj53oxct" path="res://Ty/minigames/game_2/rock.tscn" id="3_ekcuw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xfnnq"]
 size = Vector2(133, 143)
 
-[sub_resource type="Gradient" id="Gradient_fmeov"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_b24ox"]
-gradient = SubResource("Gradient_fmeov")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_crnu3"]
-size = Vector2(68, 77.5)
-
 [node name="Meteor" type="Node" unique_id=1208431657]
 script = ExtResource("1_fmeov")
+rock = ExtResource("3_ekcuw")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=220302306]
 anchors_preset = 15
@@ -38,13 +32,3 @@ texture = ExtResource("2_crnu3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=1337790040]
 position = Vector2(-1.5, 3.5)
 shape = SubResource("RectangleShape2D_xfnnq")
-
-[node name="rock" type="Area2D" parent="." unique_id=440682286]
-position = Vector2(674, 256)
-
-[node name="Sprite2D2" type="Sprite2D" parent="rock" unique_id=892809367]
-texture = SubResource("GradientTexture2D_b24ox")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="rock" unique_id=1211969843]
-position = Vector2(1, 0.25)
-shape = SubResource("RectangleShape2D_crnu3")
