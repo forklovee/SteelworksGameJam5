@@ -7,12 +7,18 @@ class_name MiniGameSystem
 var game_instance:MiniGame=null
 
 func play(game:MiniGameResource):
-	var on_win=func ():
-		$SubViewportContainer.visible=false
-		if game_instance!=null:
-			game_instance.queue_free()
-			game_instance=null
-	
+	var on_win=func (flag):
+		if flag:
+			$SubViewportContainer.visible=false
+			if game_instance!=null:
+				game_instance.queue_free()
+				game_instance=null
+		else:
+			$SubViewportContainer.visible=false
+			if game_instance!=null:
+				game_instance.queue_free()
+				game_instance=null
+			play(game.duplicate(true))
 	var map={
 		MiniGameResource.GameType.ANGRYPOT:angry_pot_game,
 		MiniGameResource.GameType.METEOR:meteor_game,

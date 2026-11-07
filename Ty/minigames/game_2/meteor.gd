@@ -11,9 +11,9 @@ var rocks_times=[]
 func _ready() -> void:
 	if get_parent().name!="SubViewport":
 		playing=true
-		on_win=func ():get_tree().reload_current_scene()
+		on_win=func (flag):get_tree().reload_current_scene()
 		meteor_game=load("res://Ty/minigames/minigame_resource/meteor1.tres")
-		rocks_times=meteor_game.rock_times
+		rocks_times=meteor_game.rock_times.duplicate()
 
 var on_win:Callable
 func start(game_camera:Camera2D,_on_win:Callable,game:MiniGameResource):
@@ -21,7 +21,7 @@ func start(game_camera:Camera2D,_on_win:Callable,game:MiniGameResource):
 	on_win=_on_win
 	t=0.0
 	meteor_game=game
-	rocks_times=meteor_game.rock_times
+	rocks_times=meteor_game.rock_times.duplicate()
 
 func _process(delta: float) -> void:
 	if playing:
@@ -47,6 +47,6 @@ func _process(delta: float) -> void:
 			$player.position.x-=100.0*delta if Input.is_key_pressed(KEY_A) else 0.0
 			$player.position.x=clamp($player.position.x,0,1000.0)
 			if $player.get_overlapping_areas().size()>0:
-				on_win.call()
+				on_win.call(false)
 			if rocks.size()==0 and rocks_times.size()==0:
-				on_win.call()
+				on_win.call(true)

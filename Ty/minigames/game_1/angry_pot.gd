@@ -37,11 +37,12 @@ func end(ok:bool):
 	
 	print("END")
 	if not ok:
-		start(game_camera_ref,on_win,game_ref)
+		#start(game_camera_ref,on_win,game_ref)
+		on_win.call(false)
 	else:
 		playing=false
 		shooting=false
-		on_win.call()
+		on_win.call(true)
 	
 	
 

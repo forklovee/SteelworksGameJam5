@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://bbtuodtvo5lq1" path="res://Ty/minigames/minigame_resource/AngryPotResource.gd" id="6_1mhn8"]
 [ext_resource type="Texture2D" uid="uid://dldnfyen8os32" path="res://Ty/CoderArt_tmp/enviro_pot.png" id="7_1mhn8"]
 [ext_resource type="Resource" uid="uid://q7gr2sp1s4mt" path="res://Ty/minigames/minigame_resource/meteor1.tres" id="8_0rof8"]
+[ext_resource type="Resource" uid="uid://c4vmmsr72ecjs" path="res://Ty/minigames/minigame_resource/meteor2.tres" id="10_l8hla"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b6lhr"]
 size = Vector2(125, 125)
@@ -82,6 +83,20 @@ texture = ExtResource("7_1mhn8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneRoot/Level/GameObject2" unique_id=1492409277]
 shape = SubResource("RectangleShape2D_b6lhr")
 
+[node name="GameObject6" type="Area2D" parent="SceneRoot/Level" unique_id=1113515955 node_paths=PackedStringArray("key", "minigameSystem")]
+position = Vector2(-326, 0)
+script = ExtResource("5_sck4r")
+key = NodePath("../KeyObject4")
+minigame = SubResource("Resource_3yxjw")
+minigameSystem = NodePath("../../../MiniGameSystem")
+
+[node name="Sprite2D" type="Sprite2D" parent="SceneRoot/Level/GameObject6" unique_id=1063389084]
+scale = Vector2(2, 2)
+texture = ExtResource("7_1mhn8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneRoot/Level/GameObject6" unique_id=779276813]
+shape = SubResource("RectangleShape2D_b6lhr")
+
 [node name="GameObject3" type="Area2D" parent="SceneRoot/Level" unique_id=2051271495 node_paths=PackedStringArray("key", "minigameSystem")]
 position = Vector2(277, -182)
 script = ExtResource("5_sck4r")
@@ -94,4 +109,32 @@ scale = Vector2(2, 2)
 texture = SubResource("GradientTexture2D_1mhn8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneRoot/Level/GameObject3" unique_id=993232870]
+shape = SubResource("RectangleShape2D_b6lhr")
+
+[node name="GameObject5" type="Area2D" parent="SceneRoot/Level" unique_id=184898256 node_paths=PackedStringArray("key", "minigameSystem")]
+position = Vector2(-428, -178)
+script = ExtResource("5_sck4r")
+key = NodePath("../KeyObject4")
+minigame = ExtResource("8_0rof8")
+minigameSystem = NodePath("../../../MiniGameSystem")
+
+[node name="Sprite2D" type="Sprite2D" parent="SceneRoot/Level/GameObject5" unique_id=4216682]
+scale = Vector2(2, 2)
+texture = SubResource("GradientTexture2D_1mhn8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneRoot/Level/GameObject5" unique_id=1499507035]
+shape = SubResource("RectangleShape2D_b6lhr")
+
+[node name="GameObject4" type="Area2D" parent="SceneRoot/Level" unique_id=1713138673 node_paths=PackedStringArray("key", "minigameSystem")]
+position = Vector2(460, -182)
+script = ExtResource("5_sck4r")
+key = NodePath("../KeyObject4")
+minigame = ExtResource("10_l8hla")
+minigameSystem = NodePath("../../../MiniGameSystem")
+
+[node name="Sprite2D" type="Sprite2D" parent="SceneRoot/Level/GameObject4" unique_id=356375946]
+scale = Vector2(2, 2)
+texture = SubResource("GradientTexture2D_1mhn8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneRoot/Level/GameObject4" unique_id=1789273827]
 shape = SubResource("RectangleShape2D_b6lhr")
