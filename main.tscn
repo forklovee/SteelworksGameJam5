@@ -1,5 +1,32 @@
 [gd_scene format=3 uid="uid://btojnm1veumfj"]
 
+[ext_resource type="Script" uid="uid://djjg8fy8y14ov" path="res://UI/Tablet/tablet_control.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://bm7yox4rtj7l2" path="res://UI/Toast/toast_control.gd" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://cd87pvau0yr8f" path="res://UI/Tablet/tablet.png" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://3sbq6o3dgmno" path="res://Quests/new_quest.gd" id="4_1bvp3"]
+[ext_resource type="FontFile" uid="uid://dvd5mbtf11li2" path="res://UI/PixelifySans-VariableFont_wght.ttf" id="5_7mycd"]
+[ext_resource type="Texture2D" uid="uid://bphbwyj284wqj" path="res://UI/Toast/elon.png" id="5_272bh"]
+[ext_resource type="Texture2D" uid="uid://of6hn87tqpwn" path="res://UI/panel.png" id="7_kek77"]
+
+[sub_resource type="Theme" id="Theme_7mycd"]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/fonts/font = ExtResource("5_7mycd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kek77"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+texture = ExtResource("7_kek77")
+texture_margin_left = 9.0
+texture_margin_top = 9.0
+texture_margin_right = 9.0
+texture_margin_bottom = 9.0
+modulate_color = Color(0.18359044, 0.18359044, 0.18359044, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hcvde"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dhxmx"]
 [ext_resource type="Script" uid="uid://b1lcv3q0m44es" path="res://Player/camera.gd" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://7bm83ywhglhl" path="res://icon.svg" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://dqc8s6gnne47t" path="res://Objects/gameobject.gd" id="3_h2yge"]
@@ -11,6 +38,178 @@ size = Vector2(125, 125)
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=2066863623]
 
+[node name="TabletControl" type="Control" parent="UI" unique_id=440444350 node_paths=PackedStringArray("tablet")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+script = ExtResource("1_ig7tw")
+tablet = NodePath("Tablet")
+shown_offset = 400.0
+
+[node name="Tablet" type="Control" parent="UI/TabletControl" unique_id=826878443]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -168.0
+offset_top = -600.0
+offset_right = 168.0
+offset_bottom = 600.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 800)
+offset_transform_visual_only = false
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_7mycd")
+
+[node name="TabletBody" type="TextureRect" parent="UI/TabletControl/Tablet" unique_id=531123886]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -168.0
+offset_right = 168.0
+offset_bottom = 576.0
+grow_horizontal = 2
+mouse_filter = 2
+texture = ExtResource("2_h2yge")
+
+[node name="ChadGPT" type="Label" parent="UI/TabletControl/Tablet" unique_id=1788557703]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -33.0
+offset_right = 33.0
+offset_bottom = 20.0
+grow_horizontal = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 92)
+offset_transform_visual_only = false
+theme_override_font_sizes/font_size = 28
+text = "ChadGPT"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/TabletControl/Tablet" unique_id=2065336099]
+custom_minimum_size = Vector2(250, 385)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -125.0
+offset_right = 125.0
+offset_bottom = 385.0
+grow_horizontal = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 125)
+offset_transform_visual_only = false
+
+[node name="MessagesContainer" type="ScrollContainer" parent="UI/TabletControl/Tablet/VBoxContainer" unique_id=251766917]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/TabletControl/Tablet/VBoxContainer/MessagesContainer" unique_id=917488453]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="ToastControl" type="Control" parent="UI" unique_id=631731580 node_paths=PackedStringArray("toast", "boss_image", "boss_title", "boss_message")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+script = ExtResource("2_0xm2m")
+toast = NodePath("Toast")
+boss_image = NodePath("Toast/HBoxContainer/VBoxContainer2/Image")
+boss_title = NodePath("Toast/HBoxContainer/VBoxContainer/Title")
+boss_message = NodePath("Toast/HBoxContainer/VBoxContainer/Message")
+
+[node name="Toast" type="PanelContainer" parent="UI/ToastControl" unique_id=969811096]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -202.0
+offset_right = 202.0
+offset_bottom = 92.0
+grow_horizontal = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 20)
+offset_transform_visual_only = false
+theme_override_styles/panel = SubResource("StyleBoxTexture_kek77")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/ToastControl/Toast" unique_id=730661876]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="UI/ToastControl/Toast/HBoxContainer" unique_id=1979679845]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Image" type="TextureRect" parent="UI/ToastControl/Toast/HBoxContainer/VBoxContainer2" unique_id=1496671495]
+custom_minimum_size = Vector2(60, 72)
+layout_mode = 2
+texture = ExtResource("5_272bh")
+expand_mode = 1
+
+[node name="Name" type="Label" parent="UI/ToastControl/Toast/HBoxContainer/VBoxContainer2" unique_id=1999357238]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_7mycd")
+text = "Antoni"
+horizontal_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="UI/ToastControl/Toast/HBoxContainer" unique_id=1070979292]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_hcvde")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/ToastControl/Toast/HBoxContainer" unique_id=899873592]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="Title" type="Label" parent="UI/ToastControl/Toast/HBoxContainer/VBoxContainer" unique_id=926755561]
+custom_maximum_size = Vector2(300, -1)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -2)
+theme_override_colors/font_color = Color(0.8960389, 0.785538, 0, 1)
+theme_override_fonts/font = ExtResource("5_7mycd")
+theme_override_font_sizes/font_size = 16
+text = "Re: Ugotuj mi dupe"
+autowrap_mode = 3
+
+[node name="HSeparator" type="HSeparator" parent="UI/ToastControl/Toast/HBoxContainer/VBoxContainer" unique_id=503027797]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 4
+theme_override_styles/separator = SubResource("StyleBoxEmpty_dhxmx")
+
+[node name="Message" type="Label" parent="UI/ToastControl/Toast/HBoxContainer/VBoxContainer" unique_id=661524480]
+custom_maximum_size = Vector2(300, -1)
+propagate_maximum_size = true
+layout_mode = 2
+size_flags_vertical = 1
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -4)
+theme_override_constants/line_spacing = 1
+theme_override_fonts/font = ExtResource("5_7mycd")
+theme_override_font_sizes/font_size = 12
+text = " Tak jak w tytule.Tak jak w tytule.Tak jak w tytule. Tak jak w tytule. Tak jak w tytule. Tak jak."
+autowrap_mode = 3
+
+[node name="QuestAnimation" type="Node" parent="." unique_id=2043042858 node_paths=PackedStringArray("toast", "tablet")]
+script = ExtResource("4_1bvp3")
+toast = NodePath("../UI/ToastControl")
+tablet = NodePath("../UI/TabletControl")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=23174848]
 anchor_mode = 0
 position_smoothing_enabled = true
