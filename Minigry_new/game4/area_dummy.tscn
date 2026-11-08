@@ -1,9 +1,14 @@
 [gd_scene format=3 uid="uid://bc8fv2rw441ti"]
 
+[ext_resource type="Shader" uid="uid://hta42301qjm2" path="res://Minigry_new/game4/area_dummy.gdshader" id="1_2cro5"]
 [ext_resource type="Texture2D" uid="uid://bvnwbkvjhp42b" path="res://Minigry_new/arty/salata.png" id="1_7h4yl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b24ox"]
 radius = 60.882
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oj18q"]
+shader = ExtResource("1_2cro5")
+shader_parameter/d = -0.095
 
 [node name="Area2D2" type="Area2D" unique_id=77320111]
 
@@ -12,4 +17,7 @@ position = Vector2(-3, 7.674419)
 shape = SubResource("CircleShape2D_b24ox")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1123669863]
+material = SubResource("ShaderMaterial_oj18q")
+position = Vector2(-9.000001, 6)
+scale = Vector2(5.990741, 4.3437505)
 texture = ExtResource("1_7h4yl")

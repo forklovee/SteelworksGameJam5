@@ -5,6 +5,7 @@ extends Node
 @export var ta:Array[CompressedTexture2D]=[]
 @export var hud_parent:Node
 func _ready() -> void:
+	Music.make_sound(Music.Sounds.WATER)
 	for c:Area2D in $"good".get_children():
 		var s:Sprite2D=c.get_child(1)
 		s.texture=cr.images[randi()%3]
@@ -22,21 +23,30 @@ func end(flag):
 		p.add_child(re)
 	else:
 		self.queue_free()
+		Music.make_sound(Music.Sounds.EAT)
 		get_parent().emit_signal("finish")
 
+func destoy(c:Area2D):
+	c.reparent($Node)
+
 func _process(delta: float) -> void:
-	pl.position.x+=300.0*delta if get_viewport().get_mouse_position().x>pl.position.x else -300.0*delta
+	var dir=clamp((get_viewport().get_mouse_position().x-pl.position.x)*0.01,-1.0,1.0)
+	pl.position.x+=300.0*delta * dir
 	pl.position.x=clamp(pl.position.x,0.0,get_viewport().size.x)
 	for c:Area2D in $"bad".get_children():
 		c.position.y+=100.0*delta
 		if c.position.y>600.0:
-			c.queue_free()
+			Music.make_sound(Music.Sounds.POP)
+			destoy(c)
+			#c.queue_free()
 	for c:Area2D in $"good".get_children():
 		c.position.y+=100.0*delta
 		if c.position.y>600.0:
-			c.queue_free()
+			Music.make_sound(Music.Sounds.POP)
+			destoy(c)
 	for c in pl.get_overlapping_areas():
 		if c.get_parent().name=="bad":
+			Music.make_sound(Music.Sounds.WRONG)
 			get_tree().reload_current_scene()
 		if c.get_parent().name=="good":
 			print("HEHE")
@@ -47,7 +57,15 @@ func _process(delta: float) -> void:
 				pr.texture=t
 				pr.visible=true
 				ta.append(t)
+			else:
+				for pr:Sprite2D in hud_parent.get_children():
+					if pr.texture==t:
+						var la:Label=pr.get_child(0)
+						la.text=str(1+la.text.to_int())
+						la.visible=true
+			Music.make_sound(Music.Sounds.COOKING)
 			c.queue_free()
+			
 	print($"good".get_child_count()+$"bad".get_child_count())
 	if $"good".get_child_count()+$"bad".get_child_count()==0:
 		
@@ -55,3 +73,10 @@ func _process(delta: float) -> void:
 			end(true)
 		else:
 			end(false)
+	for c:Area2D in $Node.get_children():
+		var sp:Sprite2D=c.get_child(1)
+		var m:ShaderMaterial=sp.material.duplicate()
+		sp.material=m
+		m.set_shader_parameter("d",m.get_shader_parameter("d")+delta*2.0)
+		if m.get_shader_parameter("d")>1.0:
+			c.queue_free()
