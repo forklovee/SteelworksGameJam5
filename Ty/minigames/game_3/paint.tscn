@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dtk1v86t8gsio"]
+
+[ext_resource type="Script" uid="uid://com1atd3xkeb1" path="res://Ty/minigames/game_3/paint.gd" id="1_fpvfp"]
+[ext_resource type="Texture2D" uid="uid://ct3yfc6dn0xtf" path="res://Ty/CoderArt_tmp/pic/katedra_bw.png" id="1_iyu3b"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_fpvfp"]
+blend_mode = 2
+
+[node name="Paint" type="Node" unique_id=657762016]
+script = ExtResource("1_fpvfp")
+tex = ExtResource("1_iyu3b")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1758308539]
+texture_filter = 1
+position = Vector2(867, 261)
+scale = Vector2(8.035645, 5.918457)
+texture = ExtResource("1_iyu3b")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=212445550]
+offset_left = 142.0
+offset_top = 482.0
+offset_right = 863.0
+offset_bottom = 563.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect" unique_id=693797327]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 719.0
+grow_vertical = 2
+color = Color(0.9094009, 0.78028333, 0.8377854, 1)
+
+[node name="Paint" type="Sprite2D" parent="." unique_id=1488706300]
+texture_filter = 1
+position = Vector2(286, 265)
+scale = Vector2(7.078125, 5.7851563)
+texture = ExtResource("1_iyu3b")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Paint" unique_id=4000985]
+modulate = Color(0.11764706, 0.11764706, 0.11764706, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_fpvfp")
+position = Vector2(-5.9604645e-08, -0.17285538)
+texture = ExtResource("1_iyu3b")

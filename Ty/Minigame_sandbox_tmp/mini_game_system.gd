@@ -4,8 +4,8 @@ class_name MiniGameSystem extends CanvasLayer
 @export var meteor_game: PackedScene
 @export var stock_man_game: PackedScene
 @export var contract_change_game: PackedScene
-
-var game_instance: MiniGame = null
+@export var paint_game:PackedScene
+var game_instance:MiniGame=null
 
 func play(game:MiniGameResource):
 	var on_win=func (flag):
@@ -25,6 +25,7 @@ func play(game:MiniGameResource):
 		MiniGameResource.GameType.Meteor: meteor_game,
 		MiniGameResource.GameType.StockManipulation: stock_man_game,
 		MiniGameResource.GameType.ContractChange: contract_change_game
+		MiniGameResource.GameType.Paint:paint_game
 	}
 	assert(game.get_game_type() in map.keys() and map.get(game.get_game_type()) != null)
 	var current_game = map[game.get_game_type()]

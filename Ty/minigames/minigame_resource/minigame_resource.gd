@@ -5,6 +5,7 @@ enum GameType{
 	None,
 	Angrypot,
 	Meteor,
+  Paint,
 	StockManipulation,
 	ContractChange,
 }
