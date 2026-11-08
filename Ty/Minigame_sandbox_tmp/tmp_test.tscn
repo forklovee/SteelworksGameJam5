@@ -99,7 +99,7 @@ minigame_transform_input = {
 [node name="EnviroPot3" type="Sprite2D" parent="." unique_id=420776184 node_paths=PackedStringArray("minigame_transform_input")]
 position = Vector2(2153, 293)
 scale = Vector2(4.71875, 5.25)
-texture = ExtResource("4_ol1co")
+texture = ExtResource("2_kix72")
 script = ExtResource("5_mdpjc")
 minigame = ExtResource("7_qouca")
 minigame_transform_input = {

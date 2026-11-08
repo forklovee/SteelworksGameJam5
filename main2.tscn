@@ -83,12 +83,16 @@ texture = ExtResource("5_w8cd7")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneRoot/Level/KeyObject4" unique_id=1733124867]
 shape = SubResource("RectangleShape2D_b6lhr")
 
-[node name="GameObject2" type="Area2D" parent="SceneRoot/Level" unique_id=815841940 node_paths=PackedStringArray("key", "minigameSystem")]
+[node name="GameObject2" type="Area2D" parent="SceneRoot/Level" unique_id=815841940 node_paths=PackedStringArray("key", "minigameSystem", "minigame_transform_input")]
 position = Vector2(292, 0)
 script = ExtResource("5_sck4r")
 key = NodePath("../KeyObject4")
 minigame = SubResource("Resource_3yxjw")
 minigameSystem = NodePath("../../../MiniGameSystem")
+minigame_transform_input = {
+"Camera": NodePath("../../../Camera2D"),
+"Pot": NodePath(".")
+}
 
 [node name="Sprite2D" type="Sprite2D" parent="SceneRoot/Level/GameObject2" unique_id=1695970192]
 scale = Vector2(2, 2)

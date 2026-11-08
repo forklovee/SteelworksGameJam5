@@ -26,7 +26,7 @@ func start(game_camera:Camera2D,_on_win:Callable,game:MiniGameResource,d=null):
 		var s:Node2D=d["Pot"]
 		var c:Camera2D=d["Camera"]
 		camera_from=Transform2D.IDENTITY.translated(#c.global_position+
-			$GamePot.global_position-s.global_position).translated(c.global_position+c.get_offset())
+			$GamePot.global_position-s.global_position).translated(c.get_screen_center_position())#c.get_target_position()+c.get_offset())
 		if d.has("Ammo"):
 			var am:Sprite2D=d["Ammo"]
 			$Line2D/Eat_Item/Sprite2D.texture=am.texture

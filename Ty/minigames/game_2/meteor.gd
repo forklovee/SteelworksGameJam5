@@ -21,7 +21,12 @@ func start(game_camera:Camera2D,_on_win:Callable,game:MiniGameResource,d=null):
 	on_win=_on_win
 	t=0.0
 	meteor_game=game
-	rocks_times=meteor_game.rock_times.duplicate()
+	rocks_times=[]
+	var max_t=0.0
+	for w_id in range(meteor_game.wave):
+		for t in meteor_game.rock_times:
+			max_t=max(max_t,t)
+			rocks_times.append(t+(max_t+2.0)*w_id)
 	$ColorRect.color=meteor_game.backgound_color
 
 func _process(delta: float) -> void:
