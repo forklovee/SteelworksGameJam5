@@ -14,6 +14,8 @@ func _process(delta: float) -> void:
 	#	$"../CanvasLayer/SubViewportContainer/SubViewport/angry_pot".start($"../Camera2D",on_win)
 	if Input.is_action_just_pressed("mouse_click"):
 		if self.get_rect().has_point( self.get_local_mouse_position()):
+			if minigame_transform_input!={}:
+				minigame_transform_input["Ammo"]=$"../bar".get_child($"../bar".selected_id).get_child(0)
 			$"../MiniGameSystem".play(minigame,minigame_transform_input)
 	#		$"../CanvasLayer/SubViewportContainer".visible=true
 	#		$"../CanvasLayer/SubViewportContainer/SubViewport/angry_pot".start($"../Camera2D",on_win)

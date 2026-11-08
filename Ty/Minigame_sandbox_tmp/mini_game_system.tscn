@@ -6,9 +6,19 @@
 [ext_resource type="Shader" uid="uid://btjxjp3lshqkf" path="res://Ty/Minigame_sandbox_tmp/tmp_test.gdshader" id="4_2d5cv"]
 [ext_resource type="Script" uid="uid://cr6yorqppejrm" path="res://Ty/Minigame_sandbox_tmp/sub_viewport.gd" id="5_0gys8"]
 
+[sub_resource type="Gradient" id="Gradient_1k0bi"]
+interpolation_mode = 2
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1k0bi"]
+gradient = SubResource("Gradient_1k0bi")
+fill = 1
+fill_from = Vector2(0.5, 0.46631205)
+fill_to = Vector2(1, 0.99113476)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_go62f"]
 shader = ExtResource("4_2d5cv")
 shader_parameter/show = 0.5
+shader_parameter/anim = SubResource("GradientTexture2D_1k0bi")
 
 [node name="MiniGameSystem" type="CanvasLayer" unique_id=825669390]
 script = ExtResource("1_1k0bi")
@@ -27,6 +37,6 @@ mouse_filter = 0
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1270906809]
 handle_input_locally = false
-size = Vector2i(768, 522)
+size = Vector2i(2, 2)
 render_target_update_mode = 0
 script = ExtResource("5_0gys8")

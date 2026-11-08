@@ -25,8 +25,14 @@ func start(game_camera:Camera2D,_on_win:Callable,game:MiniGameResource,d=null):
 	if d!=null:
 		var s:Node2D=d["Pot"]
 		var c:Camera2D=d["Camera"]
-		camera_from=Transform2D.IDENTITY.translated(
-			$GamePot.global_position-s.global_position).translated(c.global_position)
+		camera_from=Transform2D.IDENTITY.translated(#c.global_position+
+			$GamePot.global_position-s.global_position).translated(c.global_position+c.get_offset())
+		if d.has("Ammo"):
+			var am:Sprite2D=d["Ammo"]
+			$Line2D/Eat_Item/Sprite2D.texture=am.texture
+			$Line2D/Eat_Item/Sprite2D.scale*=160.0/am.texture.get_height()
+		else:
+			print("NO AMMO")
 		#camera_from.translated($GamePot.global_position-s.global_position)
 	game_camera_ref=game_camera
 	game_ref=game
