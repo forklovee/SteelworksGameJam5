@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://dpwwpfl7wuc7a" path="res://Audio/SFX/intro/suspense_drums.wav" id="10_7i0vx"]
 [ext_resource type="Texture2D" uid="uid://cqt32sjvj536j" path="res://Jakub/intro_images/AL027-01_pomme_de_terre_0_0.jpg" id="10_pme3i"]
 [ext_resource type="Texture2D" uid="uid://7x48lwq4gq80" path="res://Jakub/intro_images/chad_logo.png" id="11_eydsx"]
+[ext_resource type="Script" uid="uid://v6hn0rsue1qn" path="res://Jakub/intro.gd" id="11_op04h"]
 [ext_resource type="Texture2D" uid="uid://s37tl7neq5k1" path="res://Jakub/intro_images/cybertruc.png" id="12_c2603"]
 [ext_resource type="Texture2D" uid="uid://b18ak8hnpp8ha" path="res://Jakub/intro_images/musk_horyzont.png" id="13_71uhj"]
 
@@ -152,7 +153,7 @@ tracks/10/keys = {
 
 [sub_resource type="Animation" id="Animation_xx26s"]
 resource_name = "intro"
-length = 80.3
+length = 73.4
 step = 0.1
 tracks/0/type = "audio"
 tracks/0/imported = false
@@ -369,6 +370,7 @@ _data = {
 [node name="AnimationPlayer" type="AnimationPlayer" unique_id=1576805968]
 libraries/ = SubResource("AnimationLibrary_tgqre")
 autoplay = &"intro"
+script = ExtResource("11_op04h")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1054329451]
 offset_right = 1154.0
@@ -463,3 +465,5 @@ texture = ExtResource("13_71uhj")
 offset_right = 1154.0
 offset_bottom = 650.0
 color = Color(0, 0, 0, 0)
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
