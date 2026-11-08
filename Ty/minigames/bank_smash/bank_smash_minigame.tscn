@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://drdfwbvrpqd7o"]
+
+[ext_resource type="Script" uid="uid://bkhpu3uqno10y" path="res://Ty/minigames/bank_smash/bank_smash_minigame.gd" id="1_3ok0q"]
+[ext_resource type="Texture2D" uid="uid://dii6wh7yyvsyk" path="res://Ty/minigames/bank_smash/Sprites/policjandy_background.png" id="2_htmp6"]
+[ext_resource type="PackedScene" uid="uid://c4cbf2ksh5amd" path="res://Ty/minigames/bank_smash/assets/bank_window.tscn" id="4_3ok0q"]
+[ext_resource type="Script" uid="uid://jarkvmcshfn4" path="res://Ty/minigames/bank_smash/bank_slingshot.gd" id="4_htmp6"]
+[ext_resource type="Texture2D" uid="uid://vrhihpwvpjvu" path="res://Ty/minigames/bank_smash/Sprites/proca.png" id="6_c7bkh"]
+[ext_resource type="PackedScene" uid="uid://2oxs2hjkkqpg" path="res://UI/MinigameFinishedScreen/minigame_finished_screen.tscn" id="6_htmp6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_33ajk"]
+size = Vector2(231, 140)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b6lhr"]
+radius = 14.15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_htmp6"]
+bg_color = Color(0.30816668, 0.21439523, 0.14834583, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p7jqn"]
+bg_color = Color(0.8849638, 0.47986352, 7.70092e-07, 1)
+
+[node name="BankSmash" type="Node" unique_id=1976529396]
+script = ExtResource("1_3ok0q")
+metadata/_custom_type_script = "uid://rtlmxb86fdh3"
+
+[node name="PolicjandyBackground" type="Sprite2D" parent="." unique_id=1361498413]
+position = Vector2(575, 324.5)
+scale = Vector2(1.2166666, 1.2203704)
+texture = ExtResource("2_htmp6")
+
+[node name="Windows" type="Node2D" parent="." unique_id=193905000]
+position = Vector2(244, 101)
+scale = Vector2(1.2166666, 1.2203704)
+
+[node name="Window6" parent="Windows" unique_id=1103660129 groups=["Window"] instance=ExtResource("4_3ok0q")]
+position = Vector2(433.1507, -13.110773)
+
+[node name="Window7" parent="Windows" unique_id=1358273770 groups=["Window"] instance=ExtResource("4_3ok0q")]
+position = Vector2(531.7809, -13.110773)
+
+[node name="Window8" parent="Windows" unique_id=1503759167 groups=["Window"] instance=ExtResource("4_3ok0q")]
+position = Vector2(433.1507, 103.24734)
+
+[node name="Window9" parent="Windows" unique_id=905055712 groups=["Window"] instance=ExtResource("4_3ok0q")]
+position = Vector2(531.7809, 103.24734)
+
+[node name="Window12" parent="Windows" unique_id=1456731816 groups=["Window"] instance=ExtResource("4_3ok0q")]
+position = Vector2(-2.4657578, -13.110773)
+
+[node name="Window14" parent="Windows" unique_id=1658173700 groups=["Window"] instance=ExtResource("4_3ok0q")]
+position = Vector2(-2.4657578, 103.24734)
+
+[node name="Window13" parent="Windows" unique_id=2073764250 groups=["Window"] instance=ExtResource("4_3ok0q")]
+position = Vector2(94.520515, -13.110773)
+
+[node name="Window16" parent="Windows" unique_id=1730180370 groups=["Window"] instance=ExtResource("4_3ok0q")]
+position = Vector2(206.30139, -13.110773)
+
+[node name="Window17" parent="Windows" unique_id=340489013 groups=["Window"] instance=ExtResource("4_3ok0q")]
+position = Vector2(313.15073, -13.110773)
+
+[node name="Window15" parent="Windows" unique_id=1158815871 groups=["Window"] instance=ExtResource("4_3ok0q")]
+position = Vector2(94.520515, 103.24734)
+
+[node name="Proca" type="Area2D" parent="." unique_id=927693319]
+position = Vector2(563, 480)
+script = ExtResource("4_htmp6")
+
+[node name="Proca2" type="Sprite2D" parent="Proca" unique_id=2021420654]
+position = Vector2(4.7250366, 61.494995)
+scale = Vector2(1.895, 1.895)
+texture = ExtResource("6_c7bkh")
+
+[node name="BandLine" type="Line2D" parent="Proca" unique_id=1870172535]
+points = PackedVector2Array(-218, -18, -80, 3, 0, 3, 80, 3, 229, -18)
+width = 44.725
+default_color = Color(0, 0.18039216, 0.18039216, 1)
+
+[node name="ItemSlot" type="Node2D" parent="Proca" unique_id=622528673]
+
+[node name="KamienSlot" type="Node2D" parent="Proca/ItemSlot" unique_id=426956758]
+
+[node name="Line2D" type="Line2D" parent="Proca/ItemSlot" unique_id=1107351599]
+points = PackedVector2Array(-80, 0, 80, 0)
+width = 78.565
+default_color = Color(0.6901961, 0.34509805, 0.22352941, 1)
+
+[node name="Laser" type="Line2D" parent="Proca/ItemSlot" unique_id=897370179]
+points = PackedVector2Array(0, 0, -316, -249)
+width = 1.0
+default_color = Color(1, 0, 0, 1)
+
+[node name="Pointer" type="Node2D" parent="Proca/ItemSlot/Laser" unique_id=813929957]
+position = Vector2(-318, -249)
+
+[node name="Pointer1" type="Line2D" parent="Proca/ItemSlot/Laser/Pointer" unique_id=2011175293]
+points = PackedVector2Array(-10, -10, 10, 10)
+width = 5.0
+default_color = Color(1, 0, 0, 1)
+
+[node name="Pointer2" type="Line2D" parent="Proca/ItemSlot/Laser/Pointer" unique_id=2101196989]
+rotation = 1.5707964
+points = PackedVector2Array(-10, -10, 10, 10)
+width = 5.0
+default_color = Color(1, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Proca" unique_id=533025615]
+position = Vector2(1.2250366, 0.49499512)
+shape = SubResource("RectangleShape2D_33ajk")
+
+[node name="Hitbox" type="Area2D" parent="Proca" unique_id=919326177]
+position = Vector2(-654, -304)
+collision_layer = 0
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Proca/Hitbox" unique_id=1625108226]
+shape = SubResource("CircleShape2D_b6lhr")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1885943385]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 16.0
+grow_horizontal = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_htmp6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_p7jqn")
+value = 20.92
+show_percentage = false
+
+[node name="Label" type="Label" parent="." unique_id=648673123]
+offset_top = 15.0
+offset_right = 188.0
+offset_bottom = 38.0
+theme_override_constants/outline_size = 5
+text = "Czas do przyjazdu policji"
+
+[node name="MinigameFinishedScreen" parent="." unique_id=495293115 instance=ExtResource("6_htmp6")]
+visible = false
+
+[node name="PercentLabel" parent="MinigameFinishedScreen/VBoxContainer/Control" parent_id_path=PackedInt32Array(495293115, 187782312) index="0" unique_id=1768973174]
+visible = false
+
+[node name="GameTimer" type="Timer" parent="." unique_id=1578248660]
+wait_time = 15.0
+
+[connection signal="input_event" from="Proca" to="Proca" method="_on_input_event"]
+[connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
+
+[editable path="MinigameFinishedScreen"]

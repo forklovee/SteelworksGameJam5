@@ -38,9 +38,6 @@ size = Vector2(417, 558)
 [node name="ContractChange" type="Node" unique_id=1113922558]
 script = ExtResource("1_5pav4")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1380371054]
-anchor_mode = 0
-
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=952958860]
 self_modulate = Color(0.41726208, 0.13463335, 0.0062819053, 1)
 position = Vector2(576, 318)
