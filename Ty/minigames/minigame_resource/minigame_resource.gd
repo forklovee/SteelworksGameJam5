@@ -5,9 +5,8 @@ enum GameType{
 	None,
 	Angrypot,
 	Meteor,
-  Paint,
+ 	Paint,
 	StockManipulation,
 	ContractChange,
 }
-
 @abstract func get_game_type()->GameType

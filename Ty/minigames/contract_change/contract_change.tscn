@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://derxpqla5llv5" path="res://Fonts/LCDWinTT/LCD2U___.TTF" id="5_g0g72"]
 [ext_resource type="Script" uid="uid://n4ewnrmnr5ai" path="res://Ty/minigames/contract_change/contract_container.gd" id="5_r1m70"]
 [ext_resource type="FontFile" uid="uid://crnjqckk17rja" path="res://Fonts/liberation_serif/LiberationSerif-Regular.ttf" id="6_g0g72"]
+[ext_resource type="PackedScene" uid="uid://2oxs2hjkkqpg" path="res://UI/MinigameFinishedScreen/minigame_finished_screen.tscn" id="9_kde54"]
 
 [sub_resource type="Gradient" id="Gradient_1phw2"]
 colors = PackedColorArray(0.8172098, 0.8172098, 0.8172097, 1, 1, 1, 1, 1)
@@ -215,6 +216,8 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StampTarget" unique_id=1497057216]
 position = Vector2(-1.5, 8)
 shape = SubResource("RectangleShape2D_33ajk")
+
+[node name="MinigameFinishedScreen" parent="." unique_id=495293115 instance=ExtResource("9_kde54")]
 
 [connection signal="pressed" from="ContractContainer/AverageSalaryDisplay/VBoxContainer/HBoxContainer/PlnSwitch" to="ContractContainer/AverageSalaryDisplay" method="_on_pln_switch_pressed"]
 [connection signal="pressed" from="ContractContainer/AverageSalaryDisplay/VBoxContainer/HBoxContainer/DollarSwitch" to="ContractContainer/AverageSalaryDisplay" method="_on_dollar_switch_pressed"]

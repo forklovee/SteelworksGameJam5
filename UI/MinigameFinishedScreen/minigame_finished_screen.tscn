@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://2oxs2hjkkqpg"]
+
+[ext_resource type="Script" uid="uid://c6263wydremjm" path="res://UI/MinigameFinishedScreen/minigame_finished_screen.gd" id="1_5bc5h"]
+[ext_resource type="FontFile" uid="uid://bfrw2j2o7y3eu" path="res://Fonts/liberation_serif/LiberationSerif-Bold.ttf" id="2_wgf7k"]
+[ext_resource type="FontFile" uid="uid://bpvemb6sbjprq" path="res://Fonts/starbim/Starbim.ttf" id="3_vafk7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ydmsi"]
+font = ExtResource("2_wgf7k")
+font_size = 39
+
+[sub_resource type="LabelSettings" id="LabelSettings_b6lhr"]
+font = ExtResource("3_vafk7")
+font_size = 100
+
+[node name="MinigameFinishedScreen" type="Control" unique_id=495293115]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5bc5h")
+
+[node name="Panel" type="Panel" parent="." unique_id=350194451]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1071036772]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+alignment = 1
+
+[node name="MessageLabel" type="Label" parent="VBoxContainer" unique_id=1310485630]
+layout_mode = 2
+text = "Too Bad!"
+label_settings = SubResource("LabelSettings_ydmsi")
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="VBoxContainer" unique_id=187782312]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="PercentLabel" type="Label" parent="VBoxContainer/Control" unique_id=1768973174]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -35.0
+offset_right = 200.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "00%"
+label_settings = SubResource("LabelSettings_b6lhr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=709255983]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Buttons" type="Control" parent="VBoxContainer" unique_id=896816446]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="TryAgainButton" type="Button" parent="VBoxContainer/Buttons" unique_id=1440866872]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.5
+offset_top = -25.0
+offset_right = 74.5
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+text = "Spróbuj ponownie"
+
+[node name="ContinueButton" type="Button" parent="VBoxContainer/Buttons" unique_id=1269647106]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.5
+offset_top = -25.0
+offset_right = 44.5
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+text = "Kontynuuj"

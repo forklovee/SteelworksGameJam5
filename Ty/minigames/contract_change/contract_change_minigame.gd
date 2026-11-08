@@ -13,6 +13,7 @@ class ContractData extends RefCounted:
 signal contract_stamped_success
 signal contract_stamped_fail
 
+@onready var minigame_finished_screen: MinigameFinishedScreen = $MinigameFinishedScreen
 @onready var contract_container: ContractContainer = $ContractContainer
 @onready var stamp_creation: ContractStamp2D = $StampCreation
 @onready var stamp_b2b: ContractStamp2D = $StampB2B
@@ -35,12 +36,11 @@ func _input(_event: InputEvent) -> void:
 		if is_stamp_picked_up:
 			if is_stamp_hovering_over_contract:
 				# Stamp the contract
-				hovered_stamp.stamp()
 				var current_contract := contract_container.current_contract_page
-				if hovered_stamp.type == ContractPage.Type.Creation and current_contract.salary_pln < average_salary_pln:
-					contract_stamped_success.emit()
-					successes += 1
-				elif hovered_stamp.type == ContractPage.Type.B2B and current_contract.salary_pln >= average_salary_pln:
+				var is_successful_stamp: bool = (hovered_stamp.type == ContractPage.Type.Creation and current_contract.salary_pln < average_salary_pln or\
+												hovered_stamp.type == ContractPage.Type.B2B and current_contract.salary_pln >= average_salary_pln)
+				hovered_stamp.stamp(is_successful_stamp)
+				if is_successful_stamp:
 					contract_stamped_success.emit()
 					successes += 1
 				else:
@@ -67,6 +67,9 @@ func clear_set_stamp():
 
 func _ready() -> void:
 	super()
+	minigame_finished_screen.continue_requested.connect(finish)
+	minigame_finished_screen.try_again_requested.connect(start)
+	
 	contract_container.all_contracts_stamped.connect(_on_all_contracts_stamped)
 	stamp_target.mouse_entered.connect(_on_stamp_target_hovered)
 	stamp_target.mouse_exited.connect(_on_stamp_target_unhovered)
@@ -83,6 +86,8 @@ func _process(_delta: float) -> void:
 
 func start():
 	super()
+	successes = 0
+	clear_set_stamp()
 	average_salary_pln = Game.rng.randi_range(salary_range.x, salary_range.x + (salary_range.y - salary_range.x)*.5)
 	contract_container.start(_generate_contract_data_list(), average_salary_pln)
 
@@ -107,8 +112,9 @@ static func get_salary(salary_pln: float, currency: ContractPage.Currency) -> in
 	return floori(salary_pln * currency_mul)
 
 func _on_all_contracts_stamped():
-	var percent_successful := successes / float(contract_amount)
-	finish(percent_successful)
+	var percent_successful := (successes / float(contract_amount)) * 100.0
+	print(successes, "/", contract_amount, " ", percent_successful, "%")
+	minigame_finished_screen.setup(percent_successful)
 
 func _on_stamp_hovering(stamp: ContractStamp2D) -> void:
 	if is_stamp_picked_up:
