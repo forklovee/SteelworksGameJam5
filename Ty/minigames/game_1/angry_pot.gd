@@ -15,13 +15,16 @@ func _ready() -> void:
 var game_camera_ref
 var on_win:Callable
 var game_ref
-func start(game_camera:Camera2D,_on_win:Callable,game:MiniGameResource):
+func start(game_camera:Camera2D,_on_win:Callable,game:MiniGameResource,d=null):
 	$Line2D/Eat_Item.process_mode=Node.PROCESS_MODE_DISABLED
 	$Line2D/Eat_Item.position=Vector2.ZERO
 	$Line2D/Eat_Item.linear_velocity=Vector2.ZERO
 	print("START")
 	on_win=_on_win
 	camera_from=game_camera.transform
+	if d!=null:
+		var s:Sprite2D=d["Pot"]
+		camera_from=camera_from.translated($GamePot.global_position-s.global_position)
 	game_camera_ref=game_camera
 	game_ref=game
 	t=0.0

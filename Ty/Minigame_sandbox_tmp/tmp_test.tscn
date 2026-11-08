@@ -67,12 +67,15 @@ texture = ExtResource("3_ol1co")
 position = Vector2(1777.25, 329)
 scale = Vector2(4.71875, 5.25)
 
-[node name="EnviroPot" type="Sprite2D" parent="." unique_id=337507606]
-position = Vector2(1666.25, 271)
+[node name="EnviroPot" type="Sprite2D" parent="." unique_id=337507606 node_paths=PackedStringArray("minigame_transform_input")]
+position = Vector2(1359, 256)
 scale = Vector2(4.71875, 5.25)
 texture = ExtResource("4_ol1co")
 script = ExtResource("5_mdpjc")
 minigame = ExtResource("6_0j8h8")
+minigame_transform_input = {
+"Pot": NodePath(".")
+}
 
 [node name="EnviroPot2" type="Sprite2D" parent="." unique_id=2071519899]
 position = Vector2(1918, 271)

@@ -7,7 +7,7 @@ class_name MiniGameSystem
 @export var paint_game:PackedScene
 var game_instance:MiniGame=null
 
-func play(game:MiniGameResource):
+func play(game:MiniGameResource,d=null):
 	var on_win=func (flag):
 		if flag:
 			$SubViewportContainer.visible=false
@@ -31,5 +31,9 @@ func play(game:MiniGameResource):
 	$SubViewportContainer.visible=true
 	game_instance=current_game.instantiate()
 	$SubViewportContainer/SubViewport.add_child(game_instance)
-	game_instance.start($"../Camera2D",on_win,game)
+	
+	if d!=null:
+		game_instance.start($"../Camera2D",on_win,game,d)
+	else:
+		game_instance.start($"../Camera2D",on_win,game)
 	#$SubViewportContainer/SubViewport/angry_pot.start($"../Camera2D",on_win,game)
