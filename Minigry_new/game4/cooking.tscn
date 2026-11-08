@@ -2,8 +2,57 @@
 
 [ext_resource type="Script" uid="uid://cn0sa866msrxp" path="res://Minigry_new/finishable.gd" id="1_ki30f"]
 [ext_resource type="PackedScene" uid="uid://dyj5ri4qb3o7p" path="res://Minigry_new/game4/do_not_look/nota_cooking_game.tscn" id="2_oj18q"]
+[ext_resource type="Script" uid="uid://bcfo51pbwfq6f" path="res://Minigry_new/game4/cooking_game_tutorial.gd" id="3_48u2n"]
+[ext_resource type="Texture2D" uid="uid://83tc1wbigfwc" path="res://Minigry_new/arty/liscie.png" id="4_0lul0"]
+[ext_resource type="Texture2D" uid="uid://byyy3r2lsl8rq" path="res://Minigry_new/arty/makaron.png" id="5_cv5wy"]
+[ext_resource type="Texture2D" uid="uid://bvnwbkvjhp42b" path="res://Minigry_new/arty/salata.png" id="6_2ilr4"]
+[ext_resource type="Texture2D" uid="uid://f07of3h10qee" path="res://Minigry_new/arty/shit.png" id="7_ynycc"]
 
 [node name="Cooking" type="Node" unique_id=1714106680]
 script = ExtResource("1_ki30f")
 
 [node name="NotaCookingGame" parent="." unique_id=24237833 instance=ExtResource("2_oj18q")]
+process_mode = 4
+
+[node name="cooking game tutorial" type="Node" parent="." unique_id=1317028630]
+script = ExtResource("3_48u2n")
+c = Color(0.827451, 0.64705884, 0.76862746, 1)
+
+[node name="ColorRect" type="ColorRect" parent="cooking game tutorial" unique_id=1270033046]
+offset_left = 15.0
+offset_top = 3.0
+offset_right = 1129.0
+offset_bottom = 411.0
+color = Color(0.5154469, 0.31332535, 0.45575488, 1)
+
+[node name="Label" type="Label" parent="cooking game tutorial/ColorRect" unique_id=1020233791]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 23.0
+offset_right = 220.0
+offset_bottom = 46.0
+text = "You need to take tihis"
+
+[node name="Liscie" type="Sprite2D" parent="cooking game tutorial/ColorRect/Label" unique_id=680304530]
+position = Vector2(116, 102)
+texture = ExtResource("4_0lul0")
+
+[node name="Makaron" type="Sprite2D" parent="cooking game tutorial/ColorRect/Label" unique_id=2085080329]
+position = Vector2(308, 110)
+texture = ExtResource("5_cv5wy")
+
+[node name="Salata" type="Sprite2D" parent="cooking game tutorial/ColorRect/Label" unique_id=97754439]
+position = Vector2(496, 115)
+texture = ExtResource("6_2ilr4")
+
+[node name="Label2" type="Label" parent="cooking game tutorial/ColorRect" unique_id=56492150]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 220.0
+offset_right = 212.0
+offset_bottom = 243.0
+text = "not this"
+
+[node name="Shit" type="Sprite2D" parent="cooking game tutorial/ColorRect/Label2" unique_id=266174880]
+position = Vector2(118, 89)
+texture = ExtResource("7_ynycc")

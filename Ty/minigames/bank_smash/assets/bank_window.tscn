@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c4cbf2ksh5amd"]
+
+[ext_resource type="Script" uid="uid://clia6cocjj76u" path="res://Ty/minigames/bank_smash/bank_window.gd" id="1_siys8"]
+[ext_resource type="Texture2D" uid="uid://b1rrr7gr6hjtx" path="res://Ty/minigames/bank_smash/Sprites/okno.png" id="2_lq8qi"]
+[ext_resource type="AudioStream" uid="uid://detw0qhbr453l" path="res://Ty/minigames/bank_smash/Sounds/broken_glass.wav" id="3_lq8qi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6lhr"]
+size = Vector2(78.90411, 84.4006)
+
+[node name="Window" type="Area2D" unique_id=1103660129]
+monitoring = false
+script = ExtResource("1_siys8")
+
+[node name="Okno" type="Sprite2D" parent="." unique_id=1958034712]
+texture = ExtResource("2_lq8qi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1867804563]
+position = Vector2(0, -0.40970993)
+shape = SubResource("RectangleShape2D_b6lhr")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=181122938]
+stream = ExtResource("3_lq8qi")

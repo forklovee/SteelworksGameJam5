@@ -211,12 +211,55 @@ position = Vector2(56, 617)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_aq3dq")
 
-[node name="Sprite2D2" type="Sprite2D" parent="HUD/Node" unique_id=1274524673]
-position = Vector2(190, 622)
+[node name="Label" type="Label" parent="HUD/Node/Sprite2D" unique_id=1432733449]
+visible = false
+offset_left = 8.0
+offset_top = 4.0
+offset_right = 48.0
+offset_bottom = 49.0
+theme_override_font_sizes/font_size = 32
+text = "1"
+
+[node name="Sprite2D2" type="Sprite2D" parent="HUD/Node" unique_id=1969562674]
+position = Vector2(122, 617)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_aq3dq")
 
-[node name="Sprite2D3" type="Sprite2D" parent="HUD/Node" unique_id=303985046]
-position = Vector2(312, 624)
+[node name="Label" type="Label" parent="HUD/Node/Sprite2D2" unique_id=347345000]
+visible = false
+offset_left = 8.0
+offset_top = 4.0
+offset_right = 48.0
+offset_bottom = 49.0
+theme_override_font_sizes/font_size = 32
+text = "1"
+
+[node name="Sprite2D3" type="Sprite2D" parent="HUD/Node" unique_id=1917180227]
+position = Vector2(186, 618)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_aq3dq")
+
+[node name="Label" type="Label" parent="HUD/Node/Sprite2D3" unique_id=1681263233]
+visible = false
+offset_left = 8.0
+offset_top = 4.0
+offset_right = 48.0
+offset_bottom = 49.0
+theme_override_font_sizes/font_size = 32
+text = "1"
+
+[node name="Sprite2D4" type="Sprite2D" parent="HUD/Node" unique_id=1685303136]
+position = Vector2(250, 615)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_aq3dq")
+
+[node name="Label" type="Label" parent="HUD/Node/Sprite2D4" unique_id=1325413507]
+visible = false
+offset_left = 8.0
+offset_top = 4.0
+offset_right = 48.0
+offset_bottom = 49.0
+theme_override_font_sizes/font_size = 32
+text = "1"
+
+[node name="Node" type="Node" parent="." unique_id=599115981]
