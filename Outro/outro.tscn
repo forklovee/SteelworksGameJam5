@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cnitb1x4jyd6g"]
+
+[ext_resource type="Script" uid="uid://yfvlkwf0miw4" path="res://outro.gd" id="1_gm66w"]
+[ext_resource type="Texture2D" uid="uid://dc5ywbwxtn7yw" path="res://Minigry_new/arty/end_screen.png" id="2_ct0k0"]
+
+[node name="Outro" type="Node" unique_id=1692087937]
+script = ExtResource("1_gm66w")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1569891931]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -286.0
+offset_top = -232.5
+offset_right = 286.0
+offset_bottom = 232.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Odbyło się katastrofalne spotkanie z delegacją Bibify. Trzech z czterech gości trafiło do szpitala przez zatrucie pokarmowe, a czwarty złamał zęba przez kamienie w zupie. Oburzony Antoni wtargnął do pokoju stażysty.
+
+Antoni: Czy tobie rozum odjęło? KTO GOTUJE ZUPĘ Z KAMIENI I KLEJU?? TY BARANIE
+PIES BY LEPIEJ TĄ ROBOTĘ ZROBIŁ! PRZYNAJMNIEJ BY NIKOGO NIE OTRUŁ! CZY TY WIESZ CO MNIE TO KOSZTUJE???? WSZYSTKIE MOJE UKŁADY Z BIBIFY CHUJ TRAFIŁ! CZY TY MASZ JAKIEKOLWIEK POJĘCIE ILE TERAZ BĘDZIEMY PŁACIĆ ZA TOKENY???? NIE CHCĘ CIEBIE NIGDY WIĘCEJ WIDZIEĆ! TAK CIĘ OBSMARUJĘ NA X, ŻE NIKT CIEBIE NIGDY WIĘCEJ NIE ZATRUDNI ZAPAMIĘTAJ TO SOBIE! 
+"
+
+[node name="win" type="TextureRect" parent="." unique_id=35379862]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ct0k0")
+expand_mode = 1
