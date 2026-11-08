@@ -1,5 +1,6 @@
 extends MiniGame
 
+@onready var tutorial := $Tutorial
 @onready var windows_container := $Windows
 @onready var minigame_finishes_screen: MinigameFinishedScreen = $MinigameFinishedScreen
 @onready var timer_progressbar: ProgressBar = $ProgressBar
@@ -13,9 +14,16 @@ func _ready() -> void:
 	super()
 	minigame_finishes_screen.try_again_requested.connect(start)
 	minigame_finishes_screen.continue_requested.connect(finish)
+	timer_progressbar.value = 0
+	tutorial.show()
 
 func start():
 	super()
+	if tutorial.visible:
+		return
+	_begin()
+
+func _begin():
 	timer_progressbar.value = 0
 	successes = 0
 	total_windows = windows_container.get_child_count()
@@ -25,7 +33,8 @@ func start():
 		if !window.broken.is_connected(_on_window_broken):
 			window.broken.connect(_on_window_broken)
 	_start_timer()
-	
+
+
 
 func _start_timer():
 	tween_progressbar = get_tree().create_tween()
@@ -48,3 +57,8 @@ func _on_window_broken():
 func _on_game_timer_timeout() -> void:
 	_stop_timer()
 	minigame_finishes_screen.setup(0.0)
+
+
+func _on_tutorial_close_button_pressed() -> void:
+	tutorial.hide()
+	_begin()

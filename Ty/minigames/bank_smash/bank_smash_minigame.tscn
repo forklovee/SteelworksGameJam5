@@ -133,6 +133,41 @@ offset_bottom = 38.0
 theme_override_constants/outline_size = 5
 text = "Czas do przyjazdu policji"
 
+[node name="Tutorial" type="Control" parent="." unique_id=388225467]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Tutorial" unique_id=1462769376]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 140.0
+offset_right = 630.0
+offset_bottom = 406.0
+
+[node name="Label" type="Label" parent="Tutorial" unique_id=2096480245]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 163.0
+offset_right = 578.0
+offset_bottom = 331.0
+text = "Przekonaj bank do udzielenia pożyczki Antkowi Muszkietowi!
+W tym celu wybij okna w budynku banku, aby uzyskać dodatkowe argumenty podczas następnych negocjacji.
+
+Uważaj! Została powiadomiona policja, która będzie tu lada moment!"
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="Tutorial" unique_id=1178518654]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 327.0
+offset_right = 405.0
+offset_bottom = 391.0
+text = "Rozpocznij"
+
 [node name="MinigameFinishedScreen" parent="." unique_id=495293115 instance=ExtResource("6_htmp6")]
 visible = false
 
@@ -143,6 +178,7 @@ visible = false
 wait_time = 15.0
 
 [connection signal="input_event" from="Proca" to="Proca" method="_on_input_event"]
+[connection signal="pressed" from="Tutorial/Button" to="." method="_on_tutorial_close_button_pressed"]
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 
 [editable path="MinigameFinishedScreen"]
