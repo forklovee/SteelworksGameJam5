@@ -1,0 +1,465 @@
+[gd_scene format=3 uid="uid://dqqfnh8jcift3"]
+
+[ext_resource type="AudioStream" uid="uid://ltjtj3tlwlb1" path="res://Audio/SFX/intro/3_SztucznaInteligencja_update.wav" id="1_ch4m4"]
+[ext_resource type="AudioStream" uid="uid://dy0ukwqc1cny1" path="res://Audio/SFX/intro/2_AutonomiczneSamochody_update.wav" id="2_tqs43"]
+[ext_resource type="AudioStream" uid="uid://cdyb2nkpgb41o" path="res://Audio/SFX/intro/4_Ziemniaki_update.wav" id="3_tqs43"]
+[ext_resource type="AudioStream" uid="uid://b3lkh7w3apnma" path="res://Audio/Music/intro_bg.wav" id="3_vbxey"]
+[ext_resource type="AudioStream" uid="uid://bbh8lf1pu0tjy" path="res://Audio/SFX/intro/5_AntoniMuszkiet_update.wav" id="4_0odbi"]
+[ext_resource type="AudioStream" uid="uid://c0lv6bynjds8x" path="res://Audio/SFX/intro/6_AmbicjaAntoniego_update.wav" id="5_7i0vx"]
+[ext_resource type="AudioStream" uid="uid://cwj6big6fv5el" path="res://Audio/SFX/intro/7_Monarchiści_update.wav" id="6_op04h"]
+[ext_resource type="AudioStream" uid="uid://cidh5ybcv6kce" path="res://Audio/SFX/intro/8_Życie na gorąco_update.wav" id="7_0wa2m"]
+[ext_resource type="AudioStream" uid="uid://tajvh2hdrecb" path="res://Audio/SFX/intro/9_NarzędziaBibify_update.wav" id="8_amato"]
+[ext_resource type="AudioStream" uid="uid://dpwwpfl7wuc7a" path="res://Audio/SFX/intro/suspense_drums.wav" id="10_7i0vx"]
+[ext_resource type="Texture2D" uid="uid://cqt32sjvj536j" path="res://Jakub/intro_images/AL027-01_pomme_de_terre_0_0.jpg" id="10_pme3i"]
+[ext_resource type="Texture2D" uid="uid://7x48lwq4gq80" path="res://Jakub/intro_images/chad_logo.png" id="11_eydsx"]
+[ext_resource type="Texture2D" uid="uid://s37tl7neq5k1" path="res://Jakub/intro_images/cybertruc.png" id="12_c2603"]
+[ext_resource type="Texture2D" uid="uid://b18ak8hnpp8ha" path="res://Jakub/intro_images/musk_horyzont.png" id="13_71uhj"]
+
+[sub_resource type="Animation" id="Animation_7aocr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/AI:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-500, 255.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Samochody:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(843, 252)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/Samochody:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/Ziemniaki:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-883, 252)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/Ziemniaki:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimationPlayer/MuskHoryzont:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimationPlayer/ChadLogo:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(566.00006, 912)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimationPlayer/Cybertruc:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(747, 1074)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AnimationPlayer/Al02701PommeDeTerre00:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(687, 897.99994)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("AnimationPlayer/Al02701PommeDeTerre00:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("AnimationPlayer/ColorRect2:color")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xx26s"]
+resource_name = "intro"
+length = 80.3
+step = 0.1
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/SFXPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("1_ch4m4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_tqs43")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_tqs43")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_0odbi")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_7i0vx")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_op04h")
+}, {
+"end_offset": 0.049077082,
+"start_offset": 0.0,
+"stream": ExtResource("7_0wa2m")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_amato")
+}],
+"times": PackedFloat32Array(1, 3.1013396, 5.9, 10.3, 20.4, 29.4, 39.6, 58.300003)
+}
+tracks/0/use_blend = true
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/MusicPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_vbxey")
+}],
+"times": PackedFloat32Array(0.5)
+}
+tracks/1/use_blend = true
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/SubSFXPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("10_7i0vx")
+}],
+"times": PackedFloat32Array(14.9)
+}
+tracks/2/use_blend = true
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/AI:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.1, 3.5),
+"transitions": PackedFloat32Array(0.7845844, 1),
+"update": 0,
+"values": [Vector2(-37, 659), Vector2(-37, -365)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/Samochody:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(3.4, 6.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(71, 1655), Vector2(71, 271)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimationPlayer/Samochody:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(3.4),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.5707964]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimationPlayer/Ziemniaki:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(6.4, 9.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(775, 252), Vector2(-883, 252)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimationPlayer/Ziemniaki:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(6.4, 9.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [6.283185307179586, 0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AnimationPlayer/MuskHoryzont:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 18.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("AnimationPlayer/ChadLogo:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(1, 4),
+"transitions": PackedFloat32Array(0.7845844, 1),
+"update": 0,
+"values": [Vector2(600, 900), Vector2(600, -129)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("AnimationPlayer/Cybertruc:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(3.267862, 6.6627803),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(747, 1074), Vector2(694, -302)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("AnimationPlayer/Al02701PommeDeTerre00:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(5.3, 10.012748),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(687, 897.99994), Vector2(1439, -288.00006)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("AnimationPlayer/Al02701PommeDeTerre00:rotation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(5.3, 10.012748),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 3.0154014]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("AnimationPlayer/ColorRect2:color")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 68.39046, 72.44596),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tgqre"]
+_data = {
+&"RESET": SubResource("Animation_7aocr"),
+&"intro": SubResource("Animation_xx26s")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" unique_id=1576805968]
+libraries/ = SubResource("AnimationLibrary_tgqre")
+autoplay = &"intro"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1054329451]
+offset_right = 1154.0
+offset_bottom = 650.0
+color = Color(0, 0, 0, 1)
+
+[node name="AI" type="Label" parent="." unique_id=1464983277]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -613.0
+offset_top = 335.0
+offset_right = 594.0
+offset_bottom = 471.99988
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 80
+text = "SZTUCZNA INTELIGENCJA"
+horizontal_alignment = 1
+
+[node name="Samochody" type="Label" parent="." unique_id=578856807]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -505.0
+offset_top = 1331.0
+offset_right = 702.0
+offset_bottom = 1468.0007
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5707964
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 60
+text = "SAMOCHODY"
+horizontal_alignment = 1
+
+[node name="Ziemniaki" type="Label" parent="." unique_id=351511186]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 199.0
+offset_top = -72.0
+offset_right = 1405.998
+offset_bottom = 65.000305
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 6.2831855
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 80
+text = "ZIEMNIAKI"
+horizontal_alignment = 1
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="." unique_id=184309973]
+bus = &"SFX"
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1349674559]
+bus = &"Music"
+
+[node name="SubSFXPlayer" type="AudioStreamPlayer" parent="." unique_id=4530598]
+volume_db = 5.083
+bus = &"SFX"
+
+[node name="Al02701PommeDeTerre00" type="Sprite2D" parent="." unique_id=637695526]
+position = Vector2(687, 897.99994)
+scale = Vector2(0.45709038, 0.5760796)
+texture = ExtResource("10_pme3i")
+
+[node name="ChadLogo" type="Sprite2D" parent="." unique_id=1166903988]
+position = Vector2(600, 900)
+scale = Vector2(4.203704, 4.203704)
+texture = ExtResource("11_eydsx")
+
+[node name="Cybertruc" type="Sprite2D" parent="." unique_id=420631215]
+position = Vector2(747, 1074)
+texture = ExtResource("12_c2603")
+
+[node name="MuskHoryzont" type="Sprite2D" parent="." unique_id=777175767]
+visible = false
+position = Vector2(580.1111, 324)
+scale = Vector2(1.2148148, 1.2148148)
+texture = ExtResource("13_71uhj")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=2012408328]
+offset_right = 1154.0
+offset_bottom = 650.0
+color = Color(0, 0, 0, 0)
