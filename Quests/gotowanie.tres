@@ -1,14 +1,14 @@
 [gd_resource type="Resource" script_class="Quest" format=3 uid="uid://db8hq8fj8qwvr"]
 
-[ext_resource type="Script" uid="uid://ct73pqebfwt1r" path="res://Quests/quest_resource.gd" id="1_qve3r"]
+[ext_resource type="Script" uid="uid://ct73pqebfwt1r" path="res://Quests/quest_resource.gd" id="1_33yae"]
 
 [resource]
-script = ExtResource("1_qve3r")
+script = ExtResource("1_33yae")
 id = "gotowanie"
 boss_title = "Zupa machen"
 boss_message = "Rub zumpke."
 player_message = "Chat help Chat help Chat help Chat help Chat help  Chat help Chat help Chat help Chat help"
 gpt_message = "Kamienie.Kamienie. Kamienie. Kamienie. Kamienie. Kamienie. Kamienie. Kamienie. Kamienie.v  v"
 gpt_delay = 3.0
-item_group = "Stonks"
+item_group = "Gotowanie"
 metadata/_custom_type_script = "uid://ct73pqebfwt1r"

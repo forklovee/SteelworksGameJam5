@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://of6hn87tqpwn" path="res://UI/panel.png" id="1_3g4gn"]
 [ext_resource type="Texture2D" uid="uid://cuyubqy2yl3k5" path="res://UI/Tablet/chad_logo.png" id="2_6ociy"]
-[ext_resource type="FontFile" uid="uid://dvd5mbtf11li2" path="res://UI/PixelifySans-VariableFont_wght.ttf" id="3_6ociy"]
+[ext_resource type="FontFile" uid="uid://dvd5mbtf11li2" path="res://Fonts/PixelifySans/PixelifySans-VariableFont_wght.ttf" id="3_6ociy"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hcvde"]
 texture = ExtResource("1_3g4gn")

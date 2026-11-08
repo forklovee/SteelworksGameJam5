@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dtmoro1t8pdrc"]
 
 [ext_resource type="Texture2D" uid="uid://of6hn87tqpwn" path="res://UI/panel.png" id="1_4fpwt"]
-[ext_resource type="FontFile" uid="uid://dvd5mbtf11li2" path="res://UI/PixelifySans-VariableFont_wght.ttf" id="2_4fpwt"]
+[ext_resource type="FontFile" uid="uid://dvd5mbtf11li2" path="res://Fonts/PixelifySans/PixelifySans-VariableFont_wght.ttf" id="2_4fpwt"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hcvde"]
 texture = ExtResource("1_4fpwt")

@@ -7,9 +7,9 @@ var debug_mode := false
 func _ready() -> void:
 	if get_tree().current_scene == self: # If minigame scene started with F6, start minigame normally.
 		debug_mode = true
-		start(null, func(): return, null)
+		start()
 
-func start(game_camera: Camera2D, _on_win: Callable, game: MiniGameResource):
+func start():
 	print(self, " STARTED!")
 
 func finish(percent_successful: float):

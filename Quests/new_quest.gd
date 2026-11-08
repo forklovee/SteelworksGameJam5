@@ -7,7 +7,7 @@ var quest: Quest = null
 
 func _ready() -> void:
 	await get_tree().create_timer(2.0).timeout
-	new_quest(load("res://Quests/gotowanie.tres"))
+	new_quest(ResourceLoader.load("res://Quests/umowy.tres"))
 
 func new_quest(quest_resource: Resource) -> void:
 	quest = quest_resource

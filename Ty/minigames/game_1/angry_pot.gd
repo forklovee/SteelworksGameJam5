@@ -15,20 +15,20 @@ func _ready() -> void:
 var game_camera_ref
 var on_win:Callable
 var game_ref
-func start(game_camera:Camera2D,_on_win:Callable,game:MiniGameResource):
+func start():
 	$Line2D/Eat_Item.process_mode=Node.PROCESS_MODE_DISABLED
 	$Line2D/Eat_Item.position=Vector2.ZERO
 	$Line2D/Eat_Item.linear_velocity=Vector2.ZERO
 	print("START")
-	on_win=_on_win
-	camera_from=game_camera.transform
-	game_camera_ref=game_camera
-	game_ref=game
+	#on_win=_on_win
+	#camera_from=game_camera.transform
+	#game_camera_ref=game_camera
+	#game_ref=game
 	t=0.0
 	playing=true
 	shooting=false
-	var game_pot:AngryPotResource=game
-	$ColorRect.color=game_pot.backgound_color
+	#var game_pot:AngryPotResource=game
+	#$ColorRect.color=game_pot.backgound_color
 	
 func arc(v:Vector2):
 	var t=PackedVector2Array([])

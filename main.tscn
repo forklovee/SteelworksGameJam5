@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://bm7yox4rtj7l2" path="res://UI/Toast/toast_control.gd" id="2_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://cd87pvau0yr8f" path="res://UI/Tablet/tablet.png" id="2_h2yge"]
 [ext_resource type="Script" uid="uid://3sbq6o3dgmno" path="res://Quests/new_quest.gd" id="4_1bvp3"]
-[ext_resource type="FontFile" uid="uid://dvd5mbtf11li2" path="res://UI/PixelifySans-VariableFont_wght.ttf" id="5_7mycd"]
+[ext_resource type="FontFile" uid="uid://dvd5mbtf11li2" path="res://Fonts/PixelifySans/PixelifySans-VariableFont_wght.ttf" id="5_7mycd"]
 [ext_resource type="Texture2D" uid="uid://bphbwyj284wqj" path="res://UI/Toast/elon.png" id="5_272bh"]
 [ext_resource type="Texture2D" uid="uid://of6hn87tqpwn" path="res://UI/panel.png" id="7_kek77"]
 [ext_resource type="AudioStream" uid="uid://cal5vcf2u4y3q" path="res://Audio/SFX/femboy_meow.wav" id="7_vivmo"]
@@ -245,7 +245,7 @@ scale = Vector2(1.2, 1.2)
 texture = ExtResource("16_2cqfq")
 offset = Vector2(750, 270)
 
-[node name="Kompjuta" type="Area2D" parent="SceneRoot" unique_id=2142510113 groups=["Stonks"]]
+[node name="Kompjuta" type="Area2D" parent="SceneRoot" unique_id=2142510113 groups=["Stonks", "Umowy"]]
 position = Vector2(810, 347)
 script = ExtResource("15_2cqfq")
 

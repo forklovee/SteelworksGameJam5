@@ -81,8 +81,8 @@ func _process(_delta: float) -> void:
 	if hovered_stamp != null and is_stamp_picked_up:
 		hovered_stamp.get_stamp_sprite().global_position = contract_container.get_local_mouse_position()
 
-func start(game_camera: Camera2D, _on_win: Callable, game: MiniGameResource):
-	super(game_camera, _on_win, game)
+func start():
+	super()
 	average_salary_pln = Game.rng.randi_range(salary_range.x, salary_range.x + (salary_range.y - salary_range.x)*.5)
 	contract_container.start(_generate_contract_data_list(), average_salary_pln)
 

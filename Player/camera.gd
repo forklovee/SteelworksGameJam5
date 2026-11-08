@@ -9,7 +9,7 @@ signal scroll_requested(direction: Vector2)
 @export var position_limits: Rect2i = Rect2i()
 
 var target_position: Vector2
-
+var scrollable = true
 var is_mouse_pressed: bool
 var last_pressed_msec: float
 var hovered_object: GameObject
@@ -45,13 +45,13 @@ func _process(delta: float) -> void:
 		held_object.global_position = get_local_mouse_position()
 	
 	# Screen scrolling
-	if viewport_mouse_position.x < scrolling_margin:
+	if viewport_mouse_position.x < scrolling_margin and scrollable:
 		move_view(Vector2.LEFT)
-	elif viewport_mouse_position.x > viewport_size.x - scrolling_margin:
+	elif viewport_mouse_position.x > viewport_size.x - scrolling_margin and scrollable:
 		move_view(Vector2.RIGHT)
-	if viewport_mouse_position.y < scrolling_margin:
+	if viewport_mouse_position.y < scrolling_margin and scrollable:
 		move_view(Vector2.UP)
-	elif viewport_mouse_position.y > viewport_size.y - scrolling_margin:
+	elif viewport_mouse_position.y > viewport_size.y - scrolling_margin and scrollable:
 		move_view(Vector2.DOWN)
 	
 	offset = offset.lerp(target_position, delta * 10.0)
