@@ -22,26 +22,29 @@ func _input_event(_viewport, event, _shape_idx):
 			match minigame:
 				"Stonks":
 					game = stonks.instantiate()
-					game.game_ended.connect(minigame_done.bind([game, "path"]))
+					game.game_ended.connect(minigame_done.bind(null))
 				"Gotowanie":
 					game = gotowanie.instantiate()
-					game.game_ended.connect(minigame_done.bind([game, "path"]))
+					game.game_ended.connect(minigame_done.bind(null))
 				"Umowy":
 					game = umowy.instantiate()
-					game.finished.connect(minigame_done.bind([game, "res://Quests/gotowanie.tres"]))
+					game.finished.connect(minigame_done.bind(ResourceLoader.load("res://Quests/gotowanie.tres")))
 				"Bank":
 					game = bank.instantiate()
-					game.game_ended.connect(minigame_done.bind([game, "path"]))
+					game.game_ended.connect(minigame_done.bind(null))
 			
-			get_tree().root.add_child(game)
-			#game.global_position = $"../../Camera2D".get_screen_center_position()
+			var minigame_container := get_tree().current_scene.get_node("MinigameContainer")
+			minigame_container.add_child(game)
+			minigame_container.show()
 
-func minigame_done(game, next_game) -> void:
+func minigame_done(game: MiniGame, next_quest: Quest) -> void:
+	var minigame_container := get_tree().current_scene.get_node("MinigameContainer")
+	minigame_container.hide()
 	$"../../UI".show()
 	$"../../Camera2D".scrollable = true
 	game.queue_free()
 	await get_tree().create_timer(2.0).timeout
-	$"../../QuestAnimation".new_quest(next_game)
+	$"../../QuestAnimation".new_quest(next_quest)
 
 func on_hovered() -> void:
 	if is_active:

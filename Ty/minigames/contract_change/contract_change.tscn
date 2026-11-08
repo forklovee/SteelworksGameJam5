@@ -35,9 +35,8 @@ font_color = Color(0, 0, 0, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33ajk"]
 size = Vector2(417, 558)
 
-[node name="ContractChange" type="Node" unique_id=835200061]
+[node name="ContractChange" type="Node" unique_id=1113922558]
 script = ExtResource("1_5pav4")
-metadata/_custom_type_script = "uid://rtlmxb86fdh3"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1380371054]
 anchor_mode = 0

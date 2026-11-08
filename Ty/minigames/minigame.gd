@@ -1,6 +1,6 @@
 class_name MiniGame extends Node
 
-signal finished
+signal finished(minigame: MiniGame)
 
 func _ready() -> void:
 	start()
@@ -10,4 +10,4 @@ func start():
 
 func finish():
 	print(self, " FINISHED")
-	finished.emit()
+	finished.emit(self)
