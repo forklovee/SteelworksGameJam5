@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dua6ypdw8rhwy" path="res://Ty/minigames/contract_change/contract_change_stamp.gd" id="1_5jrbc"]
 [ext_resource type="Texture2D" uid="uid://tn8bdxg22rhu" path="res://Ty/minigames/contract_change/Sprites/Component 3.png" id="2_giuvb"]
+[ext_resource type="AudioStream" uid="uid://mhmcvbl885va" path="res://Ty/minigames/contract_change/Sounds/ralsei-splat.mp3" id="3_giuvb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b6lhr"]
 size = Vector2(16.400005, 20)
@@ -21,6 +22,9 @@ shape = SubResource("RectangleShape2D_b6lhr")
 position = Vector2(-0.05000426, -1.1920929e-07)
 scale = Vector2(0.06680499, 0.112582564)
 texture = ExtResource("2_giuvb")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1252772510]
+stream = ExtResource("3_giuvb")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

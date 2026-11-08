@@ -1,6 +1,10 @@
 class_name ContractStamp2D extends Area2D
 
+@onready var success_sound := preload("res://Ty/minigames/contract_change/Sounds/ralsei-splat.mp3")
+@onready var fail_sound := preload("res://Ty/minigames/contract_change/Sounds/bone-crack.mp3")
+
 @onready var rest_position := global_position
+@onready var sfx_player := $AudioStreamPlayer2D
 @export var type: ContractPage.Type = ContractPage.Type.Creation
 
 var is_picked_up: bool = false
@@ -20,8 +24,12 @@ func put_away():
 	is_picked_stamp_hovering = false
 	_fly_to_rest_position()
 
-func stamp():
+func stamp(is_successful: bool):
 	set_interaction_enabled(false)
+	
+	sfx_player.stream = success_sound if is_successful else fail_sound
+	sfx_player.play()
+	
 	var stamp_mark_res: PackedScene
 	match type:
 		ContractPage.Type.B2B:
@@ -29,6 +37,7 @@ func stamp():
 		ContractPage.Type.Creation:
 			stamp_mark_res = ResourceLoader.load("res://Ty/minigames/contract_change/Assets/stamp_mark_creation.tscn")
 	var stamp_mark: Node2D = stamp_mark_res.instantiate()
+	stamp_mark.modulate = Color(0.718, 0.0, 0.137, 1.0) if !is_successful else Color(0.0, 0.788, 0.275, 1.0)
 	get_parent().add_child(stamp_mark)
 	stamp_mark.global_position = $Sprite2D.global_position
 	_fly_to_rest_position()

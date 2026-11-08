@@ -3,10 +3,8 @@ extends Sprite2D
 @export var minigame:MiniGameResource
 
 func _process(delta: float) -> void:
-	
 	#var on_win=func ():
 	#	$"../CanvasLayer/SubViewportContainer".visible=false
-	
 	
 	#if Input.is_key_pressed(KEY_5):
 	#	$"../CanvasLayer/SubViewportContainer".visible=true
