@@ -23,7 +23,7 @@ Game="*uid://dsw8eyggrpdln"
 [display]
 
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+window/stretch/aspect="ignore"
 window/vsync/vsync_mode=0
 
 [dotnet]

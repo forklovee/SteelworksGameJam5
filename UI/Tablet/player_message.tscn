@@ -16,6 +16,7 @@ offset_right = 218.0
 offset_bottom = 102.0
 size_flags_horizontal = 8
 size_flags_vertical = 0
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxTexture_hcvde")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=776069277]
@@ -36,8 +37,9 @@ text = "Ja"
 [node name="Message" type="RichTextLabel" parent="HBoxContainer/VBoxContainer" unique_id=1249020417]
 custom_maximum_size = Vector2(200, -1)
 layout_mode = 2
+mouse_filter = 1
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_constants/line_separation = 1
+theme_override_constants/line_separation = 0
 theme_override_fonts/normal_font = ExtResource("2_4fpwt")
 theme_override_font_sizes/normal_font_size = 12
 text = "No to fajnie.  fd d d d . fd fddfd. fd fdsddadsadad asdsadsadsad dsasd. No to fajnie.  fd d d d . fd fddfd. fd fdsddadsadad asdsadsadsad dsasd"

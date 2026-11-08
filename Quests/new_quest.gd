@@ -5,10 +5,9 @@ extends Node
 
 var quest: Quest = null
 
-func _input(event):
-	if event is InputEventKey:
-		if event.pressed and event.keycode == KEY_SPACE:
-			new_quest(load("res://Quests/gotowanie.tres"))
+func _ready() -> void:
+	await get_tree().create_timer(2.0).timeout
+	new_quest(load("res://Quests/gotowanie.tres"))
 
 func new_quest(quest_resource: Resource) -> void:
 	quest = quest_resource
@@ -27,3 +26,4 @@ func new_quest(quest_resource: Resource) -> void:
 	toast.hide_boss_message()
 	tablet.hide_tablet()
 	tablet.hover_disabled = false
+	get_tree().call_group(quest.item_group, "activate", quest.item_group)
