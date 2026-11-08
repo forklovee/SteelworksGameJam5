@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://beqxoe0augsv6"]
+
+[ext_resource type="Script" uid="uid://ct5y3upfhll6s" path="res://Ty/minigames/contract_change/contract_stamp_mark.gd" id="1_0tee0"]
+[ext_resource type="Texture2D" uid="uid://ciuvcfuhn87h7" path="res://Ty/minigames/contract_change/Sprites/b2b_stamp.png" id="1_5dvvf"]
+
+[node name="StampMarkB2B" type="Sprite2D" unique_id=1588522076]
+modulate = Color(0.1764706, 0.7254902, 0, 1)
+scale = Vector2(0.39420116, 0.36503527)
+texture = ExtResource("1_5dvvf")
+script = ExtResource("1_0tee0")
