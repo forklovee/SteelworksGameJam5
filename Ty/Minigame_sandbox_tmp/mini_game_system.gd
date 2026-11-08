@@ -24,8 +24,8 @@ func play(game:MiniGameResource):
 		MiniGameResource.GameType.Angrypot: angry_pot_game,
 		MiniGameResource.GameType.Meteor: meteor_game,
 		MiniGameResource.GameType.StockManipulation: stock_man_game,
-		MiniGameResource.GameType.ContractChange: contract_change_game
-		MiniGameResource.GameType.Paint:paint_game
+		MiniGameResource.GameType.ContractChange: contract_change_game,
+		MiniGameResource.GameType.Paint: paint_game
 	}
 	assert(game.get_game_type() in map.keys() and map.get(game.get_game_type()) != null)
 	var current_game = map[game.get_game_type()]
