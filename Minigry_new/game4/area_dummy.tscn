@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bc8fv2rw441ti"]
+
+[ext_resource type="Texture2D" uid="uid://bvnwbkvjhp42b" path="res://Minigry_new/arty/salata.png" id="1_7h4yl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b24ox"]
+radius = 60.882
+
+[node name="Area2D2" type="Area2D" unique_id=77320111]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1203928940]
+position = Vector2(-3, 7.674419)
+shape = SubResource("CircleShape2D_b24ox")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1123669863]
+texture = ExtResource("1_7h4yl")
