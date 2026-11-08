@@ -14,10 +14,15 @@
 [ext_resource type="AudioStream" uid="uid://chev60hmy5h86" path="res://Audio/SFX/tablet_close.wav" id="9_vivmo"]
 [ext_resource type="AudioStream" uid="uid://wkayna4b705p" path="res://Audio/SFX/meow_1.wav" id="10_vivmo"]
 [ext_resource type="AudioStream" uid="uid://yy2shradi2pk" path="res://Audio/SFX/meow_2.wav" id="11_2cqfq"]
+[ext_resource type="Script" uid="uid://ci585w7p16m6e" path="res://UI/popup.gd" id="13_ryguw"]
+[ext_resource type="Texture2D" uid="uid://baola1cxkgu62" path="res://UI/strzala.png" id="14_d13ii"]
 [ext_resource type="Shader" uid="uid://b14sdnl0upfwf" path="res://Objects/outline.gdshader" id="14_yaehf"]
 [ext_resource type="Script" uid="uid://b2vs31ypvexvm" path="res://Objects/quest_item.gd" id="15_2cqfq"]
 [ext_resource type="Texture2D" uid="uid://2tbsx0pnvs4j" path="res://Objects/kakuter.png" id="15_vivmo"]
 [ext_resource type="Texture2D" uid="uid://boynt1r184unp" path="res://Objects/backgorund.png" id="16_2cqfq"]
+[ext_resource type="Texture2D" uid="uid://26yd34d4r2gk" path="res://Objects/umowy.png" id="19_cegan"]
+[ext_resource type="Texture2D" uid="uid://fc62ent1s0vl" path="res://Objects/palnik2.png" id="20_82xsv"]
+[ext_resource type="Texture2D" uid="uid://1g76qhd5w05p" path="res://Objects/drzwi.png" id="22_d13ii"]
 
 [sub_resource type="Theme" id="Theme_7mycd"]
 Label/colors/font_color = Color(0, 0, 0, 1)
@@ -39,6 +44,31 @@ modulate_color = Color(0.18359044, 0.18359044, 0.18359044, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dhxmx"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1u8w0"]
+texture = ExtResource("7_kek77")
+texture_margin_left = 9.0
+texture_margin_top = 9.0
+texture_margin_right = 9.0
+texture_margin_bottom = 9.0
+modulate_color = Color(0.22, 0.22, 0.22, 0.39215687)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hcvde"]
+texture = ExtResource("7_kek77")
+texture_margin_left = 9.0
+texture_margin_top = 9.0
+texture_margin_right = 9.0
+texture_margin_bottom = 9.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ryguw"]
+texture = ExtResource("7_kek77")
+modulate_color = Color(0.21950102, 0.21950102, 0.21950093, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1u8w0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d13ii"]
+texture = ExtResource("7_kek77")
+modulate_color = Color(0.48178947, 0.48178947, 0.48178947, 1)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_074og"]
 shader = ExtResource("14_yaehf")
 shader_parameter/outline_color = Color(1, 1, 1, 1)
@@ -47,6 +77,33 @@ shader_parameter/is_active = false
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hcvde"]
 size = Vector2(382, 191)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_getpj"]
+shader = ExtResource("14_yaehf")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 2.0
+shader_parameter/is_active = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82xsv"]
+size = Vector2(157, 191)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ryguw"]
+shader = ExtResource("14_yaehf")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 2.0
+shader_parameter/is_active = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_getpj"]
+size = Vector2(114, 132)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d13ii"]
+shader = ExtResource("14_yaehf")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 2.0
+shader_parameter/is_active = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1u8w0"]
+size = Vector2(193, 418)
 
 [node name="Main" type="Node" unique_id=1996573084]
 script = ExtResource("1_074og")
@@ -207,7 +264,7 @@ offset_transform_enabled = true
 offset_transform_position = Vector2(0, -4)
 theme_override_constants/line_spacing = 1
 theme_override_fonts/font = ExtResource("5_7mycd")
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 13
 text = " Tak jak w tytule.Tak jak w tytule.Tak jak w tytule. Tak jak w tytule. Tak jak w tytule. Tak jak."
 autowrap_mode = 3
 
@@ -227,6 +284,201 @@ volume_db = -20.0
 [node name="GPTMeow" type="AudioStreamPlayer" parent="UI" unique_id=1001160486]
 stream = ExtResource("11_2cqfq")
 volume_db = -20.0
+
+[node name="LeftScroll" type="Panel" parent="UI" unique_id=950163833]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -250.0
+offset_right = 50.0
+offset_bottom = 250.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_1u8w0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/LeftScroll" unique_id=225647165]
+modulate = Color(1, 1, 1, 0.39215687)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -45.0
+offset_right = 20.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/LeftScroll/VBoxContainer" unique_id=65780501]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("14_d13ii")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="UI/LeftScroll/VBoxContainer" unique_id=1649652335]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("14_d13ii")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="UI/LeftScroll/VBoxContainer" unique_id=937108389]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("14_d13ii")
+expand_mode = 1
+
+[node name="RightScroll" type="Panel" parent="UI" unique_id=783091878]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -250.0
+offset_bottom = 250.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_1u8w0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/RightScroll" unique_id=1704333209]
+modulate = Color(1, 1, 1, 0.39215687)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -45.0
+offset_right = 20.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/RightScroll/VBoxContainer" unique_id=1553740967]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("14_d13ii")
+expand_mode = 1
+flip_h = true
+
+[node name="TextureRect2" type="TextureRect" parent="UI/RightScroll/VBoxContainer" unique_id=687550863]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("14_d13ii")
+expand_mode = 1
+flip_h = true
+
+[node name="TextureRect3" type="TextureRect" parent="UI/RightScroll/VBoxContainer" unique_id=943768804]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("14_d13ii")
+expand_mode = 1
+flip_h = true
+
+[node name="Popup" type="Panel" parent="UI" unique_id=1894394895]
+visible = false
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("13_ryguw")
+
+[node name="TextureRect" type="PanelContainer" parent="UI/Popup" unique_id=1110287054]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -125.0
+offset_right = 200.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_hcvde")
+
+[node name="Label" type="Label" parent="UI/Popup" unique_id=501415741]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 28.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(-125, 80)
+offset_transform_visual_only = false
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_7mycd")
+theme_override_font_sizes/font_size = 18
+text = "Antoni"
+
+[node name="Label2" type="Label" parent="UI/Popup" unique_id=1578790852]
+custom_maximum_size = Vector2(230, -1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.0
+offset_top = -97.0
+offset_right = 181.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_position = Vector2(-125, 80)
+offset_transform_visual_only = false
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("5_7mycd")
+theme_override_font_sizes/font_size = 12
+text = "Siemasz! Pierwszy dzień, co? Słuchaj, mam dla ciebie takiego taska. Jak go zrobisz, będziesz moim bohaterem. Na prawdę. Za chwilę prześlę ci szczegóły. Nie zapomnij używać asystenta od Bibify AI! Mają naprawdę czaderskie apki: “free ai gf” i “Chad GPT” to moje ulubione!"
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="UI/Popup" unique_id=1803864072]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 64.0
+offset_right = 125.0
+offset_bottom = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_7mycd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ryguw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1u8w0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_d13ii")
+text = "Zaczynajmy"
+
+[node name="TextEdit" type="TextureRect" parent="UI/Popup" unique_id=581921737]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -72.0
+offset_right = 64.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(-125, -25)
+offset_transform_visual_only = false
+texture = ExtResource("5_272bh")
+expand_mode = 1
 
 [node name="MinigameContainer" type="CanvasLayer" parent="." unique_id=1707225848]
 layer = 2
@@ -251,15 +503,54 @@ scale = Vector2(1.2, 1.2)
 texture = ExtResource("16_2cqfq")
 offset = Vector2(750, 270)
 
-[node name="Kompjuta" type="Area2D" parent="SceneRoot" unique_id=2142510113 groups=["Stonks", "Umowy"]]
+[node name="Stonks" type="Area2D" parent="SceneRoot" unique_id=2142510113 groups=["Stonks"]]
 position = Vector2(810, 347)
 script = ExtResource("15_2cqfq")
 
-[node name="Sprite2D" type="Sprite2D" parent="SceneRoot/Kompjuta" unique_id=1585975649]
+[node name="Sprite2D" type="Sprite2D" parent="SceneRoot/Stonks" unique_id=1585975649]
 material = SubResource("ShaderMaterial_074og")
 texture = ExtResource("15_vivmo")
 region_rect = Rect2(-24, -20, 468, 362)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneRoot/Kompjuta" unique_id=378202390]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneRoot/Stonks" unique_id=378202390]
 position = Vector2(-18, -72)
 shape = SubResource("RectangleShape2D_hcvde")
+
+[node name="Umowy" type="Area2D" parent="SceneRoot" unique_id=1886773972 groups=["Umowy"]]
+position = Vector2(1175, 388)
+script = ExtResource("15_2cqfq")
+
+[node name="Sprite2D" type="Sprite2D" parent="SceneRoot/Umowy" unique_id=1661761362]
+material = SubResource("ShaderMaterial_getpj")
+texture = ExtResource("19_cegan")
+region_rect = Rect2(-24, -20, 468, 362)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneRoot/Umowy" unique_id=1112282261]
+position = Vector2(-5.5, 0)
+shape = SubResource("RectangleShape2D_82xsv")
+
+[node name="Gotowanie" type="Area2D" parent="SceneRoot" unique_id=888420134 groups=["Gotowanie"]]
+position = Vector2(97, 347)
+script = ExtResource("15_2cqfq")
+
+[node name="Sprite2D" type="Sprite2D" parent="SceneRoot/Gotowanie" unique_id=823877088]
+material = SubResource("ShaderMaterial_ryguw")
+texture = ExtResource("20_82xsv")
+region_rect = Rect2(-24, -20, 468, 362)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneRoot/Gotowanie" unique_id=874028345]
+position = Vector2(3, -1)
+shape = SubResource("RectangleShape2D_getpj")
+
+[node name="Bank" type="Area2D" parent="SceneRoot" unique_id=2010848718 groups=["Bank"]]
+position = Vector2(-218, 370)
+script = ExtResource("15_2cqfq")
+
+[node name="Sprite2D" type="Sprite2D" parent="SceneRoot/Bank" unique_id=1714076077]
+material = SubResource("ShaderMaterial_d13ii")
+texture = ExtResource("22_d13ii")
+region_rect = Rect2(-24, -20, 468, 362)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneRoot/Bank" unique_id=74217993]
+position = Vector2(-3.5, -1)
+shape = SubResource("RectangleShape2D_1u8w0")

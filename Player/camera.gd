@@ -9,7 +9,7 @@ signal scroll_requested(direction: Vector2)
 @export var position_limits: Rect2i = Rect2i()
 
 var target_position: Vector2
-var scrollable = true
+var scrollable = false
 var is_mouse_pressed: bool
 var last_pressed_msec: float
 var hovered_object: GameObject

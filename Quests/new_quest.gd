@@ -5,8 +5,10 @@ extends Node
 
 var quest: Quest = null
 
-func _ready() -> void:
-	await get_tree().create_timer(2.0).timeout
+func popup(popup: Panel) -> void:
+	popup.queue_free()
+	$"../Camera2D".scrollable = true
+	await get_tree().create_timer(3.0).timeout
 	new_quest(ResourceLoader.load("res://Quests/umowy.tres"))
 
 func new_quest(quest_resource: Resource) -> void:

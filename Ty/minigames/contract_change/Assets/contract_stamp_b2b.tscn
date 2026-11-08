@@ -26,6 +26,7 @@ texture = ExtResource("2_rfiya")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=660047248]
 stream = ExtResource("3_axef2")
+volume_db = -20.0
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

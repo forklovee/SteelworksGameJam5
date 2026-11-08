@@ -22,16 +22,16 @@ func _input_event(_viewport, event, _shape_idx):
 			match minigame:
 				"Stonks":
 					game = stonks.instantiate()
-					game.game_ended.connect(minigame_done.bind(null))
+					game.game_ended.connect(minigame_done.bind(ResourceLoader.load("res://Quests/bank.tres")))
 				"Gotowanie":
 					game = gotowanie.instantiate()
-					game.game_ended.connect(minigame_done.bind(null))
+					game.finish.connect(outro)
 				"Umowy":
 					game = umowy.instantiate()
-					game.finished.connect(minigame_done.bind(ResourceLoader.load("res://Quests/gotowanie.tres")))
+					game.finished.connect(minigame_done.bind(ResourceLoader.load("res://Quests/stonks.tres")))
 				"Bank":
 					game = bank.instantiate()
-					game.game_ended.connect(minigame_done.bind(null))
+					game.game_ended.connect(minigame_done.bind(ResourceLoader.load("res://Quests/gotowanie.tres")))
 			
 			var minigame_container := get_tree().current_scene.get_node("MinigameContainer")
 			minigame_container.add_child(game)
@@ -45,6 +45,9 @@ func minigame_done(game: MiniGame, next_quest: Quest) -> void:
 	game.queue_free()
 	await get_tree().create_timer(2.0).timeout
 	$"../../QuestAnimation".new_quest(next_quest)
+
+func outro() -> void:
+	pass
 
 func on_hovered() -> void:
 	if is_active:

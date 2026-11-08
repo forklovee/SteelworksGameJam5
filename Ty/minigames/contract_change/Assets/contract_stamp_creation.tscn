@@ -25,6 +25,7 @@ texture = ExtResource("2_giuvb")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1252772510]
 stream = ExtResource("3_giuvb")
+volume_db = -20.0
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

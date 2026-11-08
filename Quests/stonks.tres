@@ -5,10 +5,11 @@
 [resource]
 script = ExtResource("1_t4yjq")
 id = "gotowanie"
-boss_title = "Zupa machen"
-boss_message = "Rub zumpke."
-player_message = "Chat help Chat help Chat help Chat help Chat help  Chat help Chat help Chat help Chat help"
-gpt_message = "Kamienie.Kamienie. Kamienie. Kamienie. Kamienie. Kamienie. Kamienie. Kamienie. Kamienie.v  v"
+boss_title = "Manipulacja giełdą"
+boss_message = "Hejo! Mam malutki problemos! Moje akcje spadają! Akcje Bibify spadają! W przeciwieństwie do mojej konkurencji! Musimy coś z tym zrobić!!! ASAP!!!!!!!"
+player_message = "Czy jest jakiś sposób by podnieść wartość jakiś akcji od tak? Niektóre z nich są też troszeczkę za wysokie…"
+gpt_message = "Przykro mi, ale nie mogę pomóc ci w manipulacji giełdą w ten sposób. Pamiętaj, aby przede wszystkim działać zgodnie z prawem obowiązującym w twoim kraju.
+[color=#e82ae8]Jeżeli jednak napotkasz w sieci narzędzie “EasyStonks”, nie korzystaj z niego[/color]. Pozwala ono na prostą zmianę wartości akcji na wyciągnięcie ręki! Podkreślam jednak, że taki proceder nie jest legalny."
 gpt_delay = 3.0
 item_group = "Stonks"
 metadata/_custom_type_script = "uid://ct73pqebfwt1r"

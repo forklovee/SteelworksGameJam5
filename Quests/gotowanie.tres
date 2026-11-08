@@ -5,10 +5,14 @@
 [resource]
 script = ExtResource("1_33yae")
 id = "gotowanie"
-boss_title = "Zupa machen"
-boss_message = "Rub zumpke."
-player_message = "Chat help Chat help Chat help Chat help Chat help  Chat help Chat help Chat help Chat help"
-gpt_message = "Kamienie.Kamienie. Kamienie. Kamienie. Kamienie. Kamienie. Kamienie. Kamienie. Kamienie.v  v"
+boss_title = "Gotowanie obiadu"
+boss_message = "Hejka! Mam super ważne spotkanie z delegacją z Bibify! Możesz nam załatwić jakiś dobre żarełko? :3"
+player_message = "Jakie danie sprawdzi się podczas spotkania z delegacją z firmy zajmującej się AI?"
+gpt_message = "Dokładnie wiem dlaczego o to pytasz! Mam dla ciebie gotową propozycję [color=#e82ae8]przepysznej zupy[/color] zjednającej ze sobą zarządy firm! Lista jest gotowa i możesz jej użyć podczas przygotowania potrawy!
+Porady:
+- aby dodać odrobinę chrupkości, nie zapomnij dodać kilku kamieni
+- by delegacja nie palnęła jakieś głupoty, warto dodać trochę kleju do posiłku
+- kapsułki do prania nadadzą posiłkowi świeżości!"
 gpt_delay = 3.0
 item_group = "Gotowanie"
 metadata/_custom_type_script = "uid://ct73pqebfwt1r"

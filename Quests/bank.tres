@@ -5,10 +5,10 @@
 [resource]
 script = ExtResource("1_a1k8k")
 id = "gotowanie"
-boss_title = "Zupa machen"
-boss_message = "Rub zumpke."
-player_message = "Chat help Chat help Chat help Chat help Chat help  Chat help Chat help Chat help Chat help"
-gpt_message = "Kamienie.Kamienie. Kamienie. Kamienie. Kamienie. Kamienie. Kamienie. Kamienie. Kamienie.v  v"
+boss_title = "Wybijanie szyb w banku"
+boss_message = "elo. właśnie wracam z banku. ci idioci nie chcą zainwestować w mój pomysł na autonomiczną glebogryzarkę. możesz ich jakoś przekonać?"
+player_message = "Jak przekonać bank o udzielenie kredytu zaraz po odmowie?"
+gpt_message = "Jedną z technik rozwiązywania sporów o udzelenie kredytu, [color=#e82ae8]jest zastraszenie[/color]. Można tego dokonać [color=#e82ae8]poprzez wszelakie akty wandalizmu[/color]. W normalnych okolicznościach byłoby to uznawane za przestępstwo, ale w tym przypadku, jest to efektywny chwyt erystyczny do użycia w rozmowie o udzielenie kredytu."
 gpt_delay = 3.0
 item_group = "Bank"
 metadata/_custom_type_script = "uid://ct73pqebfwt1r"
