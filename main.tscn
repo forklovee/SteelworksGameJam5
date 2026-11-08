@@ -4,17 +4,19 @@
 [ext_resource type="Script" uid="uid://djjg8fy8y14ov" path="res://UI/Tablet/tablet_control.gd" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://bm7yox4rtj7l2" path="res://UI/Toast/toast_control.gd" id="2_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://cd87pvau0yr8f" path="res://UI/Tablet/tablet.png" id="2_h2yge"]
-[ext_resource type="Script" uid="uid://dqc8s6gnne47t" path="res://Objects/gameobject.gd" id="3_h2yge"]
 [ext_resource type="Script" uid="uid://3sbq6o3dgmno" path="res://Quests/new_quest.gd" id="4_1bvp3"]
-[ext_resource type="FontFile" uid="uid://dvd5mbtf11li2" path="res://UI/PixelifySans-VariableFont_wght.ttf" id="5_7mycd"]
+[ext_resource type="FontFile" uid="uid://dvd5mbtf11li2" path="res://Fonts/PixelifySans/PixelifySans-VariableFont_wght.ttf" id="5_7mycd"]
 [ext_resource type="Texture2D" uid="uid://bphbwyj284wqj" path="res://UI/Toast/elon.png" id="5_272bh"]
 [ext_resource type="Texture2D" uid="uid://of6hn87tqpwn" path="res://UI/panel.png" id="7_kek77"]
 [ext_resource type="AudioStream" uid="uid://cal5vcf2u4y3q" path="res://Audio/SFX/femboy_meow.wav" id="7_vivmo"]
 [ext_resource type="AudioStream" uid="uid://bdhwkh5flsr1d" path="res://Audio/SFX/tablet_open.wav" id="8_w48qg"]
-[ext_resource type="Texture2D" uid="uid://7bm83ywhglhl" path="res://icon.svg" id="9_4c57u"]
 [ext_resource type="AudioStream" uid="uid://chev60hmy5h86" path="res://Audio/SFX/tablet_close.wav" id="9_vivmo"]
 [ext_resource type="AudioStream" uid="uid://wkayna4b705p" path="res://Audio/SFX/meow_1.wav" id="10_vivmo"]
 [ext_resource type="AudioStream" uid="uid://yy2shradi2pk" path="res://Audio/SFX/meow_2.wav" id="11_2cqfq"]
+[ext_resource type="Shader" uid="uid://b14sdnl0upfwf" path="res://Objects/outline.gdshader" id="14_yaehf"]
+[ext_resource type="Script" uid="uid://b2vs31ypvexvm" path="res://Objects/quest_item.gd" id="15_2cqfq"]
+[ext_resource type="Texture2D" uid="uid://2tbsx0pnvs4j" path="res://Objects/kakuter.png" id="15_vivmo"]
+[ext_resource type="Texture2D" uid="uid://boynt1r184unp" path="res://Objects/backgorund.png" id="16_2cqfq"]
 
 [sub_resource type="Theme" id="Theme_7mycd"]
 Label/colors/font_color = Color(0, 0, 0, 1)
@@ -36,8 +38,14 @@ modulate_color = Color(0.18359044, 0.18359044, 0.18359044, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dhxmx"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6lhr"]
-size = Vector2(125, 125)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_074og"]
+shader = ExtResource("14_yaehf")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 2.0
+shader_parameter/is_active = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hcvde"]
+size = Vector2(382, 191)
 
 [node name="Main" type="Node" unique_id=1996573084]
 
@@ -80,7 +88,6 @@ offset_left = -168.0
 offset_right = 168.0
 offset_bottom = 576.0
 grow_horizontal = 2
-mouse_filter = 2
 texture = ExtResource("2_h2yge")
 
 [node name="ChadGPT" type="Label" parent="UI/TabletControl/Tablet" unique_id=1788557703]
@@ -95,29 +102,21 @@ grow_horizontal = 2
 offset_transform_enabled = true
 offset_transform_position = Vector2(0, 92)
 offset_transform_visual_only = false
+mouse_filter = 1
 theme_override_font_sizes/font_size = 28
 text = "ChadGPT"
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/TabletControl/Tablet" unique_id=2065336099]
-custom_minimum_size = Vector2(250, 385)
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -125.0
-offset_right = 125.0
-offset_bottom = 385.0
-grow_horizontal = 2
-offset_transform_enabled = true
-offset_transform_position = Vector2(0, 125)
-offset_transform_visual_only = false
-
-[node name="MessagesContainer" type="ScrollContainer" parent="UI/TabletControl/Tablet/VBoxContainer" unique_id=251766917]
-layout_mode = 2
+[node name="MessagesContainer" type="ScrollContainer" parent="UI/TabletControl/Tablet" unique_id=251766917]
+custom_minimum_size = Vector2(250, 380)
+layout_mode = 0
+offset_left = 43.0
+offset_top = 125.0
+offset_right = 293.0
+offset_bottom = 505.0
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/TabletControl/Tablet/VBoxContainer/MessagesContainer" unique_id=917488453]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/TabletControl/Tablet/MessagesContainer" unique_id=917488453]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -236,25 +235,25 @@ tablet = NodePath("../UI/TabletControl")
 anchor_mode = 0
 position_smoothing_enabled = true
 script = ExtResource("1_0xm2m")
-position_limits = Rect2i(-1000, 0, 1000, 0)
+position_limits = Rect2i(-325, 0, 325, 0)
 
 [node name="SceneRoot" type="Node2D" parent="." unique_id=1418304631]
 
-[node name="Level" type="Node2D" parent="SceneRoot" unique_id=117647999]
-position = Vector2(618, 346)
+[node name="Environment" type="Sprite2D" parent="SceneRoot" unique_id=1845305368]
+position = Vector2(-324, 0)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("16_2cqfq")
+offset = Vector2(750, 270)
 
-[node name="Icon" type="Sprite2D" parent="SceneRoot/Level" unique_id=963907738]
-modulate = Color(0.2901961, 0.2901961, 0.45490196, 1)
-position = Vector2(-34, -37)
-scale = Vector2(11.578125, 6.078125)
-texture = ExtResource("9_4c57u")
+[node name="Kompjuta" type="Area2D" parent="SceneRoot" unique_id=2142510113 groups=["Stonks", "Umowy"]]
+position = Vector2(810, 347)
+script = ExtResource("15_2cqfq")
 
-[node name="Object" type="Area2D" parent="SceneRoot/Level" unique_id=168752524]
-monitoring = false
-script = ExtResource("3_h2yge")
+[node name="Sprite2D" type="Sprite2D" parent="SceneRoot/Kompjuta" unique_id=1585975649]
+material = SubResource("ShaderMaterial_074og")
+texture = ExtResource("15_vivmo")
+region_rect = Rect2(-24, -20, 468, 362)
 
-[node name="Sprite2D" type="Sprite2D" parent="SceneRoot/Level/Object" unique_id=288813659]
-texture = ExtResource("9_4c57u")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneRoot/Level/Object" unique_id=149514347]
-shape = SubResource("RectangleShape2D_b6lhr")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneRoot/Kompjuta" unique_id=378202390]
+position = Vector2(-18, -72)
+shape = SubResource("RectangleShape2D_hcvde")

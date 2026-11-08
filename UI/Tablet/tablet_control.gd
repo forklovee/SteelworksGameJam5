@@ -14,7 +14,7 @@ var gpt_message_scene: PackedScene = load("res://UI/Tablet/gpt_message.tscn")
 func _ready() -> void:
 	tablet.mouse_entered.connect(show_tablet_user)
 	tablet.mouse_exited.connect(check_mouse)
-	messagebox = $Tablet/VBoxContainer/MessagesContainer/VBoxContainer
+	messagebox = $Tablet/MessagesContainer/VBoxContainer
 
 func player_message(message: String) -> void:
 	var new_message: PanelContainer = player_message_scene.instantiate()

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://of6hn87tqpwn" path="res://UI/panel.png" id="1_3g4gn"]
 [ext_resource type="Texture2D" uid="uid://cuyubqy2yl3k5" path="res://UI/Tablet/chad_logo.png" id="2_6ociy"]
-[ext_resource type="FontFile" uid="uid://dvd5mbtf11li2" path="res://UI/PixelifySans-VariableFont_wght.ttf" id="3_6ociy"]
+[ext_resource type="FontFile" uid="uid://dvd5mbtf11li2" path="res://Fonts/PixelifySans/PixelifySans-VariableFont_wght.ttf" id="3_6ociy"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hcvde"]
 texture = ExtResource("1_3g4gn")
@@ -17,6 +17,7 @@ offset_right = 218.0
 offset_bottom = 98.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxTexture_hcvde")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=776069277]
@@ -45,9 +46,11 @@ text = "ChadGPT"
 
 [node name="Message" type="RichTextLabel" parent="HBoxContainer/VBoxContainer" unique_id=257509144]
 custom_maximum_size = Vector2(164, -1)
+clip_contents = false
 layout_mode = 2
+mouse_filter = 1
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_constants/line_separation = 1
+theme_override_constants/line_separation = 0
 theme_override_fonts/normal_font = ExtResource("3_6ociy")
 theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true

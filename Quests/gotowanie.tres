@@ -10,4 +10,5 @@ boss_message = "Rub zumpke."
 player_message = "Chat help Chat help Chat help Chat help Chat help  Chat help Chat help Chat help Chat help"
 gpt_message = "Kamienie.Kamienie. Kamienie. Kamienie. Kamienie. Kamienie. Kamienie. Kamienie. Kamienie.v  v"
 gpt_delay = 3.0
+item_group = "Gotowanie"
 metadata/_custom_type_script = "uid://ct73pqebfwt1r"
