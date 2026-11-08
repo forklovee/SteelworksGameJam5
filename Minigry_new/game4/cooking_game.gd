@@ -16,15 +16,18 @@ func _ready() -> void:
 		c.visible=false
 func end(flag):
 	if not flag:
+		print("reset")
 		var p=get_parent()
 		self.queue_free()
 		var l:PackedScene=load("res://Minigry_new/game4/do_not_look/nota_cooking_game.tscn")
 		var re=l.instantiate()
 		p.add_child(re)
 	else:
+		get_parent().emit_signal("finish")
 		self.queue_free()
 		Music.make_sound(Music.Sounds.EAT)
-		get_parent().emit_signal("finish")
+		print("FINISH")
+		
 
 func destoy(c:Area2D):
 	c.reparent($Node)
@@ -47,7 +50,7 @@ func _process(delta: float) -> void:
 	for c in pl.get_overlapping_areas():
 		if c.get_parent().name=="bad":
 			Music.make_sound(Music.Sounds.WRONG)
-			get_tree().reload_current_scene()
+			end(false)
 		if c.get_parent().name=="good":
 			print("HEHE")
 			var t:CompressedTexture2D=c.get_child(1).texture
