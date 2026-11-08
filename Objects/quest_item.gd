@@ -6,7 +6,7 @@ var minigame: String
 var stonks: PackedScene = preload("res://Quests/Stonks/stonks.tscn")
 var gotowanie: PackedScene = preload("res://Minigry_new/game4/cooking.tscn")
 var umowy: PackedScene = preload("res://Ty/minigames/contract_change/contract_change.tscn")
-var bank: PackedScene = preload("res://Ty/minigames/game_1/angry_pot.tscn")
+var bank: PackedScene = preload("res://Ty/minigames/bank_smash/bank_smash_minigame.tscn")
 
 func _ready() -> void:
 	mouse_entered.connect(on_hovered)
@@ -53,7 +53,7 @@ func minigame_done(game: MiniGame, next_quest: Quest) -> void:
 	$"../../QuestAnimation".new_quest(next_quest)
 
 func outro() -> void:
-	pass
+	get_tree().change_scene_to_file("res://Outro/outro.tscn")
 
 func on_hovered() -> void:
 	if is_active:

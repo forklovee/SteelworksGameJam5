@@ -2,7 +2,7 @@ extends MiniGame
 
 var positive
 var negative
-var time: float = 26.0
+var time: float = 25.0
 var time_now: float = time
 var tag_array: Array[String]
 var stop: bool = false
@@ -63,8 +63,8 @@ func check_results():
 			return
 	
 	$Control2.show()
-	await get_tree().create_timer(1.0).timeout
-	finished.emit()
+	await get_tree().create_timer(3.0).timeout
+	finished.emit(self)
 
 func restart():
 	$Control.hide()
