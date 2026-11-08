@@ -1,0 +1,222 @@
+[gd_scene format=3 uid="uid://dyj5ri4qb3o7p"]
+
+[ext_resource type="Script" uid="uid://llrs2d5p1uue" path="res://Minigry_new/game4/cooking_game.gd" id="1_gdk15"]
+[ext_resource type="Texture2D" uid="uid://83tc1wbigfwc" path="res://Minigry_new/arty/liscie.png" id="2_jbg2v"]
+[ext_resource type="Texture2D" uid="uid://nrevegdw5v7x" path="res://Minigry_new/arty/zumpa_spritesheet.png" id="2_p8ydq"]
+[ext_resource type="Texture2D" uid="uid://byyy3r2lsl8rq" path="res://Minigry_new/arty/makaron.png" id="3_eib37"]
+[ext_resource type="PackedScene" uid="uid://bc8fv2rw441ti" path="res://Minigry_new/game4/area_dummy.tscn" id="3_f5s7o"]
+[ext_resource type="Texture2D" uid="uid://bvnwbkvjhp42b" path="res://Minigry_new/arty/salata.png" id="4_qwfjb"]
+[ext_resource type="Texture2D" uid="uid://f07of3h10qee" path="res://Minigry_new/arty/shit.png" id="5_aq3dq"]
+[ext_resource type="Script" uid="uid://cqy0f81sh22to" path="res://Minigry_new/cookingResouce.gd" id="6_3xhre"]
+
+[sub_resource type="Resource" id="Resource_gdk15"]
+script = ExtResource("6_3xhre")
+images = Array[CompressedTexture2D]([ExtResource("2_jbg2v"), ExtResource("3_eib37"), ExtResource("4_qwfjb"), ExtResource("5_aq3dq")])
+ateable = Array[bool]([true, true, true, false])
+metadata/_custom_type_script = "uid://cqy0f81sh22to"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfnnq"]
+atlas = ExtResource("2_p8ydq")
+region = Rect2(0, 0, 74.61481, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4tll"]
+atlas = ExtResource("2_p8ydq")
+region = Rect2(0, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbjoa"]
+atlas = ExtResource("2_p8ydq")
+region = Rect2(320, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68kms"]
+atlas = ExtResource("2_p8ydq")
+region = Rect2(640, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yppwh"]
+atlas = ExtResource("2_p8ydq")
+region = Rect2(960, 0, 320, 180)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xfnnq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4tll")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qbjoa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68kms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yppwh")
+}],
+"loop": 1,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xfnnq"]
+radius = 61.035896
+
+[node name="NotaCookingGame" type="Node" unique_id=24237833 node_paths=PackedStringArray("pl", "hud_parent")]
+script = ExtResource("1_gdk15")
+pl = NodePath("Area2D")
+cr = SubResource("Resource_gdk15")
+hud_parent = NodePath("HUD/Node")
+
+[node name="bg" type="ColorRect" parent="." unique_id=1321576647]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.827451, 0.64705884, 0.76862746, 1)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1832726193]
+position = Vector2(359, 460.99994)
+scale = Vector2(22.810812, 2.8400002)
+texture = SubResource("AtlasTexture_xfnnq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=740091317]
+position = Vector2(570.00006, 510)
+scale = Vector2(22.810812, 1)
+texture = SubResource("AtlasTexture_xfnnq")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=604394205]
+position = Vector2(442, 510)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=1633511493]
+sprite_frames = SubResource("SpriteFrames_xfnnq")
+animation = &"new_animation"
+autoplay = "new_animation"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1874497724]
+position = Vector2(-3, 7.674419)
+shape = SubResource("CircleShape2D_xfnnq")
+
+[node name="bad" type="Node2D" parent="." unique_id=1949616345]
+
+[node name="Area2D2" parent="bad" unique_id=77320111 instance=ExtResource("3_f5s7o")]
+position = Vector2(558, 79)
+
+[node name="Area2D3" parent="bad" unique_id=723175162 instance=ExtResource("3_f5s7o")]
+position = Vector2(404, 79)
+
+[node name="Area2D4" parent="bad" unique_id=1405491339 instance=ExtResource("3_f5s7o")]
+position = Vector2(728, 215)
+
+[node name="Area2D5" parent="bad" unique_id=6322854 instance=ExtResource("3_f5s7o")]
+position = Vector2(897, 215)
+
+[node name="Area2D6" parent="bad" unique_id=428286430 instance=ExtResource("3_f5s7o")]
+position = Vector2(897, -112)
+
+[node name="Area2D7" parent="bad" unique_id=870561310 instance=ExtResource("3_f5s7o")]
+position = Vector2(743, -288)
+
+[node name="Area2D8" parent="bad" unique_id=275960980 instance=ExtResource("3_f5s7o")]
+position = Vector2(589, -288)
+
+[node name="Area2D9" parent="bad" unique_id=646688157 instance=ExtResource("3_f5s7o")]
+position = Vector2(573, -466)
+
+[node name="Area2D10" parent="bad" unique_id=2111168889 instance=ExtResource("3_f5s7o")]
+position = Vector2(419, -466)
+
+[node name="Area2D11" parent="bad" unique_id=476823417 instance=ExtResource("3_f5s7o")]
+position = Vector2(249, -753)
+
+[node name="Area2D12" parent="bad" unique_id=270440937 instance=ExtResource("3_f5s7o")]
+position = Vector2(95, -753)
+
+[node name="Area2D13" parent="bad" unique_id=1604949633 instance=ExtResource("3_f5s7o")]
+position = Vector2(754, -753)
+
+[node name="Area2D14" parent="bad" unique_id=1043315226 instance=ExtResource("3_f5s7o")]
+position = Vector2(600, -753)
+
+[node name="Area2D15" parent="bad" unique_id=12795128 instance=ExtResource("3_f5s7o")]
+position = Vector2(1094, -753)
+
+[node name="Area2D16" parent="bad" unique_id=907465778 instance=ExtResource("3_f5s7o")]
+position = Vector2(940, -753)
+
+[node name="Area2D17" parent="bad" unique_id=941233326 instance=ExtResource("3_f5s7o")]
+position = Vector2(1430, -753)
+
+[node name="Area2D18" parent="bad" unique_id=662270 instance=ExtResource("3_f5s7o")]
+position = Vector2(1276, -753)
+
+[node name="good" type="Node2D" parent="." unique_id=1855166641]
+
+[node name="Area2D3" parent="good" unique_id=1943727872 instance=ExtResource("3_f5s7o")]
+position = Vector2(134, 278)
+
+[node name="Area2D4" parent="good" unique_id=1329378652 instance=ExtResource("3_f5s7o")]
+position = Vector2(362, 268)
+
+[node name="Area2D5" parent="good" unique_id=1364070552 instance=ExtResource("3_f5s7o")]
+position = Vector2(731, 77)
+
+[node name="Area2D14" parent="good" unique_id=595752210 instance=ExtResource("3_f5s7o")]
+position = Vector2(134, -935)
+
+[node name="Area2D15" parent="good" unique_id=428012488 instance=ExtResource("3_f5s7o")]
+position = Vector2(362, -945)
+
+[node name="Area2D16" parent="good" unique_id=798269274 instance=ExtResource("3_f5s7o")]
+position = Vector2(731, -1136)
+
+[node name="Area2D6" parent="good" unique_id=306589907 instance=ExtResource("3_f5s7o")]
+position = Vector2(892, 77)
+
+[node name="Area2D7" parent="good" unique_id=806630642 instance=ExtResource("3_f5s7o")]
+position = Vector2(1048, 77)
+
+[node name="Area2D8" parent="good" unique_id=2026192954 instance=ExtResource("3_f5s7o")]
+position = Vector2(407, -104)
+
+[node name="Area2D9" parent="good" unique_id=128515647 instance=ExtResource("3_f5s7o")]
+position = Vector2(568, -104)
+
+[node name="Area2D10" parent="good" unique_id=1679527848 instance=ExtResource("3_f5s7o")]
+position = Vector2(724, -104)
+
+[node name="Area2D11" parent="good" unique_id=417812839 instance=ExtResource("3_f5s7o")]
+position = Vector2(130, -284)
+
+[node name="Area2D12" parent="good" unique_id=1611261486 instance=ExtResource("3_f5s7o")]
+position = Vector2(291, -284)
+
+[node name="Area2D13" parent="good" unique_id=1393060343 instance=ExtResource("3_f5s7o")]
+position = Vector2(447, -284)
+
+[node name="HUD" type="Node" parent="." unique_id=1898901099]
+
+[node name="ColorRect" type="ColorRect" parent="HUD" unique_id=796293478]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -64.0
+offset_right = 40.0
+offset_bottom = -24.0
+grow_vertical = 0
+scale = Vector2(9.045179, 1.9958302)
+color = Color(0.27460337, 0.27460337, 0.27460337, 1)
+
+[node name="Node" type="Node" parent="HUD" unique_id=153206774]
+
+[node name="Sprite2D" type="Sprite2D" parent="HUD/Node" unique_id=1211022027]
+position = Vector2(56, 617)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_aq3dq")
+
+[node name="Sprite2D2" type="Sprite2D" parent="HUD/Node" unique_id=1274524673]
+position = Vector2(190, 622)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_aq3dq")
+
+[node name="Sprite2D3" type="Sprite2D" parent="HUD/Node" unique_id=303985046]
+position = Vector2(312, 624)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_aq3dq")

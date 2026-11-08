@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b16j1rimhlsfe"]
+
+[ext_resource type="Script" uid="uid://cn0sa866msrxp" path="res://Minigry_new/finishable.gd" id="1_ki30f"]
+[ext_resource type="PackedScene" uid="uid://dyj5ri4qb3o7p" path="res://Minigry_new/game4/do_not_look/nota_cooking_game.tscn" id="2_oj18q"]
+
+[node name="Cooking" type="Node" unique_id=1714106680]
+script = ExtResource("1_ki30f")
+
+[node name="NotaCookingGame" parent="." unique_id=24237833 instance=ExtResource("2_oj18q")]
