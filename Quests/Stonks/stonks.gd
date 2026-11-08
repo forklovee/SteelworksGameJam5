@@ -2,7 +2,7 @@ extends MiniGame
 
 var positive
 var negative
-var time: float = 19.0
+var time: float = 26.0
 var time_now: float = time
 var tag_array: Array[String]
 var stop: bool = false
@@ -19,8 +19,8 @@ func _ready() -> void:
 		stonk.set_value(tag_array.pop_back())
 	for stonk in negative:
 		stonk.set_value(tag_array.pop_back())
-		
-	$Timer.timeout.connect(update_stonks)
+	
+	start_timer()
 	$Control/Panel/Button.pressed.connect(restart)
 
 func _process(delta: float) -> void:
@@ -35,6 +35,14 @@ func _process(delta: float) -> void:
 		check_results()
 		stop = true
 
+func start_timer():
+	var timer = Timer.new()
+	timer.wait_time = 2.0
+	timer.one_shot = false
+	add_child(timer)
+	timer.timeout.connect(update_stonks)
+	timer.start()
+
 func start():
 	super()
 
@@ -42,13 +50,16 @@ func check_results():
 	for stonk in positive:
 		if stonk.stock_value < 0.0:
 			$Control.show()
-			stop = false
+			for child in get_children():
+				if child is Timer:
+					child.queue_free()
 			return
-			
 	for stonk in negative:
 		if stonk.stock_value >= 0.0:
 			$Control.show()
-			stop = false
+			for child in get_children():
+				if child is Timer:
+					child.queue_free()
 			return
 	
 	$Control2.show()
@@ -69,6 +80,9 @@ func restart():
 	for stonk in negative:
 		stonk.value_set = false
 		stonk.set_value(tag_array.pop_back())
+		
+	stop = false
+	start_timer()
 
 func generate_array(x: int) -> Array[String]:
 	var result: Array[String] = []
