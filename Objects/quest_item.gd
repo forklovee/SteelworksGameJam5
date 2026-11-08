@@ -3,8 +3,8 @@ extends Area2D
 var is_active: bool = false
 var minigame: String
 
-var stonks: PackedScene = preload("res://Ty/minigames/game_1/angry_pot.tscn")
-var gotowanie: PackedScene = preload("res://Ty/minigames/game_1/angry_pot.tscn")
+var stonks: PackedScene = preload("res://Quests/Stonks/stonks.tscn")
+var gotowanie: PackedScene = preload("res://Minigry_new/game4/cooking.tscn")
 var umowy: PackedScene = preload("res://Ty/minigames/contract_change/contract_change.tscn")
 var bank: PackedScene = preload("res://Ty/minigames/game_1/angry_pot.tscn")
 
@@ -22,7 +22,7 @@ func _input_event(_viewport, event, _shape_idx):
 			match minigame:
 				"Stonks":
 					game = stonks.instantiate()
-					game.game_ended.connect(minigame_done.bind(ResourceLoader.load("res://Quests/bank.tres")))
+					game.finished.connect(minigame_done.bind(ResourceLoader.load("res://Quests/bank.tres")))
 				"Gotowanie":
 					game = gotowanie.instantiate()
 					game.finish.connect(outro)
@@ -31,7 +31,7 @@ func _input_event(_viewport, event, _shape_idx):
 					game.finished.connect(minigame_done.bind(ResourceLoader.load("res://Quests/stonks.tres")))
 				"Bank":
 					game = bank.instantiate()
-					game.game_ended.connect(minigame_done.bind(ResourceLoader.load("res://Quests/gotowanie.tres")))
+					game.finished.connect(minigame_done.bind(ResourceLoader.load("res://Quests/gotowanie.tres")))
 			
 			var minigame_container := get_tree().current_scene.get_node("MinigameContainer")
 			minigame_container.add_child(game)

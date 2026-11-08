@@ -1,0 +1,359 @@
+[gd_scene format=3 uid="uid://b55yabmdnttv3"]
+
+[ext_resource type="Script" uid="uid://d3r3s4sq8nfmj" path="res://Quests/Stonks/stonks.gd" id="1_xsl8o"]
+[ext_resource type="FontFile" uid="uid://dvd5mbtf11li2" path="res://Fonts/PixelifySans/PixelifySans-VariableFont_wght.ttf" id="2_6u24d"]
+[ext_resource type="PackedScene" uid="uid://66ic14m42t5a" path="res://Quests/Stonks/stonk.tscn" id="3_6xbwp"]
+
+[sub_resource type="Gradient" id="Gradient_6u24d"]
+colors = PackedColorArray(0.18000486, 0.18000486, 0.18000486, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dhxmx"]
+gradient = SubResource("Gradient_6u24d")
+width = 1
+
+[sub_resource type="Theme" id="Theme_xsl8o"]
+Label/fonts/font = ExtResource("2_6u24d")
+
+[sub_resource type="Gradient" id="Gradient_6xbwp"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6xbwp"]
+gradient = SubResource("Gradient_6xbwp")
+width = 1
+
+[sub_resource type="Gradient" id="Gradient_6a150"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6a150"]
+gradient = SubResource("Gradient_6a150")
+width = 1
+
+[sub_resource type="Gradient" id="Gradient_kun6w"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_kun6w"]
+gradient = SubResource("Gradient_kun6w")
+width = 1
+
+[sub_resource type="Gradient" id="Gradient_tvpuw"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tvpuw"]
+gradient = SubResource("Gradient_tvpuw")
+width = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6xbwp"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.92941177, 0.7294118, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6xbwp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6a150"]
+bg_color = Color(0.19793725, 0.19793722, 0.19793722, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.92941177, 0.7294118, 0, 1)
+
+[node name="Stonks" type="Node" unique_id=1737872899]
+script = ExtResource("1_xsl8o")
+metadata/_custom_type_script = "uid://rtlmxb86fdh3"
+
+[node name="Timer" type="Timer" parent="." unique_id=426278443]
+wait_time = 5.0
+autostart = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=324769192]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_dhxmx")
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=637332895]
+custom_minimum_size = Vector2(400, 0)
+offset_left = 122.0
+offset_top = 28.0
+offset_right = 522.0
+offset_bottom = 77.0
+theme_override_fonts/normal_font = ExtResource("2_6u24d")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[color=55ab00]Lewy[/color] myszek dodaje [color=55ab00]zielone[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Label2" type="RichTextLabel" parent="." unique_id=1991251267]
+custom_minimum_size = Vector2(400, 0)
+offset_left = 626.0
+offset_top = 28.0
+offset_right = 1026.0
+offset_bottom = 77.0
+theme_override_fonts/normal_font = ExtResource("2_6u24d")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[color=eb0049]Prawy[/color] myszek odejmuje [color=eb0049]czerwone[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=627722385]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -250.0
+offset_right = 500.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_xsl8o")
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1899130470]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1008551646]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3325829, 0.67007, 3.85046e-07, 1)
+theme_override_font_sizes/font_size = 32
+text = "Antoni Stonks"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/VBoxContainer" unique_id=666039175]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer/VBoxContainer" unique_id=349435926]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 3
+
+[node name="Stonk" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=2070445457 groups=["stonk_positive"] instance=ExtResource("3_6xbwp")]
+layout_mode = 2
+
+[node name="Stonk2" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=1193595603 groups=["stonk_positive"] instance=ExtResource("3_6xbwp")]
+layout_mode = 2
+
+[node name="Stonk3" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=1548736406 groups=["stonk_positive"] instance=ExtResource("3_6xbwp")]
+layout_mode = 2
+
+[node name="Stonk4" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=1326320363 groups=["stonk_positive"] instance=ExtResource("3_6xbwp")]
+layout_mode = 2
+
+[node name="Stonk5" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=1106905324 groups=["stonk_positive"] instance=ExtResource("3_6xbwp")]
+layout_mode = 2
+
+[node name="Stonk6" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=1181248238 groups=["stonk_positive"] instance=ExtResource("3_6xbwp")]
+layout_mode = 2
+
+[node name="Stonk7" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=1463145934 groups=["stonk_positive"] instance=ExtResource("3_6xbwp")]
+layout_mode = 2
+
+[node name="Stonk8" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=1005735550 groups=["stonk_positive"] instance=ExtResource("3_6xbwp")]
+layout_mode = 2
+
+[node name="Stonk9" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=771249082 groups=["stonk_positive"] instance=ExtResource("3_6xbwp")]
+layout_mode = 2
+
+[node name="HSeparator" type="VSeparator" parent="HBoxContainer" unique_id=1845673175]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer" unique_id=1016516357]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=1815338833]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92069346, 0, 0.28510514, 1)
+theme_override_font_sizes/font_size = 32
+text = "Nie Antoni Stonks"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/VBoxContainer2" unique_id=633559716]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer/VBoxContainer2" unique_id=1445083849]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 3
+
+[node name="Stonk" parent="HBoxContainer/VBoxContainer2/GridContainer" unique_id=1592942548 groups=["stonk_negative"] instance=ExtResource("3_6xbwp")]
+layout_mode = 2
+
+[node name="Stonk2" parent="HBoxContainer/VBoxContainer2/GridContainer" unique_id=804050388 groups=["stonk_negative"] instance=ExtResource("3_6xbwp")]
+layout_mode = 2
+
+[node name="Stonk3" parent="HBoxContainer/VBoxContainer2/GridContainer" unique_id=649345979 groups=["stonk_negative"] instance=ExtResource("3_6xbwp")]
+layout_mode = 2
+
+[node name="Stonk4" parent="HBoxContainer/VBoxContainer2/GridContainer" unique_id=980071849 groups=["stonk_negative"] instance=ExtResource("3_6xbwp")]
+layout_mode = 2
+
+[node name="Stonk5" parent="HBoxContainer/VBoxContainer2/GridContainer" unique_id=688824349 groups=["stonk_negative"] instance=ExtResource("3_6xbwp")]
+layout_mode = 2
+
+[node name="Stonk6" parent="HBoxContainer/VBoxContainer2/GridContainer" unique_id=409212021 groups=["stonk_negative"] instance=ExtResource("3_6xbwp")]
+layout_mode = 2
+
+[node name="Stonk7" parent="HBoxContainer/VBoxContainer2/GridContainer" unique_id=930847616 groups=["stonk_negative"] instance=ExtResource("3_6xbwp")]
+layout_mode = 2
+
+[node name="Stonk8" parent="HBoxContainer/VBoxContainer2/GridContainer" unique_id=1288031922 groups=["stonk_negative"] instance=ExtResource("3_6xbwp")]
+layout_mode = 2
+
+[node name="Stonk9" parent="HBoxContainer/VBoxContainer2/GridContainer" unique_id=394078842 groups=["stonk_negative"] instance=ExtResource("3_6xbwp")]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="." unique_id=356407222]
+modulate = Color(1.4954206, 0.9565698, 0, 1)
+custom_minimum_size = Vector2(200, 40)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -16.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_icons/grabber = SubResource("GradientTexture1D_6xbwp")
+theme_override_icons/grabber_highlight = SubResource("GradientTexture1D_6a150")
+theme_override_icons/grabber_disabled = SubResource("GradientTexture1D_kun6w")
+theme_override_icons/tick = SubResource("GradientTexture1D_tvpuw")
+max_value = 30.0
+step = 0.1
+value = 30.0
+editable = false
+scrollable = false
+
+[node name="Label3" type="Label" parent="." unique_id=1738953403]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(200, -5)
+offset_transform_visual_only = false
+theme_override_colors/font_color = Color(0.93, 0.72849995, 0, 1)
+theme_override_fonts/font = ExtResource("2_6u24d")
+theme_override_font_sizes/font_size = 32
+text = "60s"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="." unique_id=1890603656]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="Control" unique_id=1901251470]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control/Panel" unique_id=83211612]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -138.0
+offset_top = -38.5
+offset_right = 138.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -50)
+theme_override_colors/font_color = Color(0.92941177, 0.7294118, 0, 1)
+theme_override_fonts/font = ExtResource("2_6u24d")
+theme_override_font_sizes/font_size = 64
+text = "Za wolno!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Control/Panel" unique_id=1531040980]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -25.0
+offset_right = 100.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 50)
+offset_transform_visual_only = false
+theme_override_fonts/font = ExtResource("2_6u24d")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_6xbwp")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6xbwp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6a150")
+text = "Restart"
+
+[node name="Control2" type="Control" parent="." unique_id=1551063783]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="Control2" unique_id=958075071]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control2/Panel" unique_id=705446944]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -138.0
+offset_top = -38.5
+offset_right = 138.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_position = Vector2(0, -50)
+theme_override_colors/font_color = Color(0.92941177, 0.7294118, 0, 1)
+theme_override_fonts/font = ExtResource("2_6u24d")
+theme_override_font_sizes/font_size = 64
+text = "Antoni jest zadowolony"
+horizontal_alignment = 1
+vertical_alignment = 1

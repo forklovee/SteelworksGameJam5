@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://66ic14m42t5a"]
+
+[ext_resource type="FontFile" uid="uid://dvd5mbtf11li2" path="res://Fonts/PixelifySans/PixelifySans-VariableFont_wght.ttf" id="1_d07ys"]
+[ext_resource type="Script" uid="uid://dhlkdi4w8okjb" path="res://Quests/Stonks/stonk.gd" id="1_vhf42"]
+
+[sub_resource type="Gradient" id="Gradient_ra0if"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ra0if"]
+gradient = SubResource("Gradient_ra0if")
+width = 1
+
+[node name="Stonk" type="TextureRect" unique_id=2070445457]
+custom_minimum_size = Vector2(120, 120)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -10.0
+offset_right = -1042.0
+offset_bottom = -538.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_ra0if")
+script = ExtResource("1_vhf42")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1128510021]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1705766295]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d07ys")
+theme_override_font_sizes/font_size = 30
+text = "STONK"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer" unique_id=77577403]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d07ys")
+theme_override_font_sizes/font_size = 20
+text = "+16.66%"
+horizontal_alignment = 1

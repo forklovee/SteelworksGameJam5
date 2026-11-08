@@ -8,8 +8,8 @@ id = "gotowanie"
 boss_title = "Zamiana umów"
 boss_message = "Hejka! Musimy trochę obciąć wydatki, możesz poszukać jakiś rozwiązań? Zapytaj czada gpt mordeczko!"
 player_message = "Czy mamy jakieś możliwości obcięcia wydatków w firmie? Wyszukaj wszystkie możliwości."
-gpt_message = "Udało mi się znaleźć kilka rażących problemów z optymalizacją budżetu firmowego, ale wygląda na to, że nieprawidłowa forma umów jest prawdziwym problemem.
-Wydatki firmowe za bardzo obejmują składki pracowników, aby je zminimalizować, [color=#e82ae8]zamień umowy o pracę na umowy o dzieło lub b2b[/color]. W ten sposób, firma zaoszczędzi na odprowadzanych składkach. To nie jest jedynie zwykła zmiana nazwy umowy, to rewolucja budżetowa!"
+gpt_message = "Udało mi się znaleźć kilka rażących problemów z optymalizacją budżetu firmowego, ale wygląda na to, że [color=#e82ae8]nieprawidłowa forma umów[/color] jest prawdziwym problemem.
+Wydatki firmowe za bardzo obejmują składki pracowników, aby je zminimalizować, [color=#e82ae8]zamień umowy o pracę na umowy o dzieło lub b2b[/color]. W ten sposób, firma zaoszczędzi na odprowadzanych składkach. To nie jest jedynie zwykła zmiana nazwy umowy, [color=#e82ae8]to rewolucja budżetowa![/color]"
 gpt_delay = 3.0
 item_group = "Umowy"
 metadata/_custom_type_script = "uid://ct73pqebfwt1r"

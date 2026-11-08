@@ -30,6 +30,11 @@ window/vsync/vsync_mode=0
 
 project/assembly_name="CrazyInternBullshit"
 
+[global_group]
+
+stonk_positive=""
+stonk_negative=""
+
 [gui]
 
 common/snap_controls_to_pixels=false
