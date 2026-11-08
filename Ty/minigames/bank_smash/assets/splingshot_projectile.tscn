@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cq2l4m4vd8cvp"]
+
+[ext_resource type="Texture2D" uid="uid://v1oxjjyl4aoh" path="res://Ty/minigames/bank_smash/Sprites/kamien.png" id="1_fw484"]
+
+[node name="Kamien" type="Node2D" unique_id=355652108]
+scale = Vector2(1.8, 1.8)
+
+[node name="Kamien" type="Sprite2D" parent="." unique_id=375643600]
+texture = ExtResource("1_fw484")

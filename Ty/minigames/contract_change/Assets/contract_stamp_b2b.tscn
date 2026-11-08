@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://b5jbxckimqjdh"]
 
 [ext_resource type="Script" uid="uid://dua6ypdw8rhwy" path="res://Ty/minigames/contract_change/contract_change_stamp.gd" id="1_2bk5g"]
-[ext_resource type="Texture2D" uid="uid://pxxjuonl16nx" path="res://Ty/minigames/contract_change/Sprites/Component 4.png" id="2_rfiya"]
+[ext_resource type="Texture2D" uid="uid://dlorfgmudo1b" path="res://Ty/minigames/contract_change/Sprites/stempel_podstawa_green.png" id="2_4ritl"]
+[ext_resource type="Texture2D" uid="uid://cuoxs80q8l4w8" path="res://Ty/minigames/contract_change/Sprites/b2bstempel.png" id="2_axef2"]
 [ext_resource type="AudioStream" uid="uid://mhmcvbl885va" path="res://Ty/minigames/contract_change/Sounds/ralsei-splat.mp3" id="3_axef2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b6lhr"]
@@ -19,10 +20,22 @@ type = 0
 position = Vector2(-7.6293945e-06, 0)
 shape = SubResource("RectangleShape2D_b6lhr")
 
+[node name="StempelPodstawaGreen" type="Sprite2D" parent="." unique_id=202927861]
+position = Vector2(0.100000024, 6.6997247)
+scale = Vector2(0.085, 0.085)
+texture = ExtResource("2_4ritl")
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1792343585]
 position = Vector2(-0.05000426, -1.1920929e-07)
 scale = Vector2(0.06680499, 0.112582564)
-texture = ExtResource("2_rfiya")
+texture = ExtResource("2_axef2")
+
+[node name="Label" type="Label" parent="Sprite2D" unique_id=1177787940]
+offset_left = -15.717325
+offset_top = 48.547173
+offset_right = 24.282675
+offset_bottom = 71.54717
+text = "B2B"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=660047248]
 stream = ExtResource("3_axef2")
