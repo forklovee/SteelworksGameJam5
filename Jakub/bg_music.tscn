@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://bu6lcbhluoorp"]
+
+[ext_resource type="AudioStream" uid="uid://dl7j3ev5qhu85" path="res://Audio/Music/cinema_default.ogg" id="1_gxhm5"]
+[ext_resource type="AudioStream" uid="uid://d1v3upxfcx2xl" path="res://Audio/Music/cinema_cooking.ogg" id="2_0cgv1"]
+[ext_resource type="AudioStream" uid="uid://14jnqnukp8j2" path="res://Audio/Music/cinema_chase.ogg" id="3_bj0qj"]
+[ext_resource type="AudioStream" uid="uid://c737mb3hlqwc1" path="res://Audio/Music/cinema_papers.ogg" id="4_pku2a"]
+[ext_resource type="AudioStream" uid="uid://b2p4ecbsymoxt" path="res://Audio/Music/cinema_stocks.ogg" id="5_y7efq"]
+[ext_resource type="Script" uid="uid://b6rrqdbr8tmx8" path="res://Jakub/bg_music.gd" id="6_0cgv1"]
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_dxoup"]
+clip_count = 5
+clip_0/name = &"Office"
+clip_0/stream = ExtResource("1_gxhm5")
+clip_0/auto_advance = 0
+clip_1/name = &"Cooking"
+clip_1/stream = ExtResource("2_0cgv1")
+clip_1/auto_advance = 0
+clip_2/name = &"Bank"
+clip_2/stream = ExtResource("3_bj0qj")
+clip_2/auto_advance = 0
+clip_3/name = &"Papers"
+clip_3/stream = ExtResource("4_pku2a")
+clip_3/auto_advance = 0
+clip_4/name = &"Stocks"
+clip_4/stream = ExtResource("5_y7efq")
+clip_4/auto_advance = 0
+_transitions = {
+Vector2i(-1, 0): {
+"fade_beats": 1.0,
+"fade_mode": 3,
+"from_time": 0,
+"to_time": 0
+},
+Vector2i(0, -1): {
+"fade_beats": 1.0,
+"fade_mode": 3,
+"from_time": 0,
+"to_time": 0
+}
+}
+
+[node name="BGMusic" type="AudioStreamPlayer" unique_id=307622772]
+stream = SubResource("AudioStreamInteractive_dxoup")
+volume_db = -7.0
+bus = &"Music"
+script = ExtResource("6_0cgv1")
+debug = true
+
+[node name="DebugMenu" type="CanvasLayer" parent="." unique_id=9114595]
+visible = false
+
+[node name="MarginContainer" type="MarginContainer" parent="DebugMenu" unique_id=418431443]
+offset_right = 113.0
+offset_bottom = 173.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DebugMenu/MarginContainer" unique_id=1790145179]
+layout_mode = 2
+theme_override_constants/separation = 9
+
+[node name="StartButton" type="Button" parent="DebugMenu/MarginContainer/VBoxContainer" unique_id=1988706902]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 12
+text = "Start Music"
+
+[node name="OfficeButton" type="Button" parent="DebugMenu/MarginContainer/VBoxContainer" unique_id=2006642727]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 12
+text = "Office BGM"
+
+[node name="CookingButton" type="Button" parent="DebugMenu/MarginContainer/VBoxContainer" unique_id=996649538]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 12
+text = "Cooking BGM"
+
+[node name="BankButton" type="Button" parent="DebugMenu/MarginContainer/VBoxContainer" unique_id=235579593]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 12
+text = "Bank BGM"
+
+[node name="PapersButton" type="Button" parent="DebugMenu/MarginContainer/VBoxContainer" unique_id=2020940339]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 12
+text = "Papers BGM"
+
+[node name="StocksButton" type="Button" parent="DebugMenu/MarginContainer/VBoxContainer" unique_id=1535471777]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 12
+text = "Stocks BGM"
