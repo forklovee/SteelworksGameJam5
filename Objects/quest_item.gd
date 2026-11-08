@@ -23,21 +23,27 @@ func _input_event(_viewport, event, _shape_idx):
 				"Stonks":
 					game = stonks.instantiate()
 					game.finished.connect(minigame_done.bind(ResourceLoader.load("res://Quests/bank.tres")))
+					BgMusic.stocks()
 				"Gotowanie":
 					game = gotowanie.instantiate()
 					game.finish.connect(outro)
+					BgMusic.cooking()
 				"Umowy":
 					game = umowy.instantiate()
 					game.finished.connect(minigame_done.bind(ResourceLoader.load("res://Quests/stonks.tres")))
+					BgMusic.papers()
 				"Bank":
 					game = bank.instantiate()
 					game.finished.connect(minigame_done.bind(ResourceLoader.load("res://Quests/gotowanie.tres")))
+					BgMusic.bank()
+				
 			
 			var minigame_container := get_tree().current_scene.get_node("MinigameContainer")
 			minigame_container.add_child(game)
 			minigame_container.show()
 
 func minigame_done(game: MiniGame, next_quest: Quest) -> void:
+	BgMusic.office()
 	var minigame_container := get_tree().current_scene.get_node("MinigameContainer")
 	minigame_container.hide()
 	$"../../UI".show()

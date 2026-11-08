@@ -41,8 +41,7 @@ Vector2i(0, -1): {
 
 [node name="BGMusic" type="AudioStreamPlayer" unique_id=307622772]
 stream = SubResource("AudioStreamInteractive_dxoup")
-volume_db = -7.0
-bus = &"Music"
+volume_db = -20.0
 script = ExtResource("6_0cgv1")
 debug = true
 

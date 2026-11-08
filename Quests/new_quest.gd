@@ -15,7 +15,7 @@ func new_quest(quest_resource: Resource) -> void:
 	quest = quest_resource
 	tablet.hover_disabled = true
 	toast.show_boss_message("Re: " + quest.boss_title, quest.boss_message)
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(5.0).timeout
 	
 	tablet.show_tablet()
 	await get_tree().create_timer(0.5).timeout
@@ -23,7 +23,7 @@ func new_quest(quest_resource: Resource) -> void:
 	await get_tree().create_timer(2.0 + 2.0 * quest.player_message.length() * 0.01).timeout
 	
 	tablet.gpt_message(quest.gpt_message, quest.gpt_delay)
-	await get_tree().create_timer(1.0 + 2.0 * quest.gpt_message.length() * 0.005 + quest.gpt_delay).timeout
+	await get_tree().create_timer(1.0 + 2.0 * quest.gpt_message.length() * 0.01 + quest.gpt_delay).timeout
 	
 	toast.hide_boss_message()
 	tablet.hide_tablet()
