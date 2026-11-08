@@ -23,8 +23,11 @@ func start(game_camera:Camera2D,_on_win:Callable,game:MiniGameResource,d=null):
 	on_win=_on_win
 	camera_from=game_camera.transform
 	if d!=null:
-		var s:Sprite2D=d["Pot"]
-		camera_from=camera_from.translated($GamePot.global_position-s.global_position)
+		var s:Node2D=d["Pot"]
+		var c:Camera2D=d["Camera"]
+		camera_from=Transform2D.IDENTITY.translated(
+			$GamePot.global_position-s.global_position).translated(c.global_position)
+		#camera_from.translated($GamePot.global_position-s.global_position)
 	game_camera_ref=game_camera
 	game_ref=game
 	t=0.0

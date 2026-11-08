@@ -16,7 +16,7 @@ func _ready() -> void:
 		rocks_times=meteor_game.rock_times.duplicate()
 
 var on_win:Callable
-func start(game_camera:Camera2D,_on_win:Callable,game:MiniGameResource):
+func start(game_camera:Camera2D,_on_win:Callable,game:MiniGameResource,d=null):
 	playing=true
 	on_win=_on_win
 	t=0.0

@@ -6,8 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://dldnfyen8os32" path="res://Ty/CoderArt_tmp/enviro_pot.png" id="4_ol1co"]
 [ext_resource type="Script" uid="uid://du0gbaou57l7l" path="res://Ty/Minigame_sandbox_tmp/enviro_pot.gd" id="5_mdpjc"]
 [ext_resource type="Resource" uid="uid://ccq4bxmsesp77" path="res://Ty/minigames/minigame_resource/angry_pot1.tres" id="6_0j8h8"]
+[ext_resource type="Script" uid="uid://bbtuodtvo5lq1" path="res://Ty/minigames/minigame_resource/AngryPotResource.gd" id="7_kr01m"]
 [ext_resource type="Resource" uid="uid://q7gr2sp1s4mt" path="res://Ty/minigames/minigame_resource/meteor1.tres" id="7_qouca"]
 [ext_resource type="PackedScene" uid="uid://bthwh1yruypok" path="res://Ty/Minigame_sandbox_tmp/mini_game_system.tscn" id="8_go62f"]
+
+[sub_resource type="Resource" id="Resource_go62f"]
+script = ExtResource("7_kr01m")
+backgound_color = Color(0.5771157, 0.6964435, 3.85046e-07, 1)
+metadata/_custom_type_script = "uid://bbtuodtvo5lq1"
 
 [node name="TmpTest" type="Node" unique_id=111779941]
 
@@ -74,14 +80,29 @@ texture = ExtResource("4_ol1co")
 script = ExtResource("5_mdpjc")
 minigame = ExtResource("6_0j8h8")
 minigame_transform_input = {
+"Camera": NodePath("../Camera2D"),
 "Pot": NodePath(".")
 }
 
-[node name="EnviroPot2" type="Sprite2D" parent="." unique_id=2071519899]
+[node name="EnviroPot2" type="Sprite2D" parent="." unique_id=2071519899 node_paths=PackedStringArray("minigame_transform_input")]
 position = Vector2(1918, 271)
 scale = Vector2(4.71875, 5.25)
 texture = ExtResource("4_ol1co")
 script = ExtResource("5_mdpjc")
+minigame = SubResource("Resource_go62f")
+minigame_transform_input = {
+"Camera": NodePath("../Camera2D"),
+"Pot": NodePath(".")
+}
+
+[node name="EnviroPot3" type="Sprite2D" parent="." unique_id=420776184 node_paths=PackedStringArray("minigame_transform_input")]
+position = Vector2(2153, 293)
+scale = Vector2(4.71875, 5.25)
+texture = ExtResource("4_ol1co")
+script = ExtResource("5_mdpjc")
 minigame = ExtResource("7_qouca")
+minigame_transform_input = {
+"Pot": NodePath("../EnviroPot2")
+}
 
 [node name="MiniGameSystem" parent="." unique_id=825669390 instance=ExtResource("8_go62f")]

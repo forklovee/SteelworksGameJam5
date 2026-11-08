@@ -11,7 +11,7 @@ var pgame
 var on_win:Callable
 var t=0.0
 
-func start(game_camera:Camera2D,_on_win:Callable,game:MiniGameResource):
+func start(game_camera:Camera2D,_on_win:Callable,game:MiniGameResource,d=null):
 	playing=true
 	on_win=_on_win
 	t=0.0
