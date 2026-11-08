@@ -4,4 +4,4 @@ class_name MeteorGameResource
 @export var rock_times:Array[float]
 
 func get_game_type():
-	return MiniGameResource.GameType.METEOR
+	return MiniGameResource.GameType.Meteor

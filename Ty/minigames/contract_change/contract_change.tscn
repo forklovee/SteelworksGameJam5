@@ -1,0 +1,221 @@
+[gd_scene format=3 uid="uid://lcxhlai1rs6i"]
+
+[ext_resource type="Script" uid="uid://clbbifxgoeony" path="res://Ty/minigames/contract_change/contract_change_minigame.gd" id="1_5pav4"]
+[ext_resource type="Texture2D" uid="uid://7bm83ywhglhl" path="res://icon.svg" id="2_n6n0a"]
+[ext_resource type="PackedScene" uid="uid://b5jbxckimqjdh" path="res://Ty/minigames/contract_change/Assets/contract_stamp_b2b.tscn" id="3_1phw2"]
+[ext_resource type="PackedScene" uid="uid://dd3cp5jkx3f1p" path="res://Ty/minigames/contract_change/Assets/contract_stamp_creation.tscn" id="4_36p5s"]
+[ext_resource type="Script" uid="uid://d248raa1ifx52" path="res://Ty/minigames/contract_change/average_salary_display.gd" id="4_r1m70"]
+[ext_resource type="FontFile" uid="uid://derxpqla5llv5" path="res://Fonts/LCDWinTT/LCD2U___.TTF" id="5_g0g72"]
+[ext_resource type="Script" uid="uid://n4ewnrmnr5ai" path="res://Ty/minigames/contract_change/contract_container.gd" id="5_r1m70"]
+[ext_resource type="FontFile" uid="uid://crnjqckk17rja" path="res://Fonts/liberation_serif/LiberationSerif-Regular.ttf" id="6_g0g72"]
+
+[sub_resource type="Gradient" id="Gradient_1phw2"]
+colors = PackedColorArray(0.8172098, 0.8172098, 0.8172097, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_b6lhr"]
+gradient = SubResource("Gradient_1phw2")
+
+[sub_resource type="Gradient" id="Gradient_kde54"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_33ajk"]
+gradient = SubResource("Gradient_kde54")
+
+[sub_resource type="LabelSettings" id="LabelSettings_sym8q"]
+font = ExtResource("5_g0g72")
+font_size = 44
+font_color = Color(0, 0.16862746, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1phw2"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_g0g72"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_33ajk"]
+size = Vector2(417, 558)
+
+[node name="ContractChange" type="Node" unique_id=835200061]
+script = ExtResource("1_5pav4")
+metadata/_custom_type_script = "uid://rtlmxb86fdh3"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1380371054]
+anchor_mode = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=952958860]
+self_modulate = Color(0.41726208, 0.13463335, 0.0062819053, 1)
+position = Vector2(576, 318)
+scale = Vector2(10, 5.671875)
+texture = ExtResource("2_n6n0a")
+
+[node name="ContractContainer" type="Control" parent="." unique_id=469653184]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("5_r1m70")
+
+[node name="SpawnPoint" type="Control" parent="ContractContainer" unique_id=1127097940]
+anchors_preset = 0
+offset_left = -204.0
+offset_top = 77.0
+offset_right = -164.0
+offset_bottom = 117.0
+mouse_filter = 2
+
+[node name="CenterSlot" type="Control" parent="ContractContainer" unique_id=2117084434]
+anchors_preset = 0
+offset_left = 366.0
+offset_top = 14.95
+offset_right = 406.0
+offset_bottom = 54.949986
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="ContractContainer" unique_id=2128245590]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="AverageSalaryDisplay" type="Control" parent="ContractContainer" unique_id=1319300976]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -345.0
+offset_top = 19.0
+offset_right = -12.0
+offset_bottom = 145.0
+grow_horizontal = 0
+mouse_filter = 2
+script = ExtResource("4_r1m70")
+
+[node name="TextureRect" type="TextureRect" parent="ContractContainer/AverageSalaryDisplay" unique_id=987008070]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture1D_b6lhr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ContractContainer/AverageSalaryDisplay" unique_id=1994591184]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 10.0
+offset_right = -8.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="ContractContainer/AverageSalaryDisplay/VBoxContainer" unique_id=201730754]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="ContractContainer/AverageSalaryDisplay/VBoxContainer/Control" unique_id=965128216]
+self_modulate = Color(0.38039216, 0.62352943, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture1D_33ajk")
+
+[node name="AverageSalary" type="Label" parent="ContractContainer/AverageSalaryDisplay/VBoxContainer/Control" unique_id=434083619]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 20.0
+offset_right = -5.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "22222"
+label_settings = SubResource("LabelSettings_sym8q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AverageSalary2" type="Label" parent="ContractContainer/AverageSalaryDisplay/VBoxContainer/Control" unique_id=1285400228]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -9.0
+offset_right = -12.0
+offset_bottom = -47.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Średnie zarobki"
+label_settings = SubResource("LabelSettings_1phw2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContractContainer/AverageSalaryDisplay/VBoxContainer" unique_id=1169477800]
+visible = false
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="PlnSwitch" type="Button" parent="ContractContainer/AverageSalaryDisplay/VBoxContainer/HBoxContainer" unique_id=1219663247]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+mouse_filter = 2
+theme_override_fonts/font = ExtResource("6_g0g72")
+theme_override_font_sizes/font_size = 24
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_g0g72")
+text = "zł"
+
+[node name="DollarSwitch" type="Button" parent="ContractContainer/AverageSalaryDisplay/VBoxContainer/HBoxContainer" unique_id=1227589058]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+mouse_filter = 2
+theme_override_fonts/font = ExtResource("6_g0g72")
+theme_override_font_sizes/font_size = 24
+toggle_mode = true
+button_group = SubResource("ButtonGroup_g0g72")
+text = "$"
+
+[node name="EuroSwitch" type="Button" parent="ContractContainer/AverageSalaryDisplay/VBoxContainer/HBoxContainer" unique_id=1242899704]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+mouse_filter = 2
+theme_override_fonts/font = ExtResource("6_g0g72")
+theme_override_font_sizes/font_size = 24
+toggle_mode = true
+button_group = SubResource("ButtonGroup_g0g72")
+text = "€"
+
+[node name="StampB2B" parent="." unique_id=1531740062 instance=ExtResource("3_1phw2")]
+position = Vector2(986, 240)
+
+[node name="StampCreation" parent="." unique_id=40766977 instance=ExtResource("4_36p5s")]
+position = Vector2(987, 417)
+
+[node name="StampTarget" type="Area2D" parent="." unique_id=121345407]
+position = Vector2(561, 308)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StampTarget" unique_id=1497057216]
+position = Vector2(-1.5, 8)
+shape = SubResource("RectangleShape2D_33ajk")
+
+[connection signal="pressed" from="ContractContainer/AverageSalaryDisplay/VBoxContainer/HBoxContainer/PlnSwitch" to="ContractContainer/AverageSalaryDisplay" method="_on_pln_switch_pressed"]
+[connection signal="pressed" from="ContractContainer/AverageSalaryDisplay/VBoxContainer/HBoxContainer/DollarSwitch" to="ContractContainer/AverageSalaryDisplay" method="_on_dollar_switch_pressed"]
+[connection signal="pressed" from="ContractContainer/AverageSalaryDisplay/VBoxContainer/HBoxContainer/EuroSwitch" to="ContractContainer/AverageSalaryDisplay" method="_on_euro_switch_pressed"]
