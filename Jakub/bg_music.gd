@@ -3,6 +3,8 @@ extends AudioStreamPlayer
 @onready var debug_menu: CanvasLayer = $DebugMenu
 
 @export var debug: bool = false
+@export var fade_duration: float = 1.0
+@export var init_volume: float = -7.0
 
 var current_playing_clip_name: StringName
 
@@ -15,7 +17,11 @@ func _ready() -> void:
 	%StocksButton.pressed.connect(stocks)
 
 func start_music() -> void:
+	volume_db = -80.0
 	play()
+
+	var tween := create_tween()
+	tween.tween_property(self, "volume_db", -7.0, fade_duration).set_ease(tween.EASE_IN)
 
 func _switch_music(clip_name: StringName) -> void:
 	var playback := get_stream_playback() as AudioStreamPlaybackInteractive
