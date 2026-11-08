@@ -2,9 +2,23 @@
 
 [ext_resource type="Script" uid="uid://yfvlkwf0miw4" path="res://outro.gd" id="1_gm66w"]
 [ext_resource type="Texture2D" uid="uid://dc5ywbwxtn7yw" path="res://Minigry_new/arty/end_screen.png" id="2_ct0k0"]
+[ext_resource type="Texture2D" uid="uid://s37tl7neq5k1" path="res://Jakub/intro_images/cybertruc.png" id="2_sfw4x"]
 
 [node name="Outro" type="Node" unique_id=1692087937]
 script = ExtResource("1_gm66w")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1100718858]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8509804, 0.627451, 0.4, 1)
+
+[node name="Cybertruc" type="Sprite2D" parent="." unique_id=2004115594]
+position = Vector2(509.25003, 519.5)
+scale = Vector2(0.5890625, 0.45)
+texture = ExtResource("2_sfw4x")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1569891931]
 anchors_preset = 8
@@ -12,12 +26,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -286.0
-offset_top = -232.5
-offset_right = 286.0
-offset_bottom = 232.5
+offset_left = -486.0
+offset_top = -237.0
+offset_right = 516.0
+offset_bottom = 228.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 20
 text = "Odbyło się katastrofalne spotkanie z delegacją Bibify. Trzech z czterech gości trafiło do szpitala przez zatrucie pokarmowe, a czwarty złamał zęba przez kamienie w zupie. Oburzony Antoni wtargnął do pokoju stażysty.
 
 Antoni: Czy tobie rozum odjęło? KTO GOTUJE ZUPĘ Z KAMIENI I KLEJU?? TY BARANIE
