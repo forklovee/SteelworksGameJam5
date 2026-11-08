@@ -1,0 +1,227 @@
+[gd_scene format=3 uid="uid://cmj7rkqxqyrkv"]
+
+[ext_resource type="Script" uid="uid://b7ssv4v3rofg2" path="res://Ty/minigames/contract_change/contract_page.gd" id="1_n8uct"]
+[ext_resource type="FontFile" uid="uid://di330rjohhuhj" path="res://Fonts/liberation_serif/LiberationSerif-BoldItalic.ttf" id="2_sl1a2"]
+[ext_resource type="FontFile" uid="uid://bfrw2j2o7y3eu" path="res://Fonts/liberation_serif/LiberationSerif-Bold.ttf" id="3_2ljcx"]
+[ext_resource type="FontFile" uid="uid://crnjqckk17rja" path="res://Fonts/liberation_serif/LiberationSerif-Regular.ttf" id="4_n54gk"]
+
+[sub_resource type="Gradient" id="Gradient_xeo0s"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tkrlo"]
+gradient = SubResource("Gradient_xeo0s")
+
+[sub_resource type="LabelSettings" id="LabelSettings_rhcrp"]
+font = ExtResource("2_sl1a2")
+font_color = Color(1, 0.23529412, 0.16470589, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_b6lhr"]
+font = ExtResource("3_2ljcx")
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_x4wcb"]
+font = ExtResource("4_n54gk")
+font_size = 10
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_r1m70"]
+font = ExtResource("3_2ljcx")
+font_size = 10
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b6lhr"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.14150438, 0.14150438, 0.14150426, 1)
+expand_margin_left = 2.0
+expand_margin_top = 4.0
+expand_margin_right = 2.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_g0g72"]
+font = ExtResource("2_sl1a2")
+font_color = Color(0, 0, 0, 1)
+
+[node name="ContractPage" type="Control" unique_id=1860872679]
+custom_minimum_size = Vector2(399, 570)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 399.0
+offset_bottom = 570.0
+pivot_offset = Vector2(199, 286)
+mouse_filter = 2
+script = ExtResource("1_n8uct")
+
+[node name="Panel" type="TextureRect" parent="." unique_id=1965213145]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_tkrlo")
+
+[node name="Label2" type="Label" parent="." unique_id=10322297]
+layout_mode = 1
+offset_left = 11.0
+offset_top = 11.0
+offset_right = 221.0
+offset_bottom = 47.0
+text = "ElektroAntex S.A"
+label_settings = SubResource("LabelSettings_rhcrp")
+
+[node name="Label" type="Label" parent="." unique_id=231556568]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 65.0
+offset_bottom = 101.0
+grow_horizontal = 2
+text = "UMOWA O PRACĘ"
+label_settings = SubResource("LabelSettings_b6lhr")
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="." unique_id=471199497]
+custom_minimum_size = Vector2(235.545, 0)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "1
+"
+label_settings = SubResource("LabelSettings_x4wcb")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=478330907]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 114.0
+offset_right = -21.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 7
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1053414191]
+custom_minimum_size = Vector2(350, 50)
+layout_mode = 2
+text = "Zawarta w Małodołkach Dużych (dalej \"Umowa\") pomiędzy:
+\"ELEKTRO ANTEX\" SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ ul. Uwstecznienia 67, 21-376 Małodołki Duże, reprezentowaną przez:
+Antoniego Muszkieta - Prezes
+a"
+label_settings = SubResource("LabelSettings_x4wcb")
+autowrap_mode = 2
+
+[node name="EmployeeLabel" type="Label" parent="VBoxContainer" unique_id=144853742]
+layout_mode = 2
+text = "Panem: Mariuszem Samodobro"
+label_settings = SubResource("LabelSettings_x4wcb")
+
+[node name="Label2" type="Label" parent="VBoxContainer" unique_id=782488089]
+custom_minimum_size = Vector2(350, 10)
+layout_mode = 2
+text = "łącznie zwanymi dalej \"Stronami\"."
+label_settings = SubResource("LabelSettings_x4wcb")
+autowrap_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=493151420]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer" unique_id=531467902]
+custom_minimum_size = Vector2(350, 10)
+layout_mode = 2
+text = "§ 1
+CEL I PRZEDMIOT UMOWY"
+label_settings = SubResource("LabelSettings_r1m70")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label5" type="Label" parent="VBoxContainer" unique_id=1639720445]
+custom_minimum_size = Vector2(350, 10)
+layout_mode = 2
+text = "Celem umowy jest określenie warunków współpracy pomiędzy Stronami w zakresie realizacji prac zleconych pracownikowi."
+label_settings = SubResource("LabelSettings_x4wcb")
+autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="VBoxContainer" unique_id=58449795]
+custom_minimum_size = Vector2(350, 10)
+layout_mode = 2
+text = "§ 2
+WYNAGRODZENIE"
+label_settings = SubResource("LabelSettings_r1m70")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=756617809]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Label6" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1629673448]
+custom_minimum_size = Vector2(235.545, 0)
+layout_mode = 2
+text = "Miesięczną wysokość wynagrodzenia Strony ustalają jako"
+label_settings = SubResource("LabelSettings_x4wcb")
+autowrap_mode = 2
+
+[node name="SalaryBox" type="Control" parent="VBoxContainer/HBoxContainer" unique_id=1514355396]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/SalaryBox" unique_id=124790132]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_b6lhr")
+
+[node name="SalaryLabel" type="Label" parent="VBoxContainer/HBoxContainer/SalaryBox" unique_id=535094020]
+custom_minimum_size = Vector2(1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+text = "3000"
+label_settings = SubResource("LabelSettings_g0g72")
+autowrap_mode = 2
+
+[node name="Label7" type="Label" parent="VBoxContainer" unique_id=1763065]
+custom_minimum_size = Vector2(235.545, 0)
+layout_mode = 2
+text = "Wynagrodzenie będzie płatne z dołu raz w miesiącu (nie później niż do 10-tego dnia następnego miesiąca)."
+label_settings = SubResource("LabelSettings_x4wcb")
+autowrap_mode = 2
+
+[node name="Label6" type="Label" parent="VBoxContainer" unique_id=260279876]
+custom_minimum_size = Vector2(350, 10)
+layout_mode = 2
+text = "§ 3
+MIEJSCE WYKONYWANIA PRACY"
+label_settings = SubResource("LabelSettings_r1m70")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label8" type="Label" parent="VBoxContainer" unique_id=1785018784]
+custom_minimum_size = Vector2(235.545, 0)
+layout_mode = 2
+text = "Pracownik ma wykonywać swoje obowiązki w biurze mieszczącego się przy ulicy Uwstecznienia 67, 21-376 Małodołki Duże.
+"
+label_settings = SubResource("LabelSettings_x4wcb")
+autowrap_mode = 2
