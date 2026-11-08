@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://lcxhlai1rs6i"]
 
 [ext_resource type="Script" uid="uid://clbbifxgoeony" path="res://Ty/minigames/contract_change/contract_change_minigame.gd" id="1_5pav4"]
-[ext_resource type="Texture2D" uid="uid://7bm83ywhglhl" path="res://icon.svg" id="2_n6n0a"]
+[ext_resource type="Texture2D" uid="uid://bd5nnndou1b5j" path="res://Ty/minigames/contract_change/Sprites/umowy_background.png" id="2_kde54"]
 [ext_resource type="PackedScene" uid="uid://b5jbxckimqjdh" path="res://Ty/minigames/contract_change/Assets/contract_stamp_b2b.tscn" id="3_1phw2"]
 [ext_resource type="PackedScene" uid="uid://dd3cp5jkx3f1p" path="res://Ty/minigames/contract_change/Assets/contract_stamp_creation.tscn" id="4_36p5s"]
 [ext_resource type="Script" uid="uid://d248raa1ifx52" path="res://Ty/minigames/contract_change/average_salary_display.gd" id="4_r1m70"]
@@ -41,8 +41,8 @@ script = ExtResource("1_5pav4")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=952958860]
 self_modulate = Color(0.41726208, 0.13463335, 0.0062819053, 1)
 position = Vector2(576, 318)
-scale = Vector2(10, 5.671875)
-texture = ExtResource("2_n6n0a")
+scale = Vector2(1.285, 1.285)
+texture = ExtResource("2_kde54")
 
 [node name="ContractContainer" type="Control" parent="." unique_id=469653184]
 layout_mode = 3
@@ -214,7 +214,45 @@ position = Vector2(-1.5, 8)
 shape = SubResource("RectangleShape2D_33ajk")
 
 [node name="MinigameFinishedScreen" parent="." unique_id=495293115 instance=ExtResource("9_kde54")]
+visible = false
+
+[node name="Tutorial" type="Control" parent="." unique_id=365240163]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Tutorial" unique_id=1902030280]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 140.0
+offset_right = 630.0
+offset_bottom = 406.0
+
+[node name="Label" type="Label" parent="Tutorial" unique_id=1389085460]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 163.0
+offset_right = 578.0
+offset_bottom = 331.0
+text = "Obetnij zbędne wydatki firmy!
+Zmień umowy o pracę na umowy B2B lub o dzieło!
+
+Jeżeli zarobki osoby są wyższe, niż średnie = B2B
+Jeżeli zarobki osoby są niższe, niż średnie = Umowa o dzieło"
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="Tutorial" unique_id=29455944]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 327.0
+offset_right = 405.0
+offset_bottom = 391.0
+text = "Rozpocznij"
 
 [connection signal="pressed" from="ContractContainer/AverageSalaryDisplay/VBoxContainer/HBoxContainer/PlnSwitch" to="ContractContainer/AverageSalaryDisplay" method="_on_pln_switch_pressed"]
 [connection signal="pressed" from="ContractContainer/AverageSalaryDisplay/VBoxContainer/HBoxContainer/DollarSwitch" to="ContractContainer/AverageSalaryDisplay" method="_on_dollar_switch_pressed"]
 [connection signal="pressed" from="ContractContainer/AverageSalaryDisplay/VBoxContainer/HBoxContainer/EuroSwitch" to="ContractContainer/AverageSalaryDisplay" method="_on_euro_switch_pressed"]
+[connection signal="pressed" from="Tutorial/Button" to="." method="_on_tutorial_button_pressed"]

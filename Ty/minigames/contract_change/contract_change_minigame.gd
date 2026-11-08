@@ -13,6 +13,7 @@ class ContractData extends RefCounted:
 signal contract_stamped_success
 signal contract_stamped_fail
 
+@onready var tutorial := $Tutorial
 @onready var minigame_finished_screen: MinigameFinishedScreen = $MinigameFinishedScreen
 @onready var contract_container: ContractContainer = $ContractContainer
 @onready var stamp_creation: ContractStamp2D = $StampCreation
@@ -80,16 +81,24 @@ func _ready() -> void:
 	contract_stamped_success.connect(contract_container._on_contract_stamped_success)
 	contract_stamped_fail.connect(contract_container._on_contract_stamped_fail)
 
+	tutorial.show()
+
 func _process(_delta: float) -> void:
 	if hovered_stamp != null and is_stamp_picked_up:
 		hovered_stamp.get_stamp_sprite().global_position = contract_container.get_local_mouse_position()
 
 func start():
 	super()
+	if tutorial.visible:
+		return
+	_begin()
+
+func _begin():
 	successes = 0
 	clear_set_stamp()
 	average_salary_pln = Game.rng.randi_range(salary_range.x, salary_range.x + (salary_range.y - salary_range.x)*.5)
 	contract_container.start(_generate_contract_data_list(), average_salary_pln)
+	
 
 func _generate_contract_data_list() -> Array[ContractData]:
 	var contract_datas: Array[ContractData]
@@ -135,3 +144,8 @@ func _on_stamp_target_hovered() -> void:
 
 func _on_stamp_target_unhovered() -> void:
 	is_stamp_hovering_over_contract = false
+
+
+func _on_tutorial_button_pressed() -> void:
+	tutorial.hide()
+	_begin()
